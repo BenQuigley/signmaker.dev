@@ -11,3 +11,4 @@ htmlcov
 pelican-plugins
 themes
 .env
+__pycache__
