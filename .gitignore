@@ -10,3 +10,4 @@ htmlcov
 
 pelican-plugins
 themes
+.env

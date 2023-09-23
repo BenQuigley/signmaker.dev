@@ -68,5 +68,8 @@ devserver-global:
 publish:
 	"$(PELICAN)" "$(INPUTDIR)" -o "$(OUTPUTDIR)" -s "$(PUBLISHCONF)" $(PELICANOPTS)
 
+requirements:
+	pip-compile requirements.txt --output-file requirements.lock
+
 
 .PHONY: html help clean regenerate serve serve-global devserver publish 
