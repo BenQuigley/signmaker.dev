@@ -8,7 +8,7 @@ Welcome!
 
 I'm Ben, and this is my home on the internet.
 
-I'm a software developer coming to you from  [Warner Bros. Digital
+I'm a software developer coming to you from [Warner Bros. Digital
 Labs](https://www.warnerbros.com/) working on
 [DCUniverse.com](https://dcuniverse.com) and other high-traffic and -visibility
 webapps, and from [EditShare](https://editshare.com/) writing high-performance
@@ -28,7 +28,7 @@ More data about me:
 
 ## About signmaker.dev
 
-One of my favorite characters is  [the Sign
+One of my favorite characters is [the Sign
 Painter](https://worldofgoo.fandom.com/wiki/The_Sign_Painter) from the puzzle
 game [World of Goo](https://en.wikipedia.org/wiki/World_of_Goo). I call my site
 [signmaker.dev](https://signmaker.dev) because putting up signs (or labels, web
@@ -43,5 +43,5 @@ software:
 
 * and a [theme](https://github.com/alexandrevicenzi/Flex) forked from
     [Alexander Revicenzi](https://www.alexandrevicenzi.com/),
-    
+
 * and is hosted on [Netlify](https://www.netlify.com/).
