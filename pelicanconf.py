@@ -46,7 +46,7 @@ DEFAULT_PAGINATION = 15
 # Uncomment following line if you want document-relative URLs when developing
 # RELATIVE_URLS = True
 
-ARCHIVES_SAVE_AS = "pages/blog.html"
+ARCHIVES_SAVE_AS = "blog.html"
 
 THEME = "themes/Flex"
 PLUGIN_PATHS = ["./pelican-plugins"]

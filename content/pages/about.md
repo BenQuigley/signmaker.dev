@@ -2,6 +2,7 @@
 title: About
 date: '2023-09-23'
 save_as: index.html
+url: index.html
 ---
 
 Welcome! I'm Ben, and this is my home on the internet.
