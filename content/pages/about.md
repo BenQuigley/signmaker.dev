@@ -4,9 +4,7 @@ date: '2023-09-23'
 save_as: index.html
 ---
 
-Welcome!
-
-I'm Ben, and this is my home on the internet.
+Welcome! I'm Ben, and this is my home on the internet.
 
 I'm a software developer coming to you from [Warner Bros. Digital
 Labs](https://www.warnerbros.com/) working on
@@ -28,7 +26,7 @@ More data about me:
 
 ## About signmaker.dev
 
-One of my favorite characters is [the Sign
+"signmaker" is an old screen name. One of my favorite characters is [the Sign
 Painter](https://worldofgoo.fandom.com/wiki/The_Sign_Painter) from the puzzle
 game [World of Goo](https://en.wikipedia.org/wiki/World_of_Goo). I call my site
 [signmaker.dev](https://signmaker.dev) because putting up signs (or labels, web

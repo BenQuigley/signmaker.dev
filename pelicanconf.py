@@ -1,3 +1,5 @@
+# Ref: https://docs.getpelican.com/en/latest/settings.html
+# Flex example: https://github.com/alexandrevicenzi/Flex/wiki/Configuration-example
 AUTHOR = "Ben Quigley"
 SITENAME = "Ben Quigley"
 SITESUBTITLE = "Ben Quigley | Software Developer"
@@ -15,7 +17,7 @@ I18N_TEMPLATES_LANG = "en"
 OG_LOCALE = "en_US"
 LOCALE = "en_US"
 
-# Feed generation is usually not desired when developing
+# Feed generation is not desired when developing
 FEED_ALL_ATOM = None
 CATEGORY_FEED_ATOM = None
 TRANSLATION_FEED_ATOM = None
@@ -23,10 +25,12 @@ AUTHOR_FEED_ATOM = None
 AUTHOR_FEED_RSS = None
 
 SITELOGO = "/images/quigley-2022-selfie-square-web.jpg"
+FAVICON = "/static/favicon.ico"
 
 # Blogroll
 LINKS = (
-    ("Github", "https://getpelican.com/"),
+    ("blog", "blog"),
+    ("Github", "https://github.com/BenQuigley"),
     ("LinkedIn", "https://www.linkedin.com/in/BenjaminQuigley/"),
 )
 
@@ -42,6 +46,8 @@ DEFAULT_PAGINATION = 15
 # Uncomment following line if you want document-relative URLs when developing
 # RELATIVE_URLS = True
 
+ARCHIVES_SAVE_AS = "pages/blog.html"
+
 THEME = "themes/Flex"
 PLUGIN_PATHS = ["./pelican-plugins"]
 
@@ -51,3 +57,6 @@ TYPOGRIFY = True
 THEME_COLOR = "light"  # (either "light" (default) or "dark"): the default theme to use when the user/browser/OS does not override it.
 THEME_COLOR_AUTO_DETECT_BROWSER_PREFERENCE = True  # set to True if you want Flex to auto-detect the user's browser/OS color scheme preference and use the appropriate theme.
 THEME_COLOR_ENABLE_USER_OVERRIDE = True
+
+PYGMENTS_STYLE = "rainbow_dash"
+PYGMENTS_STYLE_DARK = "solarized-dark"
