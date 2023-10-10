@@ -13,15 +13,14 @@
     <link rel="stylesheet" type="text/css" href="/theme/stylesheet/style.min.css">
 
     <link id="dark-theme-style" rel="stylesheet" type="text/css"
-          media="(prefers-color-scheme: dark)"
+        disabled="disabled"
     href="/theme/stylesheet/dark-theme.min.css">
 
     <link id="pygments-dark-theme" rel="stylesheet" type="text/css"
-              media="(prefers-color-scheme: dark)"
+            disabled="disabled"
           href="/theme/pygments/solarized-dark.min.css">
     <link id="pygments-light-theme" rel="stylesheet" type="text/css"
-              media="(prefers-color-scheme: light), (prefers-color-scheme: no-preference)"
-          href="/theme/pygments/rainbow_dash.min.css">
+          href="/theme/pygments/solarized-light.min.css">
 
 
 
@@ -65,7 +64,7 @@
 
 
 </head>
-<body >
+<body class="light-theme">
 
 <aside>
   <div>
@@ -527,12 +526,12 @@ Interested&#8221; section has grown&nbsp;wild:</p>
 <footer>
 <p>&copy;  </p>
 <p>
-Built with <a href="http://getpelican.com" target="_blank">pelican</a> and <a href="https://github.com/alexandrevicenzi/Flex" target="_blank">flex</a>
+Built with <a href="http://getpelican.com" target="_blank">Pelican</a> using <a href="http://bit.ly/flex-pelican" target="_blank">Flex</a> theme
   <span class="footer-separator">|</span>
   Switch to the <a href="javascript:void(0)" onclick="theme.switch(`dark`)">dark</a> | <a href="javascript:void(0)" onclick="theme.switch(`light`)">light</a> | <a href="javascript:void(0)" onclick="theme.switch(`browser`)">browser</a> theme
   <script id="dark-theme-script"
           src="/theme/dark-theme/dark-theme.min.js"
-          data-enable-auto-detect-theme="True"
+          data-enable-auto-detect-theme="False"
           data-default-theme="light"
           type="text/javascript">
   </script>
