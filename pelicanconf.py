@@ -55,8 +55,8 @@ TYPOGRIFY = True
 
 # Flex stuff
 THEME_COLOR = "light"  # (either "light" (default) or "dark"): the default theme to use when the user/browser/OS does not override it.
-THEME_COLOR_AUTO_DETECT_BROWSER_PREFERENCE = True  # set to True if you want Flex to auto-detect the user's browser/OS color scheme preference and use the appropriate theme.
+THEME_COLOR_AUTO_DETECT_BROWSER_PREFERENCE = False  # set to True if you want Flex to auto-detect the user's browser/OS color scheme preference and use the appropriate theme.
 THEME_COLOR_ENABLE_USER_OVERRIDE = True
 
-PYGMENTS_STYLE = "rainbow_dash"
+PYGMENTS_STYLE = "solarized-light"
 PYGMENTS_STYLE_DARK = "solarized-dark"
