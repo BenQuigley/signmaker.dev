@@ -1,0 +1,475 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="HandheldFriendly" content="True" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="index, follow" />
+
+  <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,400;0,700;1,400&family=Source+Sans+Pro:ital,wght@0,300;0,400;0,700;1,400&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" type="text/css" href="/theme/stylesheet/style.min.css">
+
+    <link id="dark-theme-style" rel="stylesheet" type="text/css"
+        disabled="disabled"
+    href="/theme/stylesheet/dark-theme.min.css">
+
+    <link id="pygments-dark-theme" rel="stylesheet" type="text/css"
+            disabled="disabled"
+          href="/theme/pygments/solarized-dark.min.css">
+    <link id="pygments-light-theme" rel="stylesheet" type="text/css"
+          href="/theme/pygments/solarized-light.min.css">
+
+
+
+  <link rel="stylesheet" type="text/css" href="/theme/font-awesome/css/fontawesome.css">
+  <link rel="stylesheet" type="text/css" href="/theme/font-awesome/css/brands.css">
+  <link rel="stylesheet" type="text/css" href="/theme/font-awesome/css/solid.css">
+
+
+  <link rel="shortcut icon" href="/static/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="/static/favicon.ico" type="image/x-icon">
+
+
+
+
+
+
+
+
+
+
+ 
+
+<meta name="author" content="Ben Quigley" />
+<meta name="description" content="Whether you’re a professional software developer or an “I know enough to be dangerous” power user on a higher education team, writing micro-programs to automate little tasks is one of the real joys of programming. Yet, if you’re learning programming, you’ve probably read tutorials about how to …" />
+<meta name="keywords" content="">
+
+
+  <meta property="og:site_name" content="Ben Quigley"/>
+  <meta property="og:title" content="‘Personal Scripts’"/>
+  <meta property="og:description" content="Whether you’re a professional software developer or an “I know enough to be dangerous” power user on a higher education team, writing micro-programs to automate little tasks is one of the real joys of programming. Yet, if you’re learning programming, you’ve probably read tutorials about how to …"/>
+  <meta property="og:locale" content="en_US"/>
+  <meta property="og:url" content="/personal-scripts.html"/>
+  <meta property="og:type" content="article"/>
+  <meta property="article:published_time" content="2023-10-20 00:00:00-05:00"/>
+  <meta property="article:modified_time" content=""/>
+  <meta property="article:author" content="/author/ben-quigley.html">
+  <meta property="article:section" content="blog"/>
+  <meta property="og:image" content="/images/quigley-2022-selfie-square-web.jpg">
+
+  <title>Ben Quigley &ndash; ‘Personal Scripts’</title>
+
+
+</head>
+<body class="light-theme">
+
+<aside>
+  <div>
+    <a href="/">
+      <img src="/images/quigley-2022-selfie-square-web.jpg" alt="" title="">
+    </a>
+
+    <h1>
+      <a href="/"></a>
+    </h1>
+
+    <p>Ben Quigley | Software Developer</p>
+
+
+    <nav>
+      <ul class="list">
+
+
+            <li>
+              <a target="_self"
+                 href="/index.html#about">
+                About
+              </a>
+            </li>
+            <li>
+              <a target="_self"
+                 href="/pages/contact.html#contact">
+                Contact
+              </a>
+            </li>
+
+          <li>
+            <a target="_self" href="blog" >blog</a>
+          </li>
+          <li>
+            <a target="_self" href="https://github.com/BenQuigley" >Github</a>
+          </li>
+          <li>
+            <a target="_self" href="https://www.linkedin.com/in/BenjaminQuigley/" >LinkedIn</a>
+          </li>
+      </ul>
+    </nav>
+
+    <ul class="social">
+      <li>
+        <a class="sc-github"
+           href="https://github.com/BenQuigley"
+           target="_blank">
+          <i class="fa-brands fa-github"></i>
+        </a>
+      </li>
+      <li>
+        <a class="sc-linkedin"
+           href="https://LinkedIn.com/in/BenjaminQuigley"
+           target="_blank">
+          <i class="fa-brands fa-linkedin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="sc-rss"
+           href="/blog/feeds/all.atom.xml"
+           target="_blank">
+          <i class="fa-solid fa-rss"></i>
+        </a>
+      </li>
+    </ul>
+  </div>
+
+</aside>
+  <main>
+
+<nav>
+  <a href="/">Home</a>
+
+
+
+</nav>
+
+<article class="single">
+  <header>
+      
+    <h1 id="personal-scripts"><span class="quo">&#8216;</span>Personal&nbsp;Scripts&#8217;</h1>
+    <p>
+      Posted on Fri 20 October 2023 in <a href="/category/blog.html">blog</a>
+
+    </p>
+  </header>
+
+
+  <div>
+    <p>Whether you&#8217;re a professional software developer or an &#8220;I know enough to be
+dangerous&#8221; power user on a higher education team, writing micro-programs to
+automate little tasks is one of the real joys of&nbsp;programming.</p>
+<p>Yet, if you&#8217;re learning programming, you&#8217;ve probably read tutorials about how to
+create a Django webserver, a git repository, a personal portfolio page, but may
+still have never seen a concrete illustration of how to write your own scripts
+and invoke them from your&nbsp;terminal.</p>
+<p>For example, here&#8217;s a fun one from my scripts folder. I open my command line and&nbsp;type:</p>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>word
+</code></pre></div>
+
+<p>And the output&nbsp;is:</p>
+<div class="highlight"><pre><span></span><code>retiringness
+</code></pre></div>
+
+<p>My <code>word</code> command is a Python script that chooses and prints a random word from
+the computer&#8217;s built-in word list - either <code>/usr/share/dict/words</code> on <span class="caps">OS</span> X, or
+<code>cracklib-small</code> on Linux. I&#8217;ll post this script here so that you can make use
+of it yourself if you want to, but the main goal of this blog entry is to
+encourage and unblock you to create your own quick scripts to accomplish
+absolutely anything you want to&nbsp;do.</p>
+<p>I&#8217;ll give examples in the
+<a href="https://en.wikipedia.org/wiki/Bash_(Unix_shell)">bash</a> and
+<a href="https://en.wikipedia.org/wiki/Python_(programming_language)">Python</a> languages
+for this blog post, which are both great languages to know - bash being the
+Buck knife and Python the Leatherman multitool of your digital toolbelt - but
+there are many other great languages to do scripting in too. Specifically:
+- if you know some other language better and you like it, then you might as well
+  use that;
+- if you&#8217;ve been following the <a href="https://en.wikipedia.org/wiki/DevOps">DevOps</a>
+  track of your career then you might share (or want to share) that discipline&#8217;s
+  mild bias in favor of the
+  <a href="https://en.wikipedia.org/wiki/Go_%28programming_language%29">Go</a>&nbsp;language.</p>
+<p>If you&#8217;re feeling a little indecisive about this, just ignore the feeling and
+keep reading! No one&#8217;s ever sorry that they&#8217;ve learned a little bash or&nbsp;Python.</p>
+<p>A few more quick caveats:
+- If you&#8217;re absolutely completely unfamiliar with the shell that&#8217;s fine; keep
+  reading, but although I&#8217;ve done my best to cover the basics there is a lot to
+  absorb. <a href="https://linuxjourney.com/">LinuxJourney.com</a> is a wonderful bookmark
+  for uncovering the basics of command-line interfaces.
+- If you&#8217;re on Windows, all the general points here are still true, but you will
+  need to either set up Windows Subsystem for Linux in order to do the Unix-type
+  tasks that I&#8217;m going to talk about here. Alternatively, I&#8217;m sure all this
+  stuff has some equivalent in
+  <a href="https://github.com/PowerShell/PowerShell">Powershell</a>!
+- If you&#8217;re not on Windows, you already have bash installed, but you may need to
+  <a href="https://realpython.com/installing-python/">install Python</a> before Python
+  scripts could be run.
+- If you are using zsh as your shell, which is the default in some <span class="caps">OS</span> X
+  machines, it&#8217;s <code>~/.zsh_aliases</code> instead of <code>~/.bash_aliases</code>.</p>
+<h3>Just lob the quick stuff into&nbsp;~/.bash_aliases</h3>
+<p>My <code>word</code> script above is a 51-line Python script, but if I were writing it in a
+big hurry, it could just live in my <code>~/.bash_aliases</code> file as a couple of lines
+of bash. It would have to work a little differently on Mac vs. Linux because
+their system word list files have different names. Here&#8217;s an example
+<code>~/.bash_aliases</code> section for for things that should be defined differently
+based on the operating&nbsp;system:</p>
+<div class="highlight"><pre><span></span><code><span class="k">if</span><span class="w"> </span><span class="o">[</span><span class="w"> </span><span class="nv">$OSTYPE</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s2">&quot;linux-gnu&quot;</span><span class="w"> </span><span class="o">]</span>
+<span class="k">then</span>
+<span class="w">    </span><span class="nb">alias</span><span class="w"> </span><span class="nv">copy</span><span class="o">=</span><span class="s1">&#39;xclip -sel c&#39;</span>
+<span class="k">elif</span><span class="w"> </span><span class="o">[[</span><span class="w"> </span><span class="nv">$OSTYPE</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s2">&quot;darwin&quot;</span>*<span class="w"> </span><span class="o">]]</span>
+<span class="k">then</span>
+<span class="w">    </span><span class="nb">alias</span><span class="w"> </span><span class="nv">copy</span><span class="o">=</span><span class="s1">&#39;pbcopy&#39;</span>
+<span class="k">else</span>
+<span class="w">    </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;OS type </span><span class="nv">$OSTYPE</span><span class="s2"> not recognized; some aliases not set.&quot;</span>
+<span class="k">fi</span>
+</code></pre></div>
+
+<p>(Also, if you steal this for your aliases file, then you have a convenient
+<code>copy</code> command that allows you to copy stuff from the command line to your
+normal copy / paste clipboard. Linux users need to install <code>xclip</code> before it
+will work; I think your normal package manager should have it (<code>sudo apt install
+xclip</code> on Ubuntu / Debian / Mint / Pop!_OS). Example usage: <code>cat
+~/my-cool-file.txt | copy</code> copies the contents of your cool file to your&nbsp;clipboard.)</p>
+<p>We can implement <code>word</code> easily here by adding the line
+<code>dictionary_filename=cracklib-small</code> to the Linux section and
+<code>dictionary_filename=words</code> to the Darwin (<span class="caps">OS</span> X) one, then outside of this logic
+block, we can&nbsp;add:</p>
+<div class="highlight"><pre><span></span><code><span class="nb">alias</span><span class="w"> </span><span class="nv">word</span><span class="o">=</span><span class="s2">&quot;cat /usr/share/dict/</span><span class="nv">$dictionary_filename</span><span class="s2"> | shuf -n 1&quot;</span>
+</code></pre></div>
+
+<p>It&#8217;s mind-boggling how much can be accomplished with just&nbsp;bash.</p>
+<p>Here are a few more that I use&nbsp;frequently:</p>
+<div class="highlight"><pre><span></span><code><span class="nb">alias</span><span class="w"> </span><span class="nv">hi</span><span class="o">=</span><span class="s1">&#39;git status --short&#39;</span><span class="w">  </span><span class="c1"># Underrated argument to see a super-casual git status!</span>
+<span class="nb">alias</span><span class="w"> </span><span class="nv">bra</span><span class="o">=</span><span class="s1">&#39;git branch&#39;</span>
+<span class="nb">alias</span><span class="w"> </span><span class="nv">cha</span><span class="o">=</span><span class="s1">&#39;git checkout&#39;</span>
+<span class="nb">alias</span><span class="w"> </span><span class="nv">rai</span><span class="o">=</span><span class="s1">&#39;git fetch; git rebase --interactive origin/develop&#39;</span>
+<span class="nb">alias</span><span class="w"> </span><span class="nv">ram</span><span class="o">=</span><span class="s1">&#39;git fetch; git rebase --interactive origin/master&#39;</span>
+<span class="nb">alias</span><span class="w"> </span><span class="nv">rab</span><span class="o">=</span><span class="s1">&#39;git rebase --abort&#39;</span>
+<span class="nb">alias</span><span class="w"> </span><span class="nv">rac</span><span class="o">=</span><span class="s1">&#39;git rebase --continue&#39;</span>
+</code></pre></div>
+
+<p>(I would type <code>git rebase -i</code> on the command line, but for inscribing into a
+scripts file like <code>~/.bash_aliases</code>, it&#8217;s nice to type out the full name of the
+argument, for example <code>--interactive</code>.)</p>
+<p>I also have a few simple functions defined in my <code>~/.bash_aliases</code>:</p>
+<div class="highlight"><pre><span></span><code><span class="k">function</span><span class="w"> </span>names<span class="w"> </span><span class="o">{</span>
+<span class="w">  </span>git<span class="w"> </span>log<span class="w"> </span>-n<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$@</span><span class="s2">&quot;</span><span class="w"> </span>--name-only<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>-e<span class="w"> </span><span class="s2">&quot;^\S&quot;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>-Ev<span class="w"> </span><span class="s2">&quot;^(commit|Author|Date)&quot;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>sort<span class="w"> </span><span class="p">|</span><span class="w"> </span>uniq
+<span class="o">}</span>
+<span class="nb">export</span><span class="w"> </span>-f<span class="w"> </span>names
+</code></pre></div>
+
+<p>(The <code>export -f</code> line is necessary, or this function would only be available
+inside the script, in this case the <code>~/.bash_aliases</code> file, itself. We want it
+to be available elsewhere in the shell, so we must export it. For whatever
+reason, the actual aliases do not work like&nbsp;that.)</p>
+<p>And finally, my file contains a code comment with a little note to&nbsp;myself:</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># Reminders</span>
+<span class="c1"># =========</span>
+<span class="c1"># Commands that we don&#39;t necessarily need aliases for, except that we keep forgetting:</span>
+<span class="c1"># docker system prune --volumes</span>
+<span class="c1"># The docker system prune command is a shortcut that prunes images, containers,</span>
+<span class="c1"># and networks. Volumes are not pruned by default, and you must specify the</span>
+<span class="c1"># --volumes flag for docker system prune to prune volumes. By default, you are</span>
+<span class="c1"># prompted to continue. To bypass the prompt, use the -f or --force flag.</span>
+</code></pre></div>
+
+<p>(I don&#8217;t know why I write &#8220;we&#8221; in my system configurations. Nobody&#8217;s looking at
+this stuff except for me. As my friend Darrick said, &#8220;What do you mean, &#8216;we&#8217;?
+Got a mouse in your&nbsp;pocket?&#8221;)</p>
+<h4>Make aliases for whatever you do a&nbsp;lot</h4>
+<p>If you enter commands into your command line, they&#8217;re saved in a file normally
+located in <code>~/.bash_history</code>(<code>~/.zsh_history</code> for zsh users). There are a lot of
+uses that the bash shell makes from this, such as auto-completing previously
+entered commands (usually with Ctrl+r), but one great use you can make of it is
+to make it spit out what are your top 20 most frequently used commands. I
+constructed this quickly with some googling, but it works fine on my&nbsp;machines:</p>
+<div class="highlight"><pre><span></span><code>cat ~/.bash_history | sort | uniq -c | sort -k2nr | tail -n 20
+</code></pre></div>
+
+<p>Most of mine are already bash aliases. Here are the top&nbsp;8:</p>
+<div class="highlight"><pre><span></span><code> 897 rai
+ 926 git commit
+1333 git stash
+1404 bra
+1435 git commit --amend
+3004 django
+4037 git add -p
+5586 tig
+</code></pre></div>
+
+<p>The most notable exception to that is the wonderful command-line git client,
+<a href="https://jonas.github.io/tig/">tig</a>, which I don&#8217;t need an alias for because its
+name is already so short, and which I more or less live inside of. (Here&#8217;s to
+the next 5,000&nbsp;invocations!)</p>
+<p>So if you have used your command line before, and you run this command, you can
+see what you do the most often. If anything in its output is very verbose, it
+might be a good candidate for adding an alias for, and saving a few&nbsp;keystrokes.</p>
+<h3>Full&nbsp;Scripts</h3>
+<p>Writing in bash can get tiresome; I do a lot of my quick scripting in Python.
+Here&#8217;s the quick-and-dirty to getting your scripts folder&nbsp;together.</p>
+<h4>How can I sync my scripts across all my&nbsp;computers?</h4>
+<p>Let&#8217;s assume that (like me) you are writing general-purpose scripts that you&#8217;d
+like to be able to use anywhere. I stored my scripts in <code>~/Dropbox/scripts</code>
+until I migrated from Dropbox to <a href="https://mega.nz/">Mega</a> because they give you
+more storage for free, encrypt your drive for you, and don&#8217;t look at your stuff;
+but you can put yours wherever you&nbsp;want.</p>
+<h4>How can I make my scripts reachable from my&nbsp;shell?</h4>
+<p>I don&#8217;t want to have to type <code>python3 ~/scripts/{script-name}</code>; I want to type
+<code>{script-name}</code> only and have it work, regardless of what working directory my
+shell is in. To do this, update your <code>~/.bashrc</code> to update your <span class="caps">PATH</span> variable to
+contain your scripts&nbsp;directory:</p>
+<div class="highlight"><pre><span></span><code><span class="nb">export</span><span class="w"> </span><span class="nv">PATH</span><span class="o">=</span><span class="s2">&quot;</span><span class="nv">$PATH</span><span class="s2">:</span><span class="nv">$HOME</span><span class="s2">/mega/scripts&quot;</span><span class="w">  </span><span class="c1"># replace $HOME/mega/scripts with the path of your scripts folder.</span>
+</code></pre></div>
+
+<p>Then restart your shell, or <code>source ~/.bashrc</code>, in order for the change to take&nbsp;effect.</p>
+<h4>How do I make the script be callable as <code>name</code> instead of <code>name.py</code>?</h4>
+<p>To accomplish this, literally just name the script <code>name</code> instead of
+<code>name.py</code>. However, just more changes are&nbsp;needed:</p>
+<ol>
+<li>Make the script executable with <code>chmod +x ~/scripts/name</code> (or <code>chmod +x
+   ~/scripts/*</code> to make everything in your scripts folder&nbsp;executable).</li>
+<li>Make the first line of your script <code>#!/usr/bin/env python</code>. This is so that
+   your system will know that the executable file <code>name</code>, which otherwise just
+   contains text, should be executed with the <code>python3</code> program, since you&#8217;re no
+   longer calling it with <code>python3 name.py</code> as you might be used&nbsp;to.</li>
+</ol>
+<h3>Python</h3>
+<p>Using the <code>time</code> command, we can compare the runtime of the quickly implemented shell
+version of my <code>word</code> script to the pre-existing, Python&nbsp;one:</p>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span><span class="nb">time</span><span class="w"> </span>cat<span class="w"> </span>/usr/share/dict/words<span class="w"> </span><span class="p">|</span><span class="w"> </span>shuf<span class="w"> </span>-n<span class="w"> </span><span class="m">1</span>
+Alopecias
+
+real<span class="w">    </span>0m0.030s
+user<span class="w">    </span>0m0.018s
+sys<span class="w">     </span>0m0.021s
+$<span class="w"> </span><span class="nb">time</span><span class="w"> </span>python3<span class="w"> </span>~/mega/scripts/word
+pseudopupal
+
+real<span class="w">    </span>0m0.107s
+user<span class="w">    </span>0m0.047s
+sys<span class="w">     </span>0m0.031s
+</code></pre></div>
+
+<p>So there was a real speed improvement to using bare-naked bash as opposed to
+Python. But this is not an apples-to-apples comparison - glancing at my existing
+<code>word</code> script, I remember that it has some niceties that the quick shell version
+doesn&#8217;t have - an <code>argparse.ArgumentParser</code> gets us a quick <code>-h/--help</code> command,
+a few alternative modes, and there&#8217;s a little joke in there (cribbed from
+<a href="https://xkcd.com/221/">xkcd</a> as&nbsp;well.</p>
+<p>I share this script, not because I think you need a script that generates random
+words. I just want to plant seeds, especially for readers that might not be
+familiar with programming, for concepts that many people add to their personal
+scripts that are&nbsp;helpful:</p>
+<ol>
+<li>Adding a <code>-h/--help</code> argument that, when received, prints a help message
+   describing all the other options, and then (importantly) closes the program
+   without doing its regular function. (As I mentioned above, Python&#8217;s
+   <code>argparse</code> module gets you this for&nbsp;free.)</li>
+<li>Raising errors (which exits the program, in Python) on purpose when the
+   script finds itself in a situation that you didn&#8217;t expect (like, in my case,
+   running on a Windows machine where there is no <code>/usr/share/dict/</code> directory).</li>
+<li>Writing your code as simply as possible, and adding comments (the <code>#</code> lines)
+   where appropriate and explanatory docstrings (the <code>"""..."""</code> lines) to each
+   function so that you can remember later what they were supposed to&nbsp;do.</li>
+<li>Avoid using third-party packages, anything you have to <code>pip install</code> from the
+   command line. A lot of Python learners are interested in learning Python&#8217;s
+   major analysis tools, such as <code>numpy</code> and <code>pandas</code>, but (A) your software
+   development skills will be much stronger if you learn to use the standard
+   library to accomplish simple tasks, and (B) your script will be more useful
+   to you if it doesn&#8217;t always fail the first time you use it until you remember
+   you needed to <code>pip install pandas</code> on your new <span class="caps">OS</span>.</li>
+</ol>
+<p>Here&#8217;s the&nbsp;script:</p>
+<div class="highlight"><pre><span></span><code><span class="ch">#!/usr/bin/env python3</span>
+
+<span class="sd">&quot;&quot;&quot;Print a random word from a word list.&quot;&quot;&quot;</span>
+
+<span class="kn">import</span> <span class="nn">argparse</span>
+<span class="kn">import</span> <span class="nn">platform</span>
+<span class="kn">import</span> <span class="nn">random</span>
+<span class="kn">import</span> <span class="nn">time</span>
+
+<span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">Tuple</span>
+
+<span class="c1"># The word list that ships with the system:</span>
+<span class="n">system</span> <span class="o">=</span> <span class="n">platform</span><span class="o">.</span><span class="n">system</span><span class="p">()</span>
+<span class="n">WORD_PATH</span> <span class="o">=</span> <span class="s2">&quot;/usr/share/dict&quot;</span>
+<span class="k">if</span> <span class="n">system</span> <span class="o">==</span> <span class="s2">&quot;Linux&quot;</span><span class="p">:</span>
+    <span class="n">WORD_LIST</span> <span class="o">=</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">WORD_PATH</span><span class="si">}</span><span class="s1">/cracklib-small&#39;</span>
+<span class="k">elif</span> <span class="n">system</span> <span class="o">==</span> <span class="s2">&quot;Darwin&quot;</span><span class="p">:</span>
+    <span class="n">WORD_LIST</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">WORD_PATH</span><span class="si">}</span><span class="s2">/words&quot;</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Unsupported operating system </span><span class="si">{</span><span class="n">system</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+
+<span class="n">PARSER</span> <span class="o">=</span> <span class="n">argparse</span><span class="o">.</span><span class="n">ArgumentParser</span><span class="p">()</span>
+<span class="n">PARSER</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s1">&#39;-b&#39;</span><span class="p">,</span> <span class="s1">&#39;--brainstorm&#39;</span><span class="p">,</span> <span class="n">action</span><span class="o">=</span><span class="s1">&#39;store_true&#39;</span><span class="p">)</span>
+<span class="n">PARSER</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s1">&#39;-i&#39;</span><span class="p">,</span> <span class="s1">&#39;--interval&#39;</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="nb">float</span><span class="p">)</span>
+<span class="n">ARGS</span> <span class="o">=</span> <span class="n">PARSER</span><span class="o">.</span><span class="n">parse_args</span><span class="p">()</span>
+
+
+<span class="k">def</span> <span class="nf">generate_list</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="n">Tuple</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="o">...</span><span class="p">]:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Read the word list.&quot;&quot;&quot;</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="k">return</span> <span class="nb">tuple</span><span class="p">(</span><span class="nb">open</span><span class="p">(</span><span class="n">WORD_LIST</span><span class="p">)</span><span class="o">.</span><span class="n">read</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">))</span>
+    <span class="k">except</span> <span class="ne">Exception</span><span class="p">:</span>  <span class="c1"># pylint: disable=broad-except</span>
+        <span class="c1"># Chosen by fair dice roll, guaranteed to be random</span>
+        <span class="k">return</span> <span class="p">(</span><span class="s1">&#39;saplings&#39;</span><span class="p">,)</span>
+
+
+<span class="k">def</span> <span class="nf">main</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Process the user&#39;s args and generate words.&quot;&quot;&quot;</span>
+    <span class="n">words</span> <span class="o">=</span> <span class="n">generate_list</span><span class="p">()</span>
+    <span class="k">if</span> <span class="n">ARGS</span><span class="o">.</span><span class="n">interval</span> <span class="ow">or</span> <span class="n">ARGS</span><span class="o">.</span><span class="n">brainstorm</span><span class="p">:</span>
+        <span class="n">interval</span> <span class="o">=</span> <span class="n">ARGS</span><span class="o">.</span><span class="n">interval</span> <span class="ow">or</span> <span class="mf">5.0</span>
+        <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="n">words</span><span class="p">))</span>
+            <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="n">interval</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="n">words</span><span class="p">))</span>
+
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+    <span class="n">main</span><span class="p">()</span>
+</code></pre></div>
+
+<p>Thank you for reading! Reach out if you have questions and I&#8217;ll incorporate your
+thoughts into this&nbsp;post.</p>
+  </div>
+  <div class="tag-cloud">
+    <p>
+    </p>
+  </div>
+
+
+
+
+
+
+</article>
+
+<footer>
+<p>&copy;  </p>
+<p>
+Built with <a href="http://getpelican.com" target="_blank">Pelican</a> using <a href="http://bit.ly/flex-pelican" target="_blank">Flex</a> theme
+  <span class="footer-separator">|</span>
+  Switch to the <a href="javascript:void(0)" onclick="theme.switch(`dark`)">dark</a> | <a href="javascript:void(0)" onclick="theme.switch(`light`)">light</a> | <a href="javascript:void(0)" onclick="theme.switch(`browser`)">browser</a> theme
+  <script id="dark-theme-script"
+          src="/theme/dark-theme/dark-theme.min.js"
+          data-enable-auto-detect-theme="False"
+          data-default-theme="light"
+          type="text/javascript">
+  </script>
+</p></footer>  </main>
+
+<script type="application/ld+json">
+{
+  "@context" : "http://schema.org",
+  "@type" : "Blog",
+  "name": " Ben Quigley ",
+  "url" : "",
+  "image": "/images/quigley-2022-selfie-square-web.jpg",
+  "description": "Ben Quigley homepage"
+}
+</script>
+</body>
+</html>
