@@ -132,6 +132,10 @@ function names {
 export -f names
 ```
 
+The output of this function is the sorted, deduplicated filenames of all the
+files that have been changed in the recent 3 git commits (when called with
+`names 3`). I couldn't exactly say why this is useful, but I use it a lot.
+
 (The `export -f` line is necessary, or this function would only be available
 inside the script, in this case the `~/.bash_aliases` file, itself. We want it
 to be available elsewhere in the shell, so we must export it. For whatever

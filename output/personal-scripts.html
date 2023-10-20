@@ -262,6 +262,9 @@ argument, for example <code>--interactive</code>.)</p>
 <span class="nb">export</span><span class="w"> </span>-f<span class="w"> </span>names
 </code></pre></div>
 
+<p>The output of this function is the sorted, deduplicated filenames of all the
+files that have been changed in the recent 3 git commits (when called with
+<code>names 3</code>). I couldn&#8217;t exactly say why this is useful, but I use it a&nbsp;lot.</p>
 <p>(The <code>export -f</code> line is necessary, or this function would only be available
 inside the script, in this case the <code>~/.bash_aliases</code> file, itself. We want it
 to be available elsewhere in the shell, so we must export it. For whatever
