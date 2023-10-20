@@ -38,6 +38,7 @@ I'll give examples in the
 for this blog post, which are both great languages to know - bash being the
 Buck knife and Python the Leatherman multitool of your digital toolbelt - but
 there are many other great languages to do scripting in too. Specifically:
+
 - if you know some other language better and you like it, then you might as well
   use that;
 - if you've been following the [DevOps](https://en.wikipedia.org/wiki/DevOps)
@@ -49,6 +50,7 @@ If you're feeling a little indecisive about this, just ignore the feeling and
 keep reading! No one's ever sorry that they've learned a little bash or Python.
 
 A few more quick caveats:
+
 - If you're absolutely completely unfamiliar with the shell that's fine; keep
   reading, but although I've done my best to cover the basics there is a lot to
   absorb. [LinuxJourney.com](https://linuxjourney.com/) is a wonderful bookmark
@@ -61,8 +63,9 @@ A few more quick caveats:
 - If you're not on Windows, you already have bash installed, but you may need to
   [install Python](https://realpython.com/installing-python/) before Python
   scripts could be run.
-- If you are using zsh as your shell, which is the default in some OS X
-  machines, it's `~/.zsh_aliases` instead of `~/.bash_aliases`.
+- If you are using [zsh](https://en.wikipedia.org/wiki/Z_shell) as your shell,
+  which is the default in some OS X machines, it's `~/.zsh_aliases` instead of
+  `~/.bash_aliases`.
 
 ### Just lob the quick stuff into ~/.bash_aliases
 
@@ -209,8 +212,8 @@ export PATH="$PATH:$HOME/mega/scripts"  # replace $HOME/mega/scripts with the pa
 Then restart your shell, or `source ~/.bashrc`, in order for the change to take effect.
 
 #### How do I make the script be callable as `name` instead of `name.py`?
-To accomplish this, literally just name the script `name` instead of
-`name.py`. However, just more changes are needed:
+To accomplish this, literally just name the script `name` instead of `name.py`.
+However, more quick changes are needed:
 
 1. Make the script executable with `chmod +x ~/scripts/name` (or `chmod +x
    ~/scripts/*` to make everything in your scripts folder executable).

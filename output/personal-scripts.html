@@ -181,30 +181,35 @@ absolutely anything you want to&nbsp;do.</p>
 <a href="https://en.wikipedia.org/wiki/Python_(programming_language)">Python</a> languages
 for this blog post, which are both great languages to know - bash being the
 Buck knife and Python the Leatherman multitool of your digital toolbelt - but
-there are many other great languages to do scripting in too. Specifically:
-- if you know some other language better and you like it, then you might as well
-  use that;
-- if you&#8217;ve been following the <a href="https://en.wikipedia.org/wiki/DevOps">DevOps</a>
+there are many other great languages to do scripting in too.&nbsp;Specifically:</p>
+<ul>
+<li>if you know some other language better and you like it, then you might as well
+  use&nbsp;that;</li>
+<li>if you&#8217;ve been following the <a href="https://en.wikipedia.org/wiki/DevOps">DevOps</a>
   track of your career then you might share (or want to share) that discipline&#8217;s
   mild bias in favor of the
-  <a href="https://en.wikipedia.org/wiki/Go_%28programming_language%29">Go</a>&nbsp;language.</p>
+  <a href="https://en.wikipedia.org/wiki/Go_%28programming_language%29">Go</a>&nbsp;language.</li>
+</ul>
 <p>If you&#8217;re feeling a little indecisive about this, just ignore the feeling and
 keep reading! No one&#8217;s ever sorry that they&#8217;ve learned a little bash or&nbsp;Python.</p>
-<p>A few more quick caveats:
-- If you&#8217;re absolutely completely unfamiliar with the shell that&#8217;s fine; keep
+<p>A few more quick&nbsp;caveats:</p>
+<ul>
+<li>If you&#8217;re absolutely completely unfamiliar with the shell that&#8217;s fine; keep
   reading, but although I&#8217;ve done my best to cover the basics there is a lot to
   absorb. <a href="https://linuxjourney.com/">LinuxJourney.com</a> is a wonderful bookmark
-  for uncovering the basics of command-line interfaces.
-- If you&#8217;re on Windows, all the general points here are still true, but you will
+  for uncovering the basics of command-line&nbsp;interfaces.</li>
+<li>If you&#8217;re on Windows, all the general points here are still true, but you will
   need to either set up Windows Subsystem for Linux in order to do the Unix-type
   tasks that I&#8217;m going to talk about here. Alternatively, I&#8217;m sure all this
   stuff has some equivalent in
-  <a href="https://github.com/PowerShell/PowerShell">Powershell</a>!
-- If you&#8217;re not on Windows, you already have bash installed, but you may need to
+  <a href="https://github.com/PowerShell/PowerShell">Powershell</a>!</li>
+<li>If you&#8217;re not on Windows, you already have bash installed, but you may need to
   <a href="https://realpython.com/installing-python/">install Python</a> before Python
-  scripts could be run.
-- If you are using zsh as your shell, which is the default in some <span class="caps">OS</span> X
-  machines, it&#8217;s <code>~/.zsh_aliases</code> instead of <code>~/.bash_aliases</code>.</p>
+  scripts could be&nbsp;run.</li>
+<li>If you are using <a href="https://en.wikipedia.org/wiki/Z_shell">zsh</a> as your shell,
+  which is the default in some <span class="caps">OS</span> X machines, it&#8217;s <code>~/.zsh_aliases</code> instead of
+  <code>~/.bash_aliases</code>.</li>
+</ul>
 <h3>Just lob the quick stuff into&nbsp;~/.bash_aliases</h3>
 <p>My <code>word</code> script above is a 51-line Python script, but if I were writing it in a
 big hurry, it could just live in my <code>~/.bash_aliases</code> file as a couple of lines
@@ -322,8 +327,8 @@ contain your scripts&nbsp;directory:</p>
 
 <p>Then restart your shell, or <code>source ~/.bashrc</code>, in order for the change to take&nbsp;effect.</p>
 <h4>How do I make the script be callable as <code>name</code> instead of <code>name.py</code>?</h4>
-<p>To accomplish this, literally just name the script <code>name</code> instead of
-<code>name.py</code>. However, just more changes are&nbsp;needed:</p>
+<p>To accomplish this, literally just name the script <code>name</code> instead of <code>name.py</code>.
+However, more quick changes are&nbsp;needed:</p>
 <ol>
 <li>Make the script executable with <code>chmod +x ~/scripts/name</code> (or <code>chmod +x
    ~/scripts/*</code> to make everything in your scripts folder&nbsp;executable).</li>
