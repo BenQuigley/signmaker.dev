@@ -39,8 +39,6 @@ On a less philosophical note, this site is made with open-source
 software:
 
 * it is built using [pelican](https://github.com/getpelican/pelican)
-
 * and a [theme](https://github.com/alexandrevicenzi/Flex) forked from
     [Alexander Revicenzi](https://www.alexandrevicenzi.com/),
-
 * and is hosted on [Netlify](https://www.netlify.com/).
