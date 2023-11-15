@@ -1,5 +1,294 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Ben Quigley</title><link href="https://signmaker.dev/" rel="alternate"></link><link href="https://signmaker.dev/feeds/all.atom.xml" rel="self"></link><id>https://signmaker.dev/</id><updated>2023-07-26T00:00:00-05:00</updated><subtitle>Ben Quigley | Software Developer</subtitle><entry><title>‘All My Disinterests’</title><link href="https://signmaker.dev/all-my-disinterests.html" rel="alternate"></link><published>2023-07-26T00:00:00-05:00</published><updated>2023-07-26T00:00:00-05:00</updated><author><name>Ben Quigley</name></author><id>tag:signmaker.dev,2023-07-26:/all-my-disinterests.html</id><summary type="html">&lt;p&gt;My Android phone has a news feed app, which is helpfully named just &amp;#8220;Google&amp;#8221;. It
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Ben Quigley</title><link href="https://signmaker.dev/" rel="alternate"></link><link href="https://signmaker.dev/feeds/all.atom.xml" rel="self"></link><id>https://signmaker.dev/</id><updated>2023-10-20T00:00:00-05:00</updated><subtitle>Ben Quigley | Software Developer</subtitle><entry><title>Personal Scripts</title><link href="https://signmaker.dev/personal-scripts.html" rel="alternate"></link><published>2023-10-20T00:00:00-05:00</published><updated>2023-10-20T00:00:00-05:00</updated><author><name>Ben Quigley</name></author><id>tag:signmaker.dev,2023-10-20:/personal-scripts.html</id><summary type="html">&lt;p&gt;Whether you&amp;#8217;re a professional software developer or an &amp;#8220;I know enough to be
+dangerous&amp;#8221; power user on a higher education team, writing micro-programs to
+automate little tasks is one of the real joys of&amp;nbsp;programming.&lt;/p&gt;
+&lt;p&gt;Yet, if you&amp;#8217;re learning programming, you&amp;#8217;ve probably read tutorials about how to …&lt;/p&gt;</summary><content type="html">&lt;p&gt;Whether you&amp;#8217;re a professional software developer or an &amp;#8220;I know enough to be
+dangerous&amp;#8221; power user on a higher education team, writing micro-programs to
+automate little tasks is one of the real joys of&amp;nbsp;programming.&lt;/p&gt;
+&lt;p&gt;Yet, if you&amp;#8217;re learning programming, you&amp;#8217;ve probably read tutorials about how to
+create a Django webserver, a git repository, a personal portfolio page, but may
+still have never seen a concrete illustration of how to write your own scripts
+and invoke them from your&amp;nbsp;terminal.&lt;/p&gt;
+&lt;p&gt;For example, here&amp;#8217;s a fun one from my scripts folder. I open my command line and&amp;nbsp;type:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;$&lt;span class="w"&gt; &lt;/span&gt;word
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;And the output&amp;nbsp;is:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;retiringness
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;My &lt;code&gt;word&lt;/code&gt; command is a Python script that chooses and prints a random word from
+the computer&amp;#8217;s built-in word list - either &lt;code&gt;/usr/share/dict/words&lt;/code&gt; on &lt;span class="caps"&gt;OS&lt;/span&gt; X, or
+&lt;code&gt;cracklib-small&lt;/code&gt; on Linux. I&amp;#8217;ll post this script here so that you can make use
+of it yourself if you want to, but the main goal of this blog entry is to
+encourage and unblock you to create your own quick scripts to accomplish
+absolutely anything you want to&amp;nbsp;do.&lt;/p&gt;
+&lt;p&gt;I&amp;#8217;ll give examples in the
+&lt;a href="https://en.wikipedia.org/wiki/Bash_(Unix_shell)"&gt;bash&lt;/a&gt; and
+&lt;a href="https://en.wikipedia.org/wiki/Python_(programming_language)"&gt;Python&lt;/a&gt; languages
+for this blog post, which are both great languages to know - bash being the
+Buck knife and Python the Leatherman multitool of your digital toolbelt - but
+there are many other great languages to do scripting in too.&amp;nbsp;Specifically:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;if you know some other language better and you like it, then you might as well
+  use&amp;nbsp;that;&lt;/li&gt;
+&lt;li&gt;if you&amp;#8217;ve been following the &lt;a href="https://en.wikipedia.org/wiki/DevOps"&gt;DevOps&lt;/a&gt;
+  track of your career then you might share (or want to share) that discipline&amp;#8217;s
+  mild bias in favor of the
+  &lt;a href="https://en.wikipedia.org/wiki/Go_%28programming_language%29"&gt;Go&lt;/a&gt;&amp;nbsp;language.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;If you&amp;#8217;re feeling a little indecisive about this, just ignore the feeling and
+keep reading! No one&amp;#8217;s ever sorry that they&amp;#8217;ve learned a little bash or&amp;nbsp;Python.&lt;/p&gt;
+&lt;p&gt;A few more quick&amp;nbsp;caveats:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;If you&amp;#8217;re absolutely completely unfamiliar with the shell that&amp;#8217;s fine; keep
+  reading, but although I&amp;#8217;ve done my best to cover the basics there is a lot to
+  absorb. &lt;a href="https://linuxjourney.com/"&gt;LinuxJourney.com&lt;/a&gt; is a wonderful bookmark
+  for uncovering the basics of command-line&amp;nbsp;interfaces.&lt;/li&gt;
+&lt;li&gt;If you&amp;#8217;re on Windows, all the general points here are still true, but you will
+  need to either set up Windows Subsystem for Linux in order to do the Unix-type
+  tasks that I&amp;#8217;m going to talk about here. Alternatively, I&amp;#8217;m sure all this
+  stuff has some equivalent in
+  &lt;a href="https://github.com/PowerShell/PowerShell"&gt;Powershell&lt;/a&gt;!&lt;/li&gt;
+&lt;li&gt;If you&amp;#8217;re not on Windows, you already have bash installed, but you may need to
+  &lt;a href="https://realpython.com/installing-python/"&gt;install Python&lt;/a&gt; before Python
+  scripts could be&amp;nbsp;run.&lt;/li&gt;
+&lt;li&gt;If you are using &lt;a href="https://en.wikipedia.org/wiki/Z_shell"&gt;zsh&lt;/a&gt; as your shell,
+  which is the default in some &lt;span class="caps"&gt;OS&lt;/span&gt; X machines, it&amp;#8217;s &lt;code&gt;~/.zsh_aliases&lt;/code&gt; instead of
+  &lt;code&gt;~/.bash_aliases&lt;/code&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Just lob the quick stuff into&amp;nbsp;~/.bash_aliases&lt;/h3&gt;
+&lt;p&gt;My &lt;code&gt;word&lt;/code&gt; script above is a 51-line Python script, but if I were writing it in a
+big hurry, it could just live in my &lt;code&gt;~/.bash_aliases&lt;/code&gt; file as a couple of lines
+of bash. It would have to work a little differently on Mac vs. Linux because
+their system word list files have different names. Here&amp;#8217;s an example
+&lt;code&gt;~/.bash_aliases&lt;/code&gt; section for for things that should be defined differently
+based on the operating&amp;nbsp;system:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="k"&gt;if&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;$OSTYPE&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;==&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;linux-gnu&amp;quot;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;]&lt;/span&gt;
+&lt;span class="k"&gt;then&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="nb"&gt;alias&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;copy&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;xclip -sel c&amp;#39;&lt;/span&gt;
+&lt;span class="k"&gt;elif&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;[[&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;$OSTYPE&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;==&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;darwin&amp;quot;&lt;/span&gt;*&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;]]&lt;/span&gt;
+&lt;span class="k"&gt;then&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="nb"&gt;alias&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;copy&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;pbcopy&amp;#39;&lt;/span&gt;
+&lt;span class="k"&gt;else&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="nb"&gt;echo&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;OS type &lt;/span&gt;&lt;span class="nv"&gt;$OSTYPE&lt;/span&gt;&lt;span class="s2"&gt; not recognized; some aliases not set.&amp;quot;&lt;/span&gt;
+&lt;span class="k"&gt;fi&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;(Also, if you steal this for your aliases file, then you have a convenient
+&lt;code&gt;copy&lt;/code&gt; command that allows you to copy stuff from the command line to your
+normal copy / paste clipboard. Linux users need to install &lt;code&gt;xclip&lt;/code&gt; before it
+will work; I think your normal package manager should have it (&lt;code&gt;sudo apt install
+xclip&lt;/code&gt; on Ubuntu / Debian / Mint / Pop!_OS). Example usage: &lt;code&gt;cat
+~/my-cool-file.txt | copy&lt;/code&gt; copies the contents of your cool file to your&amp;nbsp;clipboard.)&lt;/p&gt;
+&lt;p&gt;We can implement &lt;code&gt;word&lt;/code&gt; easily here by adding the line
+&lt;code&gt;dictionary_filename=cracklib-small&lt;/code&gt; to the Linux section and
+&lt;code&gt;dictionary_filename=words&lt;/code&gt; to the Darwin (&lt;span class="caps"&gt;OS&lt;/span&gt; X) one, then outside of this logic
+block, we can&amp;nbsp;add:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="nb"&gt;alias&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;word&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;cat /usr/share/dict/&lt;/span&gt;&lt;span class="nv"&gt;$dictionary_filename&lt;/span&gt;&lt;span class="s2"&gt; | shuf -n 1&amp;quot;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;It&amp;#8217;s mind-boggling how much can be accomplished with just&amp;nbsp;bash.&lt;/p&gt;
+&lt;p&gt;Here are a few more that I use&amp;nbsp;frequently:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="nb"&gt;alias&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;hi&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;git status --short&amp;#39;&lt;/span&gt;&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="c1"&gt;# Underrated argument to see a super-casual git status!&lt;/span&gt;
+&lt;span class="nb"&gt;alias&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;bra&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;git branch&amp;#39;&lt;/span&gt;
+&lt;span class="nb"&gt;alias&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;cha&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;git checkout&amp;#39;&lt;/span&gt;
+&lt;span class="nb"&gt;alias&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;rai&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;git fetch; git rebase --interactive origin/develop&amp;#39;&lt;/span&gt;
+&lt;span class="nb"&gt;alias&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;ram&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;git fetch; git rebase --interactive origin/master&amp;#39;&lt;/span&gt;
+&lt;span class="nb"&gt;alias&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;rab&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;git rebase --abort&amp;#39;&lt;/span&gt;
+&lt;span class="nb"&gt;alias&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;rac&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;git rebase --continue&amp;#39;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;(I would type &lt;code&gt;git rebase -i&lt;/code&gt; on the command line, but for inscribing into a
+scripts file like &lt;code&gt;~/.bash_aliases&lt;/code&gt;, it&amp;#8217;s nice to type out the full name of the
+argument, for example &lt;code&gt;--interactive&lt;/code&gt;.)&lt;/p&gt;
+&lt;p&gt;I also have a few simple functions defined in my &lt;code&gt;~/.bash_aliases&lt;/code&gt;:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="k"&gt;function&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;names&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;{&lt;/span&gt;
+&lt;span class="w"&gt;  &lt;/span&gt;git&lt;span class="w"&gt; &lt;/span&gt;log&lt;span class="w"&gt; &lt;/span&gt;-n&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;&lt;span class="nv"&gt;$@&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;--name-only&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;|&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;grep&lt;span class="w"&gt; &lt;/span&gt;-e&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;^\S&amp;quot;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;|&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;grep&lt;span class="w"&gt; &lt;/span&gt;-Ev&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;^(commit|Author|Date)&amp;quot;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;|&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;sort&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;|&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;uniq
+&lt;span class="o"&gt;}&lt;/span&gt;
+&lt;span class="nb"&gt;export&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;-f&lt;span class="w"&gt; &lt;/span&gt;names
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;The output of this function is the sorted, deduplicated filenames of all the
+files that have been changed in the recent 3 git commits (when called with
+&lt;code&gt;names 3&lt;/code&gt;). I couldn&amp;#8217;t exactly say why this is useful, but I use it a&amp;nbsp;lot.&lt;/p&gt;
+&lt;p&gt;(The &lt;code&gt;export -f&lt;/code&gt; line is necessary, or this function would only be available
+inside the script, in this case the &lt;code&gt;~/.bash_aliases&lt;/code&gt; file, itself. We want it
+to be available elsewhere in the shell, so we must export it. For whatever
+reason, the actual aliases do not work like&amp;nbsp;that.)&lt;/p&gt;
+&lt;p&gt;And finally, my file contains a code comment with a little note to&amp;nbsp;myself:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="c1"&gt;# Reminders&lt;/span&gt;
+&lt;span class="c1"&gt;# =========&lt;/span&gt;
+&lt;span class="c1"&gt;# Commands that we don&amp;#39;t necessarily need aliases for, except that we keep forgetting:&lt;/span&gt;
+&lt;span class="c1"&gt;# docker system prune --volumes&lt;/span&gt;
+&lt;span class="c1"&gt;# The docker system prune command is a shortcut that prunes images, containers,&lt;/span&gt;
+&lt;span class="c1"&gt;# and networks. Volumes are not pruned by default, and you must specify the&lt;/span&gt;
+&lt;span class="c1"&gt;# --volumes flag for docker system prune to prune volumes. By default, you are&lt;/span&gt;
+&lt;span class="c1"&gt;# prompted to continue. To bypass the prompt, use the -f or --force flag.&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;(I don&amp;#8217;t know why I write &amp;#8220;we&amp;#8221; in my system configurations. Nobody&amp;#8217;s looking at
+this stuff except for me. As my friend Darrick said, &amp;#8220;What do you mean, &amp;#8216;we&amp;#8217;?
+Got a mouse in your&amp;nbsp;pocket?&amp;#8221;)&lt;/p&gt;
+&lt;h4&gt;Make aliases for whatever you do a&amp;nbsp;lot&lt;/h4&gt;
+&lt;p&gt;If you enter commands into your command line, they&amp;#8217;re saved in a file normally
+located in &lt;code&gt;~/.bash_history&lt;/code&gt;(&lt;code&gt;~/.zsh_history&lt;/code&gt; for zsh users). There are a lot of
+uses that the bash shell makes from this, such as auto-completing previously
+entered commands (usually with Ctrl+r), but one great use you can make of it is
+to make it spit out what are your top 20 most frequently used commands. I
+constructed this quickly with some googling, but it works fine on my&amp;nbsp;machines:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;cat ~/.bash_history | sort | uniq -c | sort -k2nr | tail -n 20
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Most of mine are already bash aliases. Here are the top&amp;nbsp;8:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt; 897 rai
+ 926 git commit
+1333 git stash
+1404 bra
+1435 git commit --amend
+3004 django
+4037 git add -p
+5586 tig
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;The most notable exception to that is the wonderful command-line git client,
+&lt;a href="https://jonas.github.io/tig/"&gt;tig&lt;/a&gt;, which I don&amp;#8217;t need an alias for because its
+name is already so short, and which I more or less live inside of. (Here&amp;#8217;s to
+the next 5,000&amp;nbsp;invocations!)&lt;/p&gt;
+&lt;p&gt;So if you have used your command line before, and you run this command, you can
+see what you do the most often. If anything in its output is very verbose, it
+might be a good candidate for adding an alias for, and saving a few&amp;nbsp;keystrokes.&lt;/p&gt;
+&lt;h3&gt;Full&amp;nbsp;Scripts&lt;/h3&gt;
+&lt;p&gt;Writing in bash can get tiresome; I do a lot of my quick scripting in Python.
+Here&amp;#8217;s the quick-and-dirty to getting your scripts folder&amp;nbsp;together.&lt;/p&gt;
+&lt;h4&gt;How can I sync my scripts across all my&amp;nbsp;computers?&lt;/h4&gt;
+&lt;p&gt;Let&amp;#8217;s assume that (like me) you are writing general-purpose scripts that you&amp;#8217;d
+like to be able to use anywhere. I stored my scripts in &lt;code&gt;~/Dropbox/scripts&lt;/code&gt;
+until I migrated from Dropbox to &lt;a href="https://mega.nz/"&gt;Mega&lt;/a&gt; because they give you
+more storage for free, encrypt your drive for you, and don&amp;#8217;t look at your stuff;
+but you can put yours wherever you&amp;nbsp;want.&lt;/p&gt;
+&lt;h4&gt;How can I make my scripts reachable from my&amp;nbsp;shell?&lt;/h4&gt;
+&lt;p&gt;I don&amp;#8217;t want to have to type &lt;code&gt;python3 ~/scripts/{script-name}&lt;/code&gt;; I want to type
+&lt;code&gt;{script-name}&lt;/code&gt; only and have it work, regardless of what working directory my
+shell is in. To do this, update your &lt;code&gt;~/.bashrc&lt;/code&gt; to update your &lt;span class="caps"&gt;PATH&lt;/span&gt; variable to
+contain your scripts&amp;nbsp;directory:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="nb"&gt;export&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;PATH&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;&lt;span class="nv"&gt;$PATH&lt;/span&gt;&lt;span class="s2"&gt;:&lt;/span&gt;&lt;span class="nv"&gt;$HOME&lt;/span&gt;&lt;span class="s2"&gt;/mega/scripts&amp;quot;&lt;/span&gt;&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="c1"&gt;# replace $HOME/mega/scripts with the path of your scripts folder.&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Then restart your shell, or &lt;code&gt;source ~/.bashrc&lt;/code&gt;, in order for the change to take&amp;nbsp;effect.&lt;/p&gt;
+&lt;h4&gt;How do I make the script be callable as &lt;code&gt;name&lt;/code&gt; instead of &lt;code&gt;name.py&lt;/code&gt;?&lt;/h4&gt;
+&lt;p&gt;To accomplish this, literally just name the script &lt;code&gt;name&lt;/code&gt; instead of &lt;code&gt;name.py&lt;/code&gt;.
+However, more quick changes are&amp;nbsp;needed:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Make the script executable with &lt;code&gt;chmod +x ~/scripts/name&lt;/code&gt; (or &lt;code&gt;chmod +x
+   ~/scripts/*&lt;/code&gt; to make everything in your scripts folder&amp;nbsp;executable).&lt;/li&gt;
+&lt;li&gt;Make the first line of your script &lt;code&gt;#!/usr/bin/env python&lt;/code&gt;. This is so that
+   your system will know that the executable file &lt;code&gt;name&lt;/code&gt;, which otherwise just
+   contains text, should be executed with the &lt;code&gt;python3&lt;/code&gt; program, since you&amp;#8217;re no
+   longer calling it with &lt;code&gt;python3 name.py&lt;/code&gt; as you might be used&amp;nbsp;to.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3&gt;Python&lt;/h3&gt;
+&lt;p&gt;Using the &lt;code&gt;time&lt;/code&gt; command, we can compare the runtime of the quickly implemented shell
+version of my &lt;code&gt;word&lt;/code&gt; script to the pre-existing, Python&amp;nbsp;one:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;$&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nb"&gt;time&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;cat&lt;span class="w"&gt; &lt;/span&gt;/usr/share/dict/words&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;|&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;shuf&lt;span class="w"&gt; &lt;/span&gt;-n&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="m"&gt;1&lt;/span&gt;
+Alopecias
+
+real&lt;span class="w"&gt;    &lt;/span&gt;0m0.030s
+user&lt;span class="w"&gt;    &lt;/span&gt;0m0.018s
+sys&lt;span class="w"&gt;     &lt;/span&gt;0m0.021s
+$&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nb"&gt;time&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;python3&lt;span class="w"&gt; &lt;/span&gt;~/mega/scripts/word
+pseudopupal
+
+real&lt;span class="w"&gt;    &lt;/span&gt;0m0.107s
+user&lt;span class="w"&gt;    &lt;/span&gt;0m0.047s
+sys&lt;span class="w"&gt;     &lt;/span&gt;0m0.031s
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;So there was a real speed improvement to using bare-naked bash as opposed to
+Python. But this is not an apples-to-apples comparison - glancing at my existing
+&lt;code&gt;word&lt;/code&gt; script, I remember that it has some niceties that the quick shell version
+doesn&amp;#8217;t have - an &lt;code&gt;argparse.ArgumentParser&lt;/code&gt; gets us a quick &lt;code&gt;-h/--help&lt;/code&gt; command,
+a few alternative modes, and there&amp;#8217;s a little joke in there (cribbed from
+&lt;a href="https://xkcd.com/221/"&gt;xkcd&lt;/a&gt; as&amp;nbsp;well.&lt;/p&gt;
+&lt;p&gt;I share this script, not because I think you need a script that generates random
+words. I just want to plant seeds, especially for readers that might not be
+familiar with programming, for concepts that many people add to their personal
+scripts that are&amp;nbsp;helpful:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Adding a &lt;code&gt;-h/--help&lt;/code&gt; argument that, when received, prints a help message
+   describing all the other options, and then (importantly) closes the program
+   without doing its regular function. (As I mentioned above, Python&amp;#8217;s
+   &lt;code&gt;argparse&lt;/code&gt; module gets you this for&amp;nbsp;free.)&lt;/li&gt;
+&lt;li&gt;Raising errors (which exits the program, in Python) on purpose when the
+   script finds itself in a situation that you didn&amp;#8217;t expect (like, in my case,
+   running on a Windows machine where there is no &lt;code&gt;/usr/share/dict/&lt;/code&gt; directory).&lt;/li&gt;
+&lt;li&gt;Writing your code as simply as possible, and adding comments (the &lt;code&gt;#&lt;/code&gt; lines)
+   where appropriate and explanatory docstrings (the &lt;code&gt;"""..."""&lt;/code&gt; lines) to each
+   function so that you can remember later what they were supposed to&amp;nbsp;do.&lt;/li&gt;
+&lt;li&gt;Avoid using third-party packages, anything you have to &lt;code&gt;pip install&lt;/code&gt; from the
+   command line. A lot of Python learners are interested in learning Python&amp;#8217;s
+   major analysis tools, such as &lt;code&gt;numpy&lt;/code&gt; and &lt;code&gt;pandas&lt;/code&gt;, but (A) your software
+   development skills will be much stronger if you learn to use the standard
+   library to accomplish simple tasks, and (B) your script will be more useful
+   to you if it doesn&amp;#8217;t always fail the first time you use it until you remember
+   you needed to &lt;code&gt;pip install pandas&lt;/code&gt; on your new &lt;span class="caps"&gt;OS&lt;/span&gt;.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Here&amp;#8217;s the&amp;nbsp;script:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="ch"&gt;#!/usr/bin/env python3&lt;/span&gt;
+
+&lt;span class="sd"&gt;&amp;quot;&amp;quot;&amp;quot;Print a random word from a word list.&amp;quot;&amp;quot;&amp;quot;&lt;/span&gt;
+
+&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;argparse&lt;/span&gt;
+&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;platform&lt;/span&gt;
+&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;random&lt;/span&gt;
+&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;time&lt;/span&gt;
+
+&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;typing&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;Tuple&lt;/span&gt;
+
+&lt;span class="c1"&gt;# The word list that ships with the system:&lt;/span&gt;
+&lt;span class="n"&gt;system&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;platform&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;system&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+&lt;span class="n"&gt;WORD_PATH&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;/usr/share/dict&amp;quot;&lt;/span&gt;
+&lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="n"&gt;system&lt;/span&gt; &lt;span class="o"&gt;==&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;Linux&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+    &lt;span class="n"&gt;WORD_LIST&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="sa"&gt;f&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;&lt;/span&gt;&lt;span class="si"&gt;{&lt;/span&gt;&lt;span class="n"&gt;WORD_PATH&lt;/span&gt;&lt;span class="si"&gt;}&lt;/span&gt;&lt;span class="s1"&gt;/cracklib-small&amp;#39;&lt;/span&gt;
+&lt;span class="k"&gt;elif&lt;/span&gt; &lt;span class="n"&gt;system&lt;/span&gt; &lt;span class="o"&gt;==&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;Darwin&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+    &lt;span class="n"&gt;WORD_LIST&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="sa"&gt;f&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;&lt;span class="si"&gt;{&lt;/span&gt;&lt;span class="n"&gt;WORD_PATH&lt;/span&gt;&lt;span class="si"&gt;}&lt;/span&gt;&lt;span class="s2"&gt;/words&amp;quot;&lt;/span&gt;
+&lt;span class="k"&gt;else&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+    &lt;span class="k"&gt;raise&lt;/span&gt; &lt;span class="ne"&gt;Exception&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="sa"&gt;f&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;Unsupported operating system &lt;/span&gt;&lt;span class="si"&gt;{&lt;/span&gt;&lt;span class="n"&gt;system&lt;/span&gt;&lt;span class="si"&gt;}&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+
+
+&lt;span class="n"&gt;PARSER&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;argparse&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;ArgumentParser&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+&lt;span class="n"&gt;PARSER&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;add_argument&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;-b&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;--brainstorm&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;action&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;store_true&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="n"&gt;PARSER&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;add_argument&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;-i&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;--interval&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="nb"&gt;type&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="nb"&gt;float&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="n"&gt;ARGS&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;PARSER&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;parse_args&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+
+
+&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;generate_list&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt; &lt;span class="o"&gt;-&amp;gt;&lt;/span&gt; &lt;span class="n"&gt;Tuple&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="nb"&gt;str&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="o"&gt;...&lt;/span&gt;&lt;span class="p"&gt;]:&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="sd"&gt;&amp;quot;&amp;quot;&amp;quot;Read the word list.&amp;quot;&amp;quot;&amp;quot;&lt;/span&gt;
+    &lt;span class="k"&gt;try&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+        &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="nb"&gt;tuple&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;open&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;WORD_LIST&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;read&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;split&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;&lt;/span&gt;&lt;span class="se"&gt;\n&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
+    &lt;span class="k"&gt;except&lt;/span&gt; &lt;span class="ne"&gt;Exception&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;  &lt;span class="c1"&gt;# pylint: disable=broad-except&lt;/span&gt;
+        &lt;span class="c1"&gt;# Chosen by fair dice roll, guaranteed to be random&lt;/span&gt;
+        &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;saplings&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,)&lt;/span&gt;
+
+
+&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;main&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt; &lt;span class="o"&gt;-&amp;gt;&lt;/span&gt; &lt;span class="kc"&gt;None&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="sd"&gt;&amp;quot;&amp;quot;&amp;quot;Process the user&amp;#39;s args and generate words.&amp;quot;&amp;quot;&amp;quot;&lt;/span&gt;
+    &lt;span class="n"&gt;words&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;generate_list&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+    &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="n"&gt;ARGS&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;interval&lt;/span&gt; &lt;span class="ow"&gt;or&lt;/span&gt; &lt;span class="n"&gt;ARGS&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;brainstorm&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+        &lt;span class="n"&gt;interval&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;ARGS&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;interval&lt;/span&gt; &lt;span class="ow"&gt;or&lt;/span&gt; &lt;span class="mf"&gt;5.0&lt;/span&gt;
+        &lt;span class="k"&gt;while&lt;/span&gt; &lt;span class="kc"&gt;True&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+            &lt;span class="nb"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;random&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;choice&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;words&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
+            &lt;span class="n"&gt;time&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;sleep&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;interval&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+    &lt;span class="k"&gt;else&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+        &lt;span class="nb"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;random&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;choice&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;words&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
+
+
+&lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="vm"&gt;__name__&lt;/span&gt; &lt;span class="o"&gt;==&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;__main__&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+    &lt;span class="n"&gt;main&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Thank you for reading! Reach out if you have questions and I&amp;#8217;ll incorporate your
+thoughts into this&amp;nbsp;post.&lt;/p&gt;</content><category term="blog"></category></entry><entry><title>All My Disinterests</title><link href="https://signmaker.dev/all-my-disinterests.html" rel="alternate"></link><published>2023-07-26T00:00:00-05:00</published><updated>2023-07-26T00:00:00-05:00</updated><author><name>Ben Quigley</name></author><id>tag:signmaker.dev,2023-07-26:/all-my-disinterests.html</id><summary type="html">&lt;p&gt;My Android phone has a news feed app, which is helpfully named just &amp;#8220;Google&amp;#8221;. It
 serves news articles from various sources based on your Interests, which it
 tracks for you, but importantly, you can&amp;#8217;t customize your interests. You can
 &lt;em&gt;confirm&lt;/em&gt; an interest that it suggests for you, which I …&lt;/p&gt;</summary><content type="html">&lt;p&gt;My Android phone has a news feed app, which is helpfully named just &amp;#8220;Google&amp;#8221;. It
