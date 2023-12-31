@@ -1,0 +1,273 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="HandheldFriendly" content="True" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="index, follow" />
+
+  <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,400;0,700;1,400&family=Source+Sans+Pro:ital,wght@0,300;0,400;0,700;1,400&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" type="text/css" href="https://signmaker.dev/theme/stylesheet/style.min.css">
+
+    <link id="dark-theme-style" rel="stylesheet" type="text/css"
+        disabled="disabled"
+    href="https://signmaker.dev/theme/stylesheet/dark-theme.min.css">
+
+    <link id="pygments-dark-theme" rel="stylesheet" type="text/css"
+            disabled="disabled"
+          href="https://signmaker.dev/theme/pygments/solarized-dark.min.css">
+    <link id="pygments-light-theme" rel="stylesheet" type="text/css"
+          href="https://signmaker.dev/theme/pygments/solarized-light.min.css">
+
+
+
+  <link rel="stylesheet" type="text/css" href="https://signmaker.dev/theme/font-awesome/css/fontawesome.css">
+  <link rel="stylesheet" type="text/css" href="https://signmaker.dev/theme/font-awesome/css/brands.css">
+  <link rel="stylesheet" type="text/css" href="https://signmaker.dev/theme/font-awesome/css/solid.css">
+
+
+  <link rel="shortcut icon" href="/static/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="/static/favicon.ico" type="image/x-icon">
+
+
+  <link href="https://signmaker.dev/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Ben Quigley Atom">
+
+
+
+
+
+
+
+
+ 
+
+<meta name="author" content="Ben Quigley" />
+<meta name="description" content="Unlike most emacs users, I haven’t wholeheartedly adopted magit as my sole interface for git. I mostly stick to the command line, in the coziness of my aliases - alias bra=&#39;git branch&#39; alias cha=&#39;git checkout&#39; alias rai=&#39;git fetch; git rebase --interactive origin/develop&#39; alias rab=&#39;git rebase …" />
+<meta name="keywords" content="">
+
+
+  <meta property="og:site_name" content="Ben Quigley"/>
+  <meta property="og:title" content="Refinements from magit"/>
+  <meta property="og:description" content="Unlike most emacs users, I haven’t wholeheartedly adopted magit as my sole interface for git. I mostly stick to the command line, in the coziness of my aliases - alias bra=&#39;git branch&#39; alias cha=&#39;git checkout&#39; alias rai=&#39;git fetch; git rebase --interactive origin/develop&#39; alias rab=&#39;git rebase …"/>
+  <meta property="og:locale" content="en_US"/>
+  <meta property="og:url" content="https://signmaker.dev/refinements-from-magit.html"/>
+  <meta property="og:type" content="article"/>
+  <meta property="article:published_time" content="2023-12-31 00:00:00-05:00"/>
+  <meta property="article:modified_time" content=""/>
+  <meta property="article:author" content="https://signmaker.dev/author/ben-quigley.html">
+  <meta property="article:section" content="blog"/>
+  <meta property="og:image" content="/images/quigley-2022-selfie-square-web.jpg">
+
+  <title>Ben Quigley &ndash; Refinements from magit</title>
+
+
+</head>
+<body class="light-theme">
+
+<aside>
+  <div>
+    <a href="https://signmaker.dev/">
+      <img src="/images/quigley-2022-selfie-square-web.jpg" alt="" title="">
+    </a>
+
+    <h1>
+      <a href="https://signmaker.dev/"></a>
+    </h1>
+
+    <p>Ben Quigley | Software Developer</p>
+
+
+    <nav>
+      <ul class="list">
+
+
+            <li>
+              <a target="_self"
+                 href="https://signmaker.dev/index.html#about">
+                About
+              </a>
+            </li>
+            <li>
+              <a target="_self"
+                 href="https://signmaker.dev/pages/contact.html#contact">
+                Contact
+              </a>
+            </li>
+
+          <li>
+            <a target="_self" href="blog" >blog</a>
+          </li>
+          <li>
+            <a target="_self" href="https://github.com/BenQuigley" >Github</a>
+          </li>
+          <li>
+            <a target="_self" href="https://www.linkedin.com/in/BenjaminQuigley/" >LinkedIn</a>
+          </li>
+      </ul>
+    </nav>
+
+    <ul class="social">
+      <li>
+        <a class="sc-github"
+           href="https://github.com/BenQuigley"
+           target="_blank">
+          <i class="fa-brands fa-github"></i>
+        </a>
+      </li>
+      <li>
+        <a class="sc-linkedin"
+           href="https://LinkedIn.com/in/BenjaminQuigley"
+           target="_blank">
+          <i class="fa-brands fa-linkedin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="sc-rss"
+           href="/blog/feeds/all.atom.xml"
+           target="_blank">
+          <i class="fa-solid fa-rss"></i>
+        </a>
+      </li>
+    </ul>
+  </div>
+
+</aside>
+  <main>
+
+<nav>
+  <a href="https://signmaker.dev/">Home</a>
+
+
+  <a href="https://signmaker.dev/feeds/all.atom.xml">Atom</a>
+
+</nav>
+
+<article class="single">
+  <header>
+      
+    <h1 id="refinements-from-magit">Refinements from&nbsp;magit</h1>
+    <p>
+      Posted on Sun 31 December 2023 in <a href="https://signmaker.dev/category/blog.html">blog</a>
+
+    </p>
+  </header>
+
+
+  <div>
+    <p>Unlike most emacs users, I haven&#8217;t wholeheartedly adopted magit as my sole
+interface for git. I mostly stick to the command line, in the coziness of my
+aliases&nbsp;- </p>
+<div class="highlight"><pre><span></span><code><span class="nb">alias</span><span class="w"> </span><span class="nv">bra</span><span class="o">=</span><span class="s1">&#39;git branch&#39;</span>
+<span class="nb">alias</span><span class="w"> </span><span class="nv">cha</span><span class="o">=</span><span class="s1">&#39;git checkout&#39;</span>
+<span class="nb">alias</span><span class="w"> </span><span class="nv">rai</span><span class="o">=</span><span class="s1">&#39;git fetch; git rebase --interactive origin/develop&#39;</span>
+<span class="nb">alias</span><span class="w"> </span><span class="nv">rab</span><span class="o">=</span><span class="s1">&#39;git rebase --abort&#39;</span>
+<span class="nb">alias</span><span class="w"> </span><span class="nv">rac</span><span class="o">=</span><span class="s1">&#39;git rebase --continue&#39;</span>
+<span class="nb">alias</span><span class="w"> </span><span class="nv">hi</span><span class="o">=</span><span class="s1">&#39;git status --short&#39;</span>
+<span class="nb">alias</span><span class="w"> </span><span class="nv">hii</span><span class="o">=</span><span class="s1">&#39;git status --long&#39;</span>
+</code></pre></div>
+
+<p>- and a few helper functions. However, I do open magit often, partly because
+emacs is always already open, but also because magit&#8217;s configurations are deeply&nbsp;clever.</p>
+<p>For this blog post, I wanted to delve into how magit&#8217;s default behaviors are so
+well-thought-out that it can be instructive to explore them. If I no longer had
+access to magit, I would still keep these four habits in my&nbsp;workflow:</p>
+<h2>&#8212;force-with-lease is better than&nbsp;&#8212;force</h2>
+<p>I learned at my first engineering job - at EditShare, a shop where git fluency
+was somewhat more important than at your standard web dev shop because we
+maintained several live branches of our code - the helpfulness of typing
+<code>--force-with-lease</code> instead of <code>--force</code>, using <code>--force</code> / <code>-f</code> only when all
+else failed. It&#8217;s helpful because, if some collaborator has pushed a fix commit
+to your branch while you commited something else and are about to force push,
+your force push will obliterate the collaboration unless git warns you there
+are upstream changes that you don&#8217;t have. Git gives that warning only if you use
+<code>--force-with-lease</code>:</p>
+<div class="highlight"><pre><span></span><code><span class="n">error</span><span class="o">:</span><span class="w"> </span><span class="n">failed</span><span class="w"> </span><span class="n">to</span><span class="w"> </span><span class="n">push</span><span class="w"> </span><span class="n">some</span><span class="w"> </span><span class="n">refs</span><span class="w"> </span><span class="n">to</span><span class="w"> </span><span class="s1">&#39;{repository}&#39;</span>
+<span class="n">hint</span><span class="o">:</span><span class="w"> </span><span class="n">Updates</span><span class="w"> </span><span class="n">were</span><span class="w"> </span><span class="n">rejected</span><span class="w"> </span><span class="n">because</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">remote</span><span class="w"> </span><span class="n">contains</span><span class="w"> </span><span class="n">work</span><span class="w"> </span><span class="n">that</span><span class="w"> </span><span class="n">you</span><span class="w"> </span><span class="k">do</span>
+<span class="n">hint</span><span class="o">:</span><span class="w"> </span><span class="n">not</span><span class="w"> </span><span class="n">have</span><span class="w"> </span><span class="n">locally</span><span class="o">.</span><span class="w"> </span><span class="n">This</span><span class="w"> </span><span class="k">is</span><span class="w"> </span><span class="n">usually</span><span class="w"> </span><span class="n">caused</span><span class="w"> </span><span class="n">by</span><span class="w"> </span><span class="n">another</span><span class="w"> </span><span class="n">repository</span><span class="w"> </span><span class="n">pushing</span>
+<span class="n">hint</span><span class="o">:</span><span class="w"> </span><span class="n">to</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">same</span><span class="w"> </span><span class="n">ref</span><span class="o">.</span><span class="w"> </span><span class="n">You</span><span class="w"> </span><span class="n">may</span><span class="w"> </span><span class="n">want</span><span class="w"> </span><span class="n">to</span><span class="w"> </span><span class="n">first</span><span class="w"> </span><span class="n">integrate</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">remote</span><span class="w"> </span><span class="n">changes</span>
+<span class="n">hint</span><span class="o">:</span><span class="w"> </span><span class="o">(</span><span class="n">e</span><span class="o">.</span><span class="na">g</span><span class="o">.,</span><span class="w"> </span><span class="s1">&#39;git pull ...&#39;</span><span class="o">)</span><span class="w"> </span><span class="n">before</span><span class="w"> </span><span class="n">pushing</span><span class="w"> </span><span class="n">again</span><span class="o">.</span>
+</code></pre></div>
+
+<p>Unfortunately, <code>-f</code> is 16 characters shorter than  <code>--force-with-lease</code>, so it&#8217;s
+easy to default to on the command line. With magit-push, though, it&#8217;s more the
+default - <code>-f</code> is the key activating force-with-lease and <code>-F</code> activates force
+mode, so users who take hints from magit about how they should use git are fs
+trained to prefer the safer and better&nbsp;option.</p>
+<h2>Name your branch&#8217;s&nbsp;upstream</h2>
+<p>In a case of a magit feature not only surpassing the git <span class="caps">CLI</span>, but actually making
+it easier to use, magit makes it very convenient to set a branch&#8217;s upstream,
+giving you an option to set it when pushing or pulling from a&nbsp;branch.</p>
+<p>It&#8217;s great for a branch&#8217;s upstream to be set because then you can use <code>git pull</code>
+(or <code>magit-pull</code>) on that branch more easily. With bare git, only under certain
+specific circumstances will the upstream be set automatically. git has no way to
+know that your local branch named <code>hotfix</code> is actually related to the <code>hotfix</code>
+on GitHub of the same&nbsp;name.</p>
+<h2>Name your&nbsp;stashes</h2>
+<p>When doing a <code>git stash</code> from magit, there are a lot of options to choose from,
+most of which I don&#8217;t use. The next step, is the option to give your stash a
+name, like &#8220;<span class="caps">WIP</span> notes <span class="caps">API</span>&#8221; or&nbsp;&#8220;tentative-test-refactor&#8221;.</p>
+<p>Before I used magit, I didn&#8217;t know it was an option to add a message to a stash,
+but reviewing the output of <code>git stash --help</code>, it&nbsp;is:</p>
+<div class="highlight"><pre><span></span><code><span class="nv">COMMANDS</span>
+<span class="w">       </span><span class="nv">push</span><span class="w"> </span>[<span class="o">-</span><span class="nv">p</span><span class="o">|--</span><span class="nv">patch</span>]<span class="w"> </span>[<span class="o">-</span><span class="nv">S</span><span class="o">|--</span><span class="nv">staged</span>]<span class="w"> </span>[<span class="o">-</span><span class="nv">k</span><span class="o">|--</span>[<span class="nv">no</span><span class="o">-</span>]<span class="nv">keep</span><span class="o">-</span><span class="nv">index</span>]<span class="w"> </span>[<span class="o">-</span><span class="nv">u</span><span class="o">|--</span><span class="k">include</span><span class="o">-</span><span class="nv">untracked</span>]<span class="w"> </span>[<span class="o">-</span><span class="nv">a</span><span class="o">|--</span><span class="nv">all</span>]<span class="w"> </span>[<span class="o">-</span><span class="nv">q</span><span class="o">|--</span><span class="nv">quiet</span>]<span class="w"> </span>[<span class="ss">(</span><span class="o">-</span><span class="nv">m</span><span class="o">|--</span><span class="nv">message</span><span class="ss">)</span>
+<span class="w">       </span><span class="o">&lt;</span><span class="nv">message</span><span class="o">&gt;</span>]<span class="w"> </span>[<span class="o">--</span><span class="nv">pathspec</span><span class="o">-</span><span class="nv">from</span><span class="o">-</span><span class="nv">file</span><span class="o">=&lt;</span><span class="nv">file</span><span class="o">&gt;</span><span class="w"> </span>[<span class="o">--</span><span class="nv">pathspec</span><span class="o">-</span><span class="nv">file</span><span class="o">-</span><span class="nv">nul</span>]]<span class="w"> </span>[<span class="o">--</span>]<span class="w"> </span>[<span class="o">&lt;</span><span class="nv">pathspec</span><span class="o">&gt;</span>...]
+<span class="w">           </span><span class="nv">Save</span><span class="w"> </span><span class="nv">your</span><span class="w"> </span><span class="nv">local</span><span class="w"> </span><span class="nv">modifications</span><span class="w"> </span><span class="nv">to</span><span class="w"> </span><span class="nv">a</span><span class="w"> </span><span class="nv">new</span><span class="w"> </span><span class="nv">stash</span><span class="w"> </span><span class="nv">entry</span><span class="w"> </span><span class="nv">and</span><span class="w"> </span><span class="nv">roll</span><span class="w"> </span><span class="nv">them</span><span class="w"> </span><span class="nv">back</span><span class="w"> </span><span class="nv">to</span><span class="w"> </span><span class="nv">HEAD</span><span class="w"> </span><span class="ss">(</span><span class="nv">in</span><span class="w"> </span><span class="nv">the</span><span class="w"> </span><span class="nv">working</span><span class="w"> </span><span class="nv">tree</span><span class="w"> </span><span class="nv">and</span><span class="w"> </span><span class="nv">in</span><span class="w"> </span><span class="nv">the</span><span class="w"> </span><span class="nv">index</span><span class="ss">)</span>.
+<span class="w">           </span><span class="nv">The</span><span class="w"> </span><span class="o">&lt;</span><span class="nv">message</span><span class="o">&gt;</span><span class="w"> </span><span class="nv">part</span><span class="w"> </span><span class="nv">is</span><span class="w"> </span><span class="nv">optional</span><span class="w"> </span><span class="nv">and</span><span class="w"> </span><span class="nv">gives</span><span class="w"> </span><span class="nv">the</span><span class="w"> </span><span class="nv">description</span><span class="w"> </span><span class="nv">along</span><span class="w"> </span><span class="nv">with</span><span class="w"> </span><span class="nv">the</span><span class="w"> </span><span class="nv">stashed</span><span class="w"> </span><span class="nv">state</span>.
+</code></pre></div>
+
+<p>Thanks to the magit developers for the&nbsp;lesson.</p>
+<p>It&#8217;s extremely convenient to be able to stash something without worrying about losing
+it in a pile of stashed&nbsp;things.</p>
+<h2>Reverting hunks is&nbsp;easy</h2>
+<p>Reverting an entire commit is usually easy (find the commit&#8217;s hash in <code>git log</code>
+and then run <code>git revert {commit-hash}</code>), but reverting a single fragment of a
+commit? Hard to do from the command line - the easiest way I can think of is to
+interactive rebase back to the commit in question (with <code>edit</code> or <code>break</code>), and
+then rewrite the code and add a new commit, or amend&nbsp;it.</p>
+<p>None of that is automatic, and it would be quite laborious compared to reverting
+the hunk in magit. When the user is reviewing <code>magit-revision</code>, magit gives a
+<code>reverse</code> option with the keystroke <code>v</code>. That&#8217;s&nbsp;it!</p>
+<p>One shouldn&#8217;t have to rewrite history to use one&#8217;s version control system to
+undo a fragment of a change&nbsp;record.</p>
+  </div>
+  <div class="tag-cloud">
+    <p>
+    </p>
+  </div>
+
+
+
+
+
+
+</article>
+
+<footer>
+<p>&copy;  </p>
+<p>
+Built with <a href="http://getpelican.com" target="_blank">Pelican</a> using <a href="http://bit.ly/flex-pelican" target="_blank">Flex</a> theme
+  <span class="footer-separator">|</span>
+  Switch to the <a href="javascript:void(0)" onclick="theme.switch(`dark`)">dark</a> | <a href="javascript:void(0)" onclick="theme.switch(`light`)">light</a> | <a href="javascript:void(0)" onclick="theme.switch(`browser`)">browser</a> theme
+  <script id="dark-theme-script"
+          src="https://signmaker.dev/theme/dark-theme/dark-theme.min.js"
+          data-enable-auto-detect-theme="False"
+          data-default-theme="light"
+          type="text/javascript">
+  </script>
+</p></footer>  </main>
+
+<script type="application/ld+json">
+{
+  "@context" : "http://schema.org",
+  "@type" : "Blog",
+  "name": " Ben Quigley ",
+  "url" : "https://signmaker.dev",
+  "image": "/images/quigley-2022-selfie-square-web.jpg",
+  "description": "Ben Quigley homepage"
+}
+</script>
+</body>
+</html>
