@@ -1,6 +1,7 @@
 ---
 title: Refinements from magit
 date: 2023-12-31
+tags: emacs, computing, blog
 ---
 
 Unlike most emacs users, I haven't wholeheartedly adopted magit as my sole

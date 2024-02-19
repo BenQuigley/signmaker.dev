@@ -1,6 +1,7 @@
 ---
 title: Personal Scripts
 date: 2023-10-20
+tags: computing, blog
 ---
 
 Whether you're a professional software developer or an "I know enough to be

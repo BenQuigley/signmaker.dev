@@ -1,6 +1,7 @@
 ---
 title: All My Disinterests
 date: 2023-07-26
+tags: blog
 ---
 
 My Android phone has a news feed app, which is helpfully named just "Google". It
