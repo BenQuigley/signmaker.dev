@@ -79,7 +79,7 @@ then rewrite the code and add a new commit, or amend&amp;nbsp;it.&lt;/p&gt;
 the hunk in magit. When the user is reviewing &lt;code&gt;magit-revision&lt;/code&gt;, magit gives a
 &lt;code&gt;reverse&lt;/code&gt; option with the keystroke &lt;code&gt;v&lt;/code&gt;. That&amp;#8217;s&amp;nbsp;it!&lt;/p&gt;
 &lt;p&gt;One shouldn&amp;#8217;t have to rewrite history to use one&amp;#8217;s version control system to
-undo a fragment of a change&amp;nbsp;record.&lt;/p&gt;</content><category term="blog"></category></entry><entry><title>Personal Scripts</title><link href="https://signmaker.dev/personal-scripts.html" rel="alternate"></link><published>2023-10-20T00:00:00-05:00</published><updated>2023-10-20T00:00:00-05:00</updated><author><name>Ben Quigley</name></author><id>tag:signmaker.dev,2023-10-20:/personal-scripts.html</id><summary type="html">&lt;p&gt;Whether you&amp;#8217;re a professional software developer or an &amp;#8220;I know enough to be
+undo a fragment of a change&amp;nbsp;record.&lt;/p&gt;</content><category term="blog"></category><category term="emacs"></category><category term="computing"></category><category term="blog"></category></entry><entry><title>Personal Scripts</title><link href="https://signmaker.dev/personal-scripts.html" rel="alternate"></link><published>2023-10-20T00:00:00-05:00</published><updated>2023-10-20T00:00:00-05:00</updated><author><name>Ben Quigley</name></author><id>tag:signmaker.dev,2023-10-20:/personal-scripts.html</id><summary type="html">&lt;p&gt;Whether you&amp;#8217;re a professional software developer or an &amp;#8220;I know enough to be
 dangerous&amp;#8221; power user on a higher education team, writing micro-programs to
 automate little tasks is one of the real joys of&amp;nbsp;programming.&lt;/p&gt;
 &lt;p&gt;Yet, if you&amp;#8217;re learning programming, you&amp;#8217;ve probably read tutorials about how to …&lt;/p&gt;</summary><content type="html">&lt;p&gt;Whether you&amp;#8217;re a professional software developer or an &amp;#8220;I know enough to be
@@ -368,7 +368,7 @@ scripts that are&amp;nbsp;helpful:&lt;/p&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;p&gt;Thank you for reading! Reach out if you have questions and I&amp;#8217;ll incorporate your
-thoughts into this&amp;nbsp;post.&lt;/p&gt;</content><category term="blog"></category></entry><entry><title>All My Disinterests</title><link href="https://signmaker.dev/all-my-disinterests.html" rel="alternate"></link><published>2023-07-26T00:00:00-05:00</published><updated>2023-07-26T00:00:00-05:00</updated><author><name>Ben Quigley</name></author><id>tag:signmaker.dev,2023-07-26:/all-my-disinterests.html</id><summary type="html">&lt;p&gt;My Android phone has a news feed app, which is helpfully named just &amp;#8220;Google&amp;#8221;. It
+thoughts into this&amp;nbsp;post.&lt;/p&gt;</content><category term="blog"></category><category term="computing"></category><category term="blog"></category></entry><entry><title>All My Disinterests</title><link href="https://signmaker.dev/all-my-disinterests.html" rel="alternate"></link><published>2023-07-26T00:00:00-05:00</published><updated>2023-07-26T00:00:00-05:00</updated><author><name>Ben Quigley</name></author><id>tag:signmaker.dev,2023-07-26:/all-my-disinterests.html</id><summary type="html">&lt;p&gt;My Android phone has a news feed app, which is helpfully named just &amp;#8220;Google&amp;#8221;. It
 serves news articles from various sources based on your Interests, which it
 tracks for you, but importantly, you can&amp;#8217;t customize your interests. You can
 &lt;em&gt;confirm&lt;/em&gt; an interest that it suggests for you, which I …&lt;/p&gt;</summary><content type="html">&lt;p&gt;My Android phone has a news feed app, which is helpfully named just &amp;#8220;Google&amp;#8221;. It
@@ -725,4 +725,4 @@ Interested&amp;#8221; section has grown&amp;nbsp;wild:&lt;/p&gt;
 &lt;li&gt;Stories&lt;/li&gt;
 &lt;li&gt;Streaming&amp;nbsp;recommendations&lt;/li&gt;
 &lt;/ul&gt;
-&lt;/blockquote&gt;</content><category term="blog"></category></entry></feed>
+&lt;/blockquote&gt;</content><category term="blog"></category><category term="blog"></category></entry></feed>
