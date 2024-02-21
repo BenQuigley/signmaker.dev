@@ -46,10 +46,11 @@ hint: (e.g., 'git pull ...') before pushing again.
 ```
 
 Unfortunately, `-f` is 16 characters shorter than  `--force-with-lease`, so it's
-easy to default to on the command line. With magit-push, though, it's more the
-default - `-f` is the key activating force-with-lease and `-F` activates force
-mode, so users who take hints from magit about how they should use git are fs
-trained to prefer the safer and better option.
+easy to default to `-f` on the command line. With magit-push, though,
+`--force-with-lease` is more the default - `-f` is the key activating
+force-with-lease and `-F` activates force mode, so users who take hints from
+magit about how they should use git are fs trained to prefer the safer and
+better option.
 
 ## Name your branch's upstream
 In a case of a magit feature not only surpassing the git CLI, but actually making
