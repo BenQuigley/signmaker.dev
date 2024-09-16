@@ -19,8 +19,8 @@ application.
 More data about me:
 
 * 🕷️ Software developer (Python, GraphQL, REST, databases)
-* 🔥 Climate activist
-* ♊ Twin parent
+* 🌲 Climate activist
+* 🚸 Twin parent
 * 🥧 Baking & cooking enthusiast
 * 🎸 Folk fingerstyle guitarist
 * ✏️ Novice artist

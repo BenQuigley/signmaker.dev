@@ -1,0 +1,404 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="HandheldFriendly" content="True" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="index, follow" />
+
+  <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,400;0,700;1,400&family=Source+Sans+Pro:ital,wght@0,300;0,400;0,700;1,400&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" type="text/css" href="/theme/stylesheet/style.min.css">
+
+    <link id="dark-theme-style" rel="stylesheet" type="text/css"
+        disabled="disabled"
+    href="/theme/stylesheet/dark-theme.min.css">
+
+    <link id="pygments-dark-theme" rel="stylesheet" type="text/css"
+            disabled="disabled"
+          href="/theme/pygments/solarized-dark.min.css">
+    <link id="pygments-light-theme" rel="stylesheet" type="text/css"
+          href="/theme/pygments/solarized-light.min.css">
+
+
+
+  <link rel="stylesheet" type="text/css" href="/theme/font-awesome/css/fontawesome.css">
+  <link rel="stylesheet" type="text/css" href="/theme/font-awesome/css/brands.css">
+  <link rel="stylesheet" type="text/css" href="/theme/font-awesome/css/solid.css">
+
+
+  <link rel="shortcut icon" href="/static/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="/static/favicon.ico" type="image/x-icon">
+
+
+
+
+
+
+
+
+
+
+ 
+
+<meta name="author" content="Ben Quigley" />
+<meta name="description" content="Over the years I’ve developed (and stolen) a lot of shortcuts and scripts for accomplishing tasks quickly from the command line. I’ve written about them before; it is time now to go further and document all of the absolute best scripts in my possession. Aliases To use these …" />
+<meta name="keywords" content="computing, blog, bash, unix">
+
+
+  <meta property="og:site_name" content="Ben Quigley"/>
+  <meta property="og:title" content="Aliases and Scripts"/>
+  <meta property="og:description" content="Over the years I’ve developed (and stolen) a lot of shortcuts and scripts for accomplishing tasks quickly from the command line. I’ve written about them before; it is time now to go further and document all of the absolute best scripts in my possession. Aliases To use these …"/>
+  <meta property="og:locale" content="en_US"/>
+  <meta property="og:url" content="/aliases-and-scripts.html"/>
+  <meta property="og:type" content="article"/>
+  <meta property="article:published_time" content="2024-09-16 00:00:00-05:00"/>
+  <meta property="article:modified_time" content=""/>
+  <meta property="article:author" content="/author/ben-quigley.html">
+  <meta property="article:section" content="blog"/>
+  <meta property="article:tag" content="computing"/>
+  <meta property="article:tag" content="blog"/>
+  <meta property="article:tag" content="bash"/>
+  <meta property="article:tag" content="unix"/>
+  <meta property="og:image" content="/images/quigley-2022-selfie-square-web.jpg">
+
+  <title>Ben Quigley &ndash; Aliases and Scripts</title>
+
+
+</head>
+<body class="light-theme">
+
+<aside>
+  <div>
+    <a href="/">
+      <img src="/images/quigley-2022-selfie-square-web.jpg" alt="" title="">
+    </a>
+
+    <h1>
+      <a href="/"></a>
+    </h1>
+
+    <p>Ben Quigley | Software Developer</p>
+
+
+    <nav>
+      <ul class="list">
+
+
+            <li>
+              <a target="_self"
+                 href="/index.html#about">
+                About
+              </a>
+            </li>
+            <li>
+              <a target="_self"
+                 href="/pages/contact.html#contact">
+                Contact
+              </a>
+            </li>
+
+          <li>
+            <a target="_self" href="blog" >blog</a>
+          </li>
+          <li>
+            <a target="_self" href="https://github.com/BenQuigley" >Github</a>
+          </li>
+          <li>
+            <a target="_self" href="https://www.linkedin.com/in/BenjaminQuigley/" >LinkedIn</a>
+          </li>
+      </ul>
+    </nav>
+
+    <ul class="social">
+      <li>
+        <a class="sc-github"
+           href="https://github.com/BenQuigley"
+           target="_blank">
+          <i class="fa-brands fa-github"></i>
+        </a>
+      </li>
+      <li>
+        <a class="sc-linkedin"
+           href="https://LinkedIn.com/in/BenjaminQuigley"
+           target="_blank">
+          <i class="fa-brands fa-linkedin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="sc-rss"
+           href="/blog/feeds/all.atom.xml"
+           target="_blank">
+          <i class="fa-solid fa-rss"></i>
+        </a>
+      </li>
+    </ul>
+  </div>
+
+</aside>
+  <main>
+
+<nav>
+  <a href="/">Home</a>
+
+
+
+</nav>
+
+<article class="single">
+  <header>
+      
+    <h1 id="aliases-and-scripts">Aliases and&nbsp;Scripts</h1>
+    <p>
+      Posted on Mon 16 September 2024 in <a href="/category/blog.html">blog</a>
+
+    </p>
+  </header>
+
+
+  <div>
+    <p>Over the years I&#8217;ve developed (and stolen) a lot of shortcuts and scripts for
+accomplishing tasks quickly from the command line. I&#8217;ve written about them
+<a href="https://signmaker.dev/personal-scripts">before</a>; it is time now to go further
+and document all of the absolute best scripts in my&nbsp;possession.</p>
+<h1>Aliases</h1>
+<p>To use these aliases for yourself, copy and paste them into your
+<code>~/.bash_aliases</code> file (or <code>~/.zsh_aliases</code> if you use zsh instead of&nbsp;bash).</p>
+<h2>wec</h2>
+<p>Sometimes I download an image from the Internet but it arrives in the .webp
+format, a newfangled image format that often needs to be converted before being
+recognized as an image in other utilities (for example, if I&#8217;m uploading an
+avatar for a web site or game). My bash alias <code>wec</code> automatically converts all
+webp files in a directory to png files. Requirements:
+<a href="https://imagemagick.org/">imagemagick</a>,
+<a href="https://github.com/sharkdp/fd">fd-find</a>, and the standard Unix tools
+<a href="https://en.wikipedia.org/wiki/Sed">sed</a> and
+<a href="https://en.wikipedia.org/wiki/Xargs">xargs</a>.</p>
+<div class="highlight"><pre><span></span><code><span class="nb">alias</span><span class="w"> </span><span class="nv">wec</span><span class="o">=</span><span class="s1">&#39;fd webp$ | sed &quot;s/.webp$//&quot; | xargs -n1 -I {} dwebp {}.webp -o {}.png&#39;</span><span class="w">  </span><span class="c1"># webp convert</span>
+</code></pre></div>
+
+<p>Example&nbsp;usage:</p>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span><span class="nb">cd</span><span class="w"> </span>Downloads
+$<span class="w"> </span>ls
+cool-avatar.webp<span class="w">  </span><span class="c1"># Yay, my file I downloaded is here, but it&#39;s a webp file</span>
+$<span class="w"> </span>wec
+Decoded<span class="w"> </span>cool-avatar.webp.<span class="w"> </span>Dimensions:<span class="w"> </span><span class="m">421</span><span class="w"> </span>x<span class="w"> </span><span class="m">611</span><span class="w"> </span>.<span class="w"> </span>Format:<span class="w"> </span>lossy.<span class="w"> </span>Now<span class="w"> </span>saving...
+Saved<span class="w"> </span>file<span class="w"> </span>cool-avatar.png
+$<span class="w"> </span>ls
+cool-avatar.webp<span class="w"> </span>cool-avatar.png
+</code></pre></div>
+
+<h2>serg</h2>
+<p><code>sed</code> can be used as an entire local find-and-replace. I only really use this in
+directories where the files are tracked in git / version control, because it can
+be a bit risky, otherwise, to bulk change your files unless it&#8217;s trivial to
+revert&nbsp;changes.</p>
+<div class="highlight"><pre><span></span><code><span class="k">function</span><span class="w"> </span>serg<span class="w"> </span><span class="o">{</span>
+<span class="w">  </span>sed<span class="w"> </span>-i<span class="w"> </span>-e<span class="w"> </span><span class="s2">&quot;s/</span><span class="nv">$1</span><span class="s2">/</span><span class="nv">$2</span><span class="s2">/g&quot;</span><span class="w"> </span><span class="k">$(</span>rg<span class="w"> </span>-l<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$1</span><span class="s2">&quot;</span><span class="k">)</span>
+<span class="o">}</span>
+</code></pre></div>
+
+<p>Example usage: I use this a lot in software development, e.g. if I&#8217;ve decided to
+rename a variable <code>unload_s3_path</code> to <code>s3_table_path</code> to reflect that &#8220;unload&#8221;
+is no longer the only table-populating&nbsp;strategy:</p>
+<div class="highlight"><pre><span></span><code>serg<span class="w"> </span>unload_s3_path<span class="w"> </span>s3_table_path
+</code></pre></div>
+
+<h2>today</h2>
+<p>My alias <code>today</code> creates a directory called <code>~/today/</code> in my home folder if it
+does not exist, and within it, creates a subfolder <code>~/today/2024-09-16/</code> if it
+does not exist. Then it outputs the name, which (since I tend to run this from
+emacs) allows me to jump straight into that new directory with <code>g f</code>. I store
+all kinds of things in there, typically just
+<a href="https://en.wikipedia.org/wiki/Org-mode">org</a> files with simple to-do lists and
+other&nbsp;notes.</p>
+<div class="highlight"><pre><span></span><code><span class="k">function</span><span class="w"> </span>today<span class="o">()</span><span class="w"> </span><span class="o">{</span>
+<span class="w">    </span><span class="nv">TODAY_DIR</span><span class="o">=</span><span class="s2">&quot;</span><span class="nv">$HOME</span><span class="s2">/today/&quot;</span>
+<span class="w">    </span><span class="nv">DATE_DIR</span><span class="o">=</span><span class="k">$(</span>date<span class="w"> </span>+<span class="s1">&#39;%Y-%m-%d&#39;</span><span class="k">)</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="o">[</span><span class="w"> </span>!<span class="w"> </span>-d<span class="w">  </span><span class="nv">$TODAY_DIR$DATE_DIR</span><span class="w"> </span><span class="o">]</span><span class="p">;</span>
+<span class="w">    </span><span class="k">then</span>
+<span class="w">        </span>mkdir<span class="w"> </span>-p<span class="w"> </span><span class="nv">$TODAY_DIR$DATE_DIR</span>
+<span class="w">    </span><span class="k">fi</span><span class="p">;</span>
+<span class="w">    </span><span class="nb">echo</span><span class="w"> </span><span class="nv">$TODAY_DIR$DATE_DIR</span>
+<span class="o">}</span>
+<span class="nb">export</span><span class="w"> </span>today
+</code></pre></div>
+
+<p>Example&nbsp;usage:</p>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>today
+/home/signmaker/today/2024-09-16
+vi<span class="w"> </span>~/today/2024-09-16/hotfix.txt
+</code></pre></div>
+
+<p>(I&#8217;m sorry if you&#8217;re the redditor or Mastodonian I stole this script from. I
+tried to find you in order to give credit but wasn&#8217;t able&nbsp;to.)</p>
+<h1>Scripts</h1>
+<p>When a task that I need automated is too complex to express as one or two lines
+of bash, I store it in <code>~/mega/scripts/</code>, a directory that is synced across my
+computers. Here&#8217;s all the information you need to adopt one of them (after
+copying the script itself into a file in your own scripts&nbsp;directory):</p>
+<ol>
+<li>These scripts are accessible in any directory, just as if they were a
+   bash_alias, because the following line is always in my <code>~/.bashrc</code> (or
+   <code>~/.zshrc</code> if I were to use zsh):
+   <code>export PATH="$PATH:$HOME/mega/scripts"</code></li>
+<li>I also, when I add a new script to this directory, or install the directory
+   onto a new computer, need to run the following
+   <a href="https://en.wikipedia.org/wiki/Chmod">chmod</a> command to make each script
+   executable:
+   &#8220;`
+   chmod +x&nbsp;~/mega/scripts/*</li>
+</ol>
+<h2>age</h2>
+<p>Starting off simple - I frequently forget, or feel uncertainty, about my
+own age! But there is no need to&nbsp;be:</p>
+<div class="highlight"><pre><span></span><code><span class="ch">#!/usr/bin/python3</span>
+<span class="sd">&quot;&quot;&quot;Output my current age.&quot;&quot;&quot;</span>
+<span class="kn">import</span> <span class="nn">datetime</span>
+
+<span class="n">years</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span> <span class="o">-</span> <span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="p">(</span><span class="n">year</span><span class="o">=</span><span class="mi">1987</span><span class="p">,</span> <span class="n">month</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">day</span><span class="o">=</span><span class="mi">26</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">round</span><span class="p">(</span><span class="n">years</span><span class="o">.</span><span class="n">days</span> <span class="o">/</span> <span class="mi">365</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span>
+</code></pre></div>
+
+<p>Example&nbsp;usage:</p>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>age
+<span class="m">37</span>.42
+</code></pre></div>
+
+<h2>reminders</h2>
+<p>Even simpler, this is just a list of things that I benefit greatly from being
+able to quickly remind&nbsp;myself:</p>
+<ul>
+<li>The incantations to make <a href="https://github.com/BurntSushi/ripgrep">ripgrep</a>
+  omit certain parts of its typical&nbsp;output</li>
+<li>Date and datetime formatting syntax for&nbsp;Python</li>
+<li>The syntax to quickly print &#8220;foo=&#8217;bar&#8217;&#8221; in Python, given a variable <code>foo</code>
+  containing the value <code>"bar"</code></li>
+<li>The magic strings used for the
+  <a href="https://github.com/astanin/python-tabulate">tabulate</a>&nbsp;library</li>
+<li>Commands to open a postgresql shell from its docker&nbsp;container</li>
+<li>Command to instantiate a pandas dataframe with a couple of rows of sample&nbsp;data</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="ch">#!/usr/bin/env python3</span>
+<span class="sd">&quot;&quot;&quot;I still always forget certain things.&quot;&quot;&quot;</span>
+<span class="n">reminders</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">rg options: -o/--only-matching; -I no filename; -N no line number</span>
+<span class="s2">strftime: %Y-%m-</span><span class="si">%d</span><span class="s2"> %H:%M:%S; or month words %B/%b; weekdays %A/</span><span class="si">%a</span>
+<span class="s2">f-string tricks: f&quot;{foo=}&quot;; f&quot;</span><span class="si">{num:.2f}</span><span class="s2">&quot;</span>
+<span class="s2">tabulate kwargs: tablefmt=(default &quot;simple&quot;, github&quot;, &quot;markdown&quot;, &quot;orgtbl&quot;, &quot;plain&quot;, &quot;rounded_grid&quot;)</span>
+<span class="s2">sql shell: postgres (alias for docker exec -it postgres /bin/bash); then psql -U </span><span class="si">{username}</span><span class="s2"> -d </span><span class="si">{database}</span>
+<span class="s2">dataframe: df = pd.DataFrame({&quot;Name&quot;: [&quot;John&quot;, &quot;Alice&quot;, &quot;Bob&quot;], &quot;Age&quot;: [25, 30, 35], &quot;City&quot;: [&quot;New York&quot;, &quot;London&quot;, &quot;Paris&quot;]})</span>
+<span class="s2">&quot;&quot;&quot;</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">reminders</span><span class="p">)</span>
+</code></pre></div>
+
+<h2>sleeep</h2>
+<p><a href="https://en.wikipedia.org/wiki/Sleep_(command)">sleep</a> is a frequently useful
+command, but when invoking it from the shell (for example in order to run <code>say
+"Job's done"</code> when 3 minutes have elapsed), I find myself wondering &#8220;Are we
+there yet?&#8221; My script <code>sleeep</code> does the same thing as <code>sleep</code>, except that it
+prints a counter for how many seconds have&nbsp;elapsed.</p>
+<div class="highlight"><pre><span></span><code><span class="ch">#!/usr/bin/python3</span>
+<span class="sd">&quot;&quot;&quot;Count down a user-specified number of seconds.&quot;&quot;&quot;</span>
+<span class="kn">import</span> <span class="nn">sys</span>
+<span class="kn">import</span> <span class="nn">time</span>
+
+<span class="k">try</span><span class="p">:</span>
+    <span class="n">to_sleep</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+<span class="k">except</span> <span class="p">(</span><span class="ne">IndexError</span><span class="p">,</span> <span class="ne">TypeError</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;usage: sleeep seconds&quot;</span><span class="p">)</span>
+    <span class="n">sys</span><span class="o">.</span><span class="n">exit</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">second</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">to_sleep</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">second</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s2">&quot;</span><span class="se">\r</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">to_sleep</span><span class="p">)</span>
+</code></pre></div>
+
+<h2>exc</h2>
+<p>This script converts back and forth between Excel&#8217;s column nomenclature (e.g.
+&#8220;A&#8221;, &#8220;B&#8221;, &#8220;C&#8221;, &#8230;, &#8220;Z&#8221;, &#8220;<span class="caps">AA</span>&#8221;, &#8220;<span class="caps">AB</span>&#8221;, &#8230;) and indexes in a Python list. It
+becomes useful when switching back and forth between Excel and Python, for
+example, when programming a script to generate a copy of a spreadsheet. When the
+list of columns becomes long enough, it&#8217;s very convenient to be able to quickly
+identify that the 33rd column is &#8220;<span class="caps">AH</span>&#8221;, or that column <span class="caps">CAZ</span> is column&nbsp;2079.</p>
+<div class="highlight"><pre><span></span><code><span class="ch">#!/usr/bin/env python3</span>
+<span class="sd">&quot;&quot;&quot;Convert from Excel column lettering to 0-indexes or back.&quot;&quot;&quot;</span>
+<span class="kn">import</span> <span class="nn">sys</span>
+
+
+<span class="k">def</span> <span class="nf">column_to_index</span><span class="p">(</span><span class="n">column</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Convert Excel column name to 0-indexed integer.&quot;&quot;&quot;</span>
+    <span class="n">index</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">for</span> <span class="n">char</span> <span class="ow">in</span> <span class="n">column</span><span class="p">:</span>
+        <span class="n">index</span> <span class="o">=</span> <span class="n">index</span> <span class="o">*</span> <span class="mi">26</span> <span class="o">+</span> <span class="p">(</span><span class="nb">ord</span><span class="p">(</span><span class="n">char</span><span class="p">)</span> <span class="o">-</span> <span class="nb">ord</span><span class="p">(</span><span class="s2">&quot;A&quot;</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">index</span> <span class="o">-</span> <span class="mi">1</span>  <span class="c1"># because it&#39;s 0-indexed</span>
+
+
+<span class="k">def</span> <span class="nf">index_to_column</span><span class="p">(</span><span class="n">index</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Convert 0-indexed integer to Excel column name.&quot;&quot;&quot;</span>
+    <span class="n">column</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
+    <span class="k">while</span> <span class="n">index</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="n">column</span> <span class="o">=</span> <span class="nb">chr</span><span class="p">(</span><span class="n">index</span> <span class="o">%</span> <span class="mi">26</span> <span class="o">+</span> <span class="nb">ord</span><span class="p">(</span><span class="s2">&quot;A&quot;</span><span class="p">))</span> <span class="o">+</span> <span class="n">column</span>
+        <span class="n">index</span> <span class="o">=</span> <span class="n">index</span> <span class="o">//</span> <span class="mi">26</span> <span class="o">-</span> <span class="mi">1</span>
+    <span class="k">return</span> <span class="n">column</span>
+
+
+<span class="n">arg</span> <span class="o">=</span> <span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+
+<span class="k">if</span> <span class="n">arg</span><span class="o">.</span><span class="n">isalpha</span><span class="p">():</span>  <span class="c1"># Check if the input is an alphabetical column name</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Index&quot;</span><span class="p">,</span> <span class="n">column_to_index</span><span class="p">(</span><span class="n">arg</span><span class="p">))</span>
+<span class="k">elif</span> <span class="n">arg</span><span class="o">.</span><span class="n">isnumeric</span><span class="p">():</span>  <span class="c1"># Check if the input is a numeric index</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Column&quot;</span><span class="p">,</span> <span class="n">index_to_column</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">arg</span><span class="p">)))</span>
+</code></pre></div>
+
+<p>Example&nbsp;usage:</p>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>exc<span class="w"> </span><span class="m">33</span>
+Column<span class="w"> </span>AH
+$<span class="w"> </span>exc<span class="w"> </span>CAZ
+Index<span class="w"> </span><span class="m">2079</span>
+</code></pre></div>
+  </div>
+  <div class="tag-cloud">
+    <p>
+      <a href="/tag/computing.html">computing</a>
+      <a href="/tag/blog.html">blog</a>
+      <a href="/tag/bash.html">bash</a>
+      <a href="/tag/unix.html">unix</a>
+    </p>
+  </div>
+
+
+
+
+
+
+</article>
+
+<footer>
+<p>&copy;  </p>
+<p>
+Built with <a href="http://getpelican.com" target="_blank">Pelican</a> using <a href="http://bit.ly/flex-pelican" target="_blank">Flex</a> theme
+  <span class="footer-separator">|</span>
+  Switch to the <a href="javascript:void(0)" onclick="theme.switch(`dark`)">dark</a> | <a href="javascript:void(0)" onclick="theme.switch(`light`)">light</a> | <a href="javascript:void(0)" onclick="theme.switch(`browser`)">browser</a> theme
+  <script id="dark-theme-script"
+          src="/theme/dark-theme/dark-theme.min.js"
+          data-enable-auto-detect-theme="False"
+          data-default-theme="light"
+          type="text/javascript">
+  </script>
+</p></footer>  </main>
+
+<script type="application/ld+json">
+{
+  "@context" : "http://schema.org",
+  "@type" : "Blog",
+  "name": " Ben Quigley ",
+  "url" : "",
+  "image": "/images/quigley-2022-selfie-square-web.jpg",
+  "description": "Ben Quigley homepage"
+}
+</script>
+</body>
+</html>
