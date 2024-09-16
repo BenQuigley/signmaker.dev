@@ -18,7 +18,7 @@ application.
 
 More data about me:
 
-* 🕷️ Software develoepr and data engineer (Python, GraphQL, REST, Airflow, Athena)
+* 🕷️ Software developer and data engineer (Python, GraphQL, REST, Airflow, Athena)
 * 🌲 Climate activist
 * 🚸 Twin parent
 * 🥧 Baking & cooking enthusiast
