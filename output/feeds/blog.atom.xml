@@ -1,5 +1,209 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Ben Quigley - blog</title><link href="https://signmaker.dev/" rel="alternate"></link><link href="https://signmaker.dev/feeds/blog.atom.xml" rel="self"></link><id>https://signmaker.dev/</id><updated>2023-12-31T00:00:00-05:00</updated><subtitle>Ben Quigley | Software Developer</subtitle><entry><title>Refinements from magit</title><link href="https://signmaker.dev/refinements-from-magit.html" rel="alternate"></link><published>2023-12-31T00:00:00-05:00</published><updated>2023-12-31T00:00:00-05:00</updated><author><name>Ben Quigley</name></author><id>tag:signmaker.dev,2023-12-31:/refinements-from-magit.html</id><summary type="html">&lt;p&gt;Unlike most emacs users, I haven&amp;#8217;t wholeheartedly adopted magit as my sole
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Ben Quigley - blog</title><link href="https://signmaker.dev/" rel="alternate"></link><link href="https://signmaker.dev/feeds/blog.atom.xml" rel="self"></link><id>https://signmaker.dev/</id><updated>2024-09-16T00:00:00-05:00</updated><subtitle>Ben Quigley | Software Developer</subtitle><entry><title>Aliases and Scripts</title><link href="https://signmaker.dev/aliases-and-scripts.html" rel="alternate"></link><published>2024-09-16T00:00:00-05:00</published><updated>2024-09-16T00:00:00-05:00</updated><author><name>Ben Quigley</name></author><id>tag:signmaker.dev,2024-09-16:/aliases-and-scripts.html</id><summary type="html">&lt;p&gt;Over the years I&amp;#8217;ve developed (and stolen) a lot of shortcuts and scripts for
+accomplishing tasks quickly from the command line. I&amp;#8217;ve written about them
+&lt;a href="https://signmaker.dev/personal-scripts"&gt;before&lt;/a&gt;; it is time now to go further
+and document all of the absolute best scripts in my&amp;nbsp;possession.&lt;/p&gt;
+&lt;h1&gt;Aliases&lt;/h1&gt;
+&lt;p&gt;To use these …&lt;/p&gt;</summary><content type="html">&lt;p&gt;Over the years I&amp;#8217;ve developed (and stolen) a lot of shortcuts and scripts for
+accomplishing tasks quickly from the command line. I&amp;#8217;ve written about them
+&lt;a href="https://signmaker.dev/personal-scripts"&gt;before&lt;/a&gt;; it is time now to go further
+and document all of the absolute best scripts in my&amp;nbsp;possession.&lt;/p&gt;
+&lt;h1&gt;Aliases&lt;/h1&gt;
+&lt;p&gt;To use these aliases for yourself, copy and paste them into your
+&lt;code&gt;~/.bash_aliases&lt;/code&gt; file (or &lt;code&gt;~/.zsh_aliases&lt;/code&gt; if you use zsh instead of&amp;nbsp;bash).&lt;/p&gt;
+&lt;h2&gt;wec&lt;/h2&gt;
+&lt;p&gt;Sometimes I download an image from the Internet but it arrives in the .webp
+format, a newfangled image format that often needs to be converted before being
+recognized as an image in other utilities (for example, if I&amp;#8217;m uploading an
+avatar for a web site or game). My bash alias &lt;code&gt;wec&lt;/code&gt; automatically converts all
+webp files in a directory to png files. Requirements:
+&lt;a href="https://imagemagick.org/"&gt;imagemagick&lt;/a&gt;,
+&lt;a href="https://github.com/sharkdp/fd"&gt;fd-find&lt;/a&gt;, and the standard Unix tools
+&lt;a href="https://en.wikipedia.org/wiki/Sed"&gt;sed&lt;/a&gt; and
+&lt;a href="https://en.wikipedia.org/wiki/Xargs"&gt;xargs&lt;/a&gt;.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="nb"&gt;alias&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;wec&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;fd webp$ | sed &amp;quot;s/.webp$//&amp;quot; | xargs -n1 -I {} dwebp {}.webp -o {}.png&amp;#39;&lt;/span&gt;&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="c1"&gt;# webp convert&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Example&amp;nbsp;usage:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;$&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nb"&gt;cd&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;Downloads
+$&lt;span class="w"&gt; &lt;/span&gt;ls
+cool-avatar.webp&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="c1"&gt;# Yay, my file I downloaded is here, but it&amp;#39;s a webp file&lt;/span&gt;
+$&lt;span class="w"&gt; &lt;/span&gt;wec
+Decoded&lt;span class="w"&gt; &lt;/span&gt;cool-avatar.webp.&lt;span class="w"&gt; &lt;/span&gt;Dimensions:&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="m"&gt;421&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;x&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="m"&gt;611&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;.&lt;span class="w"&gt; &lt;/span&gt;Format:&lt;span class="w"&gt; &lt;/span&gt;lossy.&lt;span class="w"&gt; &lt;/span&gt;Now&lt;span class="w"&gt; &lt;/span&gt;saving...
+Saved&lt;span class="w"&gt; &lt;/span&gt;file&lt;span class="w"&gt; &lt;/span&gt;cool-avatar.png
+$&lt;span class="w"&gt; &lt;/span&gt;ls
+cool-avatar.webp&lt;span class="w"&gt; &lt;/span&gt;cool-avatar.png
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;h2&gt;serg&lt;/h2&gt;
+&lt;p&gt;&lt;code&gt;sed&lt;/code&gt; can be used as an entire local find-and-replace. I only really use this in
+directories where the files are tracked in git / version control, because it can
+be a bit risky, otherwise, to bulk change your files unless it&amp;#8217;s trivial to
+revert&amp;nbsp;changes.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="k"&gt;function&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;serg&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;{&lt;/span&gt;
+&lt;span class="w"&gt;  &lt;/span&gt;sed&lt;span class="w"&gt; &lt;/span&gt;-i&lt;span class="w"&gt; &lt;/span&gt;-e&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;s/&lt;/span&gt;&lt;span class="nv"&gt;$1&lt;/span&gt;&lt;span class="s2"&gt;/&lt;/span&gt;&lt;span class="nv"&gt;$2&lt;/span&gt;&lt;span class="s2"&gt;/g&amp;quot;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;$(&lt;/span&gt;rg&lt;span class="w"&gt; &lt;/span&gt;-l&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;&lt;span class="nv"&gt;$1&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;&lt;span class="k"&gt;)&lt;/span&gt;
+&lt;span class="o"&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Example usage: I use this a lot in software development, e.g. if I&amp;#8217;ve decided to
+rename a variable &lt;code&gt;unload_s3_path&lt;/code&gt; to &lt;code&gt;s3_table_path&lt;/code&gt; to reflect that &amp;#8220;unload&amp;#8221;
+is no longer the only table-populating&amp;nbsp;strategy:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;serg&lt;span class="w"&gt; &lt;/span&gt;unload_s3_path&lt;span class="w"&gt; &lt;/span&gt;s3_table_path
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;h2&gt;today&lt;/h2&gt;
+&lt;p&gt;My alias &lt;code&gt;today&lt;/code&gt; creates a directory called &lt;code&gt;~/today/&lt;/code&gt; in my home folder if it
+does not exist, and within it, creates a subfolder &lt;code&gt;~/today/2024-09-16/&lt;/code&gt; if it
+does not exist. Then it outputs the name, which (since I tend to run this from
+emacs) allows me to jump straight into that new directory with &lt;code&gt;g f&lt;/code&gt;. I store
+all kinds of things in there, typically just
+&lt;a href="https://en.wikipedia.org/wiki/Org-mode"&gt;org&lt;/a&gt; files with simple to-do lists and
+other&amp;nbsp;notes.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="k"&gt;function&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;today&lt;span class="o"&gt;()&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;{&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="nv"&gt;TODAY_DIR&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;&lt;span class="nv"&gt;$HOME&lt;/span&gt;&lt;span class="s2"&gt;/today/&amp;quot;&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="nv"&gt;DATE_DIR&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="k"&gt;$(&lt;/span&gt;date&lt;span class="w"&gt; &lt;/span&gt;+&lt;span class="s1"&gt;&amp;#39;%Y-%m-%d&amp;#39;&lt;/span&gt;&lt;span class="k"&gt;)&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="k"&gt;if&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;!&lt;span class="w"&gt; &lt;/span&gt;-d&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="nv"&gt;$TODAY_DIR$DATE_DIR&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;]&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="k"&gt;then&lt;/span&gt;
+&lt;span class="w"&gt;        &lt;/span&gt;mkdir&lt;span class="w"&gt; &lt;/span&gt;-p&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;$TODAY_DIR$DATE_DIR&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="k"&gt;fi&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="nb"&gt;echo&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;$TODAY_DIR$DATE_DIR&lt;/span&gt;
+&lt;span class="o"&gt;}&lt;/span&gt;
+&lt;span class="nb"&gt;export&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;today
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Example&amp;nbsp;usage:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;$&lt;span class="w"&gt; &lt;/span&gt;today
+/home/signmaker/today/2024-09-16
+vi&lt;span class="w"&gt; &lt;/span&gt;~/today/2024-09-16/hotfix.txt
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;(I&amp;#8217;m sorry if you&amp;#8217;re the redditor or Mastodonian I stole this script from. I
+tried to find you in order to give credit but wasn&amp;#8217;t able&amp;nbsp;to.)&lt;/p&gt;
+&lt;h1&gt;Scripts&lt;/h1&gt;
+&lt;p&gt;When a task that I need automated is too complex to express as one or two lines
+of bash, I store it in &lt;code&gt;~/mega/scripts/&lt;/code&gt;, a directory that is synced across my
+computers. Here&amp;#8217;s all the information you need to adopt one of them (after
+copying the script itself into a file in your own scripts&amp;nbsp;directory):&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;These scripts are accessible in any directory, just as if they were a
+   bash_alias, because the following line is always in my &lt;code&gt;~/.bashrc&lt;/code&gt; (or
+   &lt;code&gt;~/.zshrc&lt;/code&gt; if I were to use zsh):
+   &lt;code&gt;export PATH="$PATH:$HOME/mega/scripts"&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;I also, when I add a new script to this directory, or install the directory
+   onto a new computer, need to run the following
+   &lt;a href="https://en.wikipedia.org/wiki/Chmod"&gt;chmod&lt;/a&gt; command to make each script
+   executable:
+   &lt;code&gt;chmod +x ~/mega/scripts/*&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;My scripts use &lt;a href="https://www.python.org/"&gt;Python&lt;/a&gt;, so Python needs to be&amp;nbsp;installed.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2&gt;age&lt;/h2&gt;
+&lt;p&gt;Starting off simple - I frequently forget, or feel uncertainty, about my
+own age! But there is no need to&amp;nbsp;be:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="ch"&gt;#!/usr/bin/python3&lt;/span&gt;
+&lt;span class="sd"&gt;&amp;quot;&amp;quot;&amp;quot;Output my current age.&amp;quot;&amp;quot;&amp;quot;&lt;/span&gt;
+&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;datetime&lt;/span&gt;
+
+&lt;span class="n"&gt;years&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;datetime&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;datetime&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;now&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt; &lt;span class="n"&gt;datetime&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;datetime&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;year&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="mi"&gt;1987&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;month&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="mi"&gt;4&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;day&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="mi"&gt;26&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="nb"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;round&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;years&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;days&lt;/span&gt; &lt;span class="o"&gt;/&lt;/span&gt; &lt;span class="mi"&gt;365&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Example&amp;nbsp;usage:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;$&lt;span class="w"&gt; &lt;/span&gt;age
+&lt;span class="m"&gt;37&lt;/span&gt;.42
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;h2&gt;reminders&lt;/h2&gt;
+&lt;p&gt;Even simpler, this is just a list of things that I benefit greatly from being
+able to quickly remind&amp;nbsp;myself:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;The incantations to make &lt;a href="https://github.com/BurntSushi/ripgrep"&gt;ripgrep&lt;/a&gt;
+  omit certain parts of its typical&amp;nbsp;output&lt;/li&gt;
+&lt;li&gt;Date and datetime formatting syntax for&amp;nbsp;Python&lt;/li&gt;
+&lt;li&gt;The syntax to quickly print &amp;#8220;foo=&amp;#8217;bar&amp;#8217;&amp;#8221; in Python, given a variable &lt;code&gt;foo&lt;/code&gt;
+  containing the value &lt;code&gt;"bar"&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;The magic strings used for the
+  &lt;a href="https://github.com/astanin/python-tabulate"&gt;tabulate&lt;/a&gt;&amp;nbsp;library&lt;/li&gt;
+&lt;li&gt;Commands to open a postgresql shell from its docker&amp;nbsp;container&lt;/li&gt;
+&lt;li&gt;Command to instantiate a pandas dataframe with a couple of rows of sample&amp;nbsp;data&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="ch"&gt;#!/usr/bin/env python3&lt;/span&gt;
+&lt;span class="sd"&gt;&amp;quot;&amp;quot;&amp;quot;I still always forget certain things.&amp;quot;&amp;quot;&amp;quot;&lt;/span&gt;
+&lt;span class="n"&gt;reminders&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;&amp;quot;&amp;quot;&lt;/span&gt;
+&lt;span class="s2"&gt;rg options: -o/--only-matching; -I no filename; -N no line number&lt;/span&gt;
+&lt;span class="s2"&gt;strftime: %Y-%m-&lt;/span&gt;&lt;span class="si"&gt;%d&lt;/span&gt;&lt;span class="s2"&gt; %H:%M:%S; or month words %B/%b; weekdays %A/&lt;/span&gt;&lt;span class="si"&gt;%a&lt;/span&gt;
+&lt;span class="s2"&gt;f-string tricks: f&amp;quot;{foo=}&amp;quot;; f&amp;quot;&lt;/span&gt;&lt;span class="si"&gt;{num:.2f}&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;
+&lt;span class="s2"&gt;tabulate kwargs: tablefmt=(default &amp;quot;simple&amp;quot;, github&amp;quot;, &amp;quot;markdown&amp;quot;, &amp;quot;orgtbl&amp;quot;, &amp;quot;plain&amp;quot;, &amp;quot;rounded_grid&amp;quot;)&lt;/span&gt;
+&lt;span class="s2"&gt;sql shell: postgres (alias for docker exec -it postgres /bin/bash); then psql -U &lt;/span&gt;&lt;span class="si"&gt;{username}&lt;/span&gt;&lt;span class="s2"&gt; -d &lt;/span&gt;&lt;span class="si"&gt;{database}&lt;/span&gt;
+&lt;span class="s2"&gt;dataframe: df = pd.DataFrame({&amp;quot;Name&amp;quot;: [&amp;quot;John&amp;quot;, &amp;quot;Alice&amp;quot;, &amp;quot;Bob&amp;quot;], &amp;quot;Age&amp;quot;: [25, 30, 35], &amp;quot;City&amp;quot;: [&amp;quot;New York&amp;quot;, &amp;quot;London&amp;quot;, &amp;quot;Paris&amp;quot;]})&lt;/span&gt;
+&lt;span class="s2"&gt;&amp;quot;&amp;quot;&amp;quot;&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;strip&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+&lt;span class="nb"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;reminders&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;h2&gt;sleeep&lt;/h2&gt;
+&lt;p&gt;&lt;a href="https://en.wikipedia.org/wiki/Sleep_(command)"&gt;sleep&lt;/a&gt; is a frequently useful
+command, but when invoking it from the shell (for example in order to run &lt;code&gt;say
+"Job's done"&lt;/code&gt; when 3 minutes have elapsed), I find myself wondering &amp;#8220;Are we
+there yet?&amp;#8221; My script &lt;code&gt;sleeep&lt;/code&gt; does the same thing as &lt;code&gt;sleep&lt;/code&gt;, except that it
+prints a counter for how many seconds have&amp;nbsp;elapsed.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="ch"&gt;#!/usr/bin/python3&lt;/span&gt;
+&lt;span class="sd"&gt;&amp;quot;&amp;quot;&amp;quot;Count down a user-specified number of seconds.&amp;quot;&amp;quot;&amp;quot;&lt;/span&gt;
+&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;sys&lt;/span&gt;
+&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;time&lt;/span&gt;
+
+&lt;span class="k"&gt;try&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+    &lt;span class="n"&gt;to_sleep&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nb"&gt;int&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;sys&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;argv&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;])&lt;/span&gt;
+&lt;span class="k"&gt;except&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="ne"&gt;IndexError&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="ne"&gt;TypeError&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+    &lt;span class="nb"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;usage: sleeep seconds&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+    &lt;span class="n"&gt;sys&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;exit&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;second&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="nb"&gt;range&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;to_sleep&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+    &lt;span class="nb"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;second&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;end&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;&lt;span class="se"&gt;\r&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+    &lt;span class="n"&gt;time&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;sleep&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="nb"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;to_sleep&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;h2&gt;exc&lt;/h2&gt;
+&lt;p&gt;This script converts back and forth between Excel&amp;#8217;s column nomenclature (e.g.
+&amp;#8220;A&amp;#8221;, &amp;#8220;B&amp;#8221;, &amp;#8220;C&amp;#8221;, &amp;#8230;, &amp;#8220;Z&amp;#8221;, &amp;#8220;&lt;span class="caps"&gt;AA&lt;/span&gt;&amp;#8221;, &amp;#8220;&lt;span class="caps"&gt;AB&lt;/span&gt;&amp;#8221;, &amp;#8230;) and indexes in a Python list. It
+becomes useful when switching back and forth between Excel and Python, for
+example, when programming a script to generate a copy of a spreadsheet. When the
+list of columns becomes long enough, it&amp;#8217;s very convenient to be able to quickly
+identify that the 33rd column is &amp;#8220;&lt;span class="caps"&gt;AH&lt;/span&gt;&amp;#8221;, or that column &lt;span class="caps"&gt;CAZ&lt;/span&gt; is column&amp;nbsp;2079.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="ch"&gt;#!/usr/bin/env python3&lt;/span&gt;
+&lt;span class="sd"&gt;&amp;quot;&amp;quot;&amp;quot;Convert from Excel column lettering to 0-indexes or back.&amp;quot;&amp;quot;&amp;quot;&lt;/span&gt;
+&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;sys&lt;/span&gt;
+
+
+&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;column_to_index&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;column&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="sd"&gt;&amp;quot;&amp;quot;&amp;quot;Convert Excel column name to 0-indexed integer.&amp;quot;&amp;quot;&amp;quot;&lt;/span&gt;
+    &lt;span class="n"&gt;index&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;0&lt;/span&gt;
+    &lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;char&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="n"&gt;column&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+        &lt;span class="n"&gt;index&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;index&lt;/span&gt; &lt;span class="o"&gt;*&lt;/span&gt; &lt;span class="mi"&gt;26&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;ord&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;char&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt; &lt;span class="nb"&gt;ord&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;A&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+    &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="n"&gt;index&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt; &lt;span class="mi"&gt;1&lt;/span&gt;  &lt;span class="c1"&gt;# because it&amp;#39;s 0-indexed&lt;/span&gt;
+
+
+&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;index_to_column&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;index&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="sd"&gt;&amp;quot;&amp;quot;&amp;quot;Convert 0-indexed integer to Excel column name.&amp;quot;&amp;quot;&amp;quot;&lt;/span&gt;
+    &lt;span class="n"&gt;column&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;&amp;quot;&lt;/span&gt;
+    &lt;span class="k"&gt;while&lt;/span&gt; &lt;span class="n"&gt;index&lt;/span&gt; &lt;span class="o"&gt;&amp;gt;=&lt;/span&gt; &lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+        &lt;span class="n"&gt;column&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nb"&gt;chr&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;index&lt;/span&gt; &lt;span class="o"&gt;%&lt;/span&gt; &lt;span class="mi"&gt;26&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="nb"&gt;ord&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;A&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="n"&gt;column&lt;/span&gt;
+        &lt;span class="n"&gt;index&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;index&lt;/span&gt; &lt;span class="o"&gt;//&lt;/span&gt; &lt;span class="mi"&gt;26&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt; &lt;span class="mi"&gt;1&lt;/span&gt;
+    &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="n"&gt;column&lt;/span&gt;
+
+
+&lt;span class="n"&gt;arg&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;sys&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;argv&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
+
+&lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="n"&gt;arg&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;isalpha&lt;/span&gt;&lt;span class="p"&gt;():&lt;/span&gt;  &lt;span class="c1"&gt;# Check if the input is an alphabetical column name&lt;/span&gt;
+    &lt;span class="nb"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;Index&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;column_to_index&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;arg&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
+&lt;span class="k"&gt;elif&lt;/span&gt; &lt;span class="n"&gt;arg&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;isnumeric&lt;/span&gt;&lt;span class="p"&gt;():&lt;/span&gt;  &lt;span class="c1"&gt;# Check if the input is a numeric index&lt;/span&gt;
+    &lt;span class="nb"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;Column&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;index_to_column&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;int&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;arg&lt;/span&gt;&lt;span class="p"&gt;)))&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Example&amp;nbsp;usage:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;$&lt;span class="w"&gt; &lt;/span&gt;exc&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="m"&gt;33&lt;/span&gt;
+Column&lt;span class="w"&gt; &lt;/span&gt;AH
+$&lt;span class="w"&gt; &lt;/span&gt;exc&lt;span class="w"&gt; &lt;/span&gt;CAZ
+Index&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="m"&gt;2079&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</content><category term="blog"></category><category term="computing"></category><category term="blog"></category><category term="bash"></category><category term="unix"></category></entry><entry><title>Refinements from magit</title><link href="https://signmaker.dev/refinements-from-magit.html" rel="alternate"></link><published>2023-12-31T00:00:00-05:00</published><updated>2023-12-31T00:00:00-05:00</updated><author><name>Ben Quigley</name></author><id>tag:signmaker.dev,2023-12-31:/refinements-from-magit.html</id><summary type="html">&lt;p&gt;Unlike most emacs users, I haven&amp;#8217;t wholeheartedly adopted magit as my sole
 interface for git. I mostly stick to the command line, in the coziness of my
 aliases&amp;nbsp;- &lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="nb"&gt;alias&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;bra&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;git branch&amp;#39;&lt;/span&gt;
@@ -40,10 +244,11 @@ are upstream changes that you don&amp;#8217;t have. Git gives that warning only 
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;p&gt;Unfortunately, &lt;code&gt;-f&lt;/code&gt; is 16 characters shorter than  &lt;code&gt;--force-with-lease&lt;/code&gt;, so it&amp;#8217;s
-easy to default to on the command line. With magit-push, though, it&amp;#8217;s more the
-default - &lt;code&gt;-f&lt;/code&gt; is the key activating force-with-lease and &lt;code&gt;-F&lt;/code&gt; activates force
-mode, so users who take hints from magit about how they should use git are fs
-trained to prefer the safer and better&amp;nbsp;option.&lt;/p&gt;
+easy to default to &lt;code&gt;-f&lt;/code&gt; on the command line. With magit-push, though,
+&lt;code&gt;--force-with-lease&lt;/code&gt; is more the default - &lt;code&gt;-f&lt;/code&gt; is the key activating
+force-with-lease and &lt;code&gt;-F&lt;/code&gt; activates force mode, so users who take hints from
+magit about how they should use git are fs trained to prefer the safer and
+better&amp;nbsp;option.&lt;/p&gt;
 &lt;h2&gt;Name your branch&amp;#8217;s&amp;nbsp;upstream&lt;/h2&gt;
 &lt;p&gt;In a case of a magit feature not only surpassing the git &lt;span class="caps"&gt;CLI&lt;/span&gt;, but actually making
 it easier to use, magit makes it very convenient to set a branch&amp;#8217;s upstream,
