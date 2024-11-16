@@ -1,0 +1,417 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="HandheldFriendly" content="True" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="index, follow" />
+
+  <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,400;0,700;1,400&family=Source+Sans+Pro:ital,wght@0,300;0,400;0,700;1,400&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" type="text/css" href="/theme/stylesheet/style.min.css">
+
+    <link id="dark-theme-style" rel="stylesheet" type="text/css"
+        disabled="disabled"
+    href="/theme/stylesheet/dark-theme.min.css">
+
+    <link id="pygments-dark-theme" rel="stylesheet" type="text/css"
+            disabled="disabled"
+          href="/theme/pygments/solarized-dark.min.css">
+    <link id="pygments-light-theme" rel="stylesheet" type="text/css"
+          href="/theme/pygments/solarized-light.min.css">
+
+
+
+  <link rel="stylesheet" type="text/css" href="/theme/font-awesome/css/fontawesome.css">
+  <link rel="stylesheet" type="text/css" href="/theme/font-awesome/css/brands.css">
+  <link rel="stylesheet" type="text/css" href="/theme/font-awesome/css/solid.css">
+
+
+  <link rel="shortcut icon" href="/static/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="/static/favicon.ico" type="image/x-icon">
+
+
+
+
+
+
+
+
+
+
+ 
+
+<meta name="author" content="Ben Quigley" />
+<meta name="description" content="It’s common for online code editors (LeetCode, CoderPad, CodeSignal, etc.) to offer “Vim and Emacs modes,” and since I’m most comfortable working with the Vim keybinds, I usually turn them on. When I sat down for a technical interview the other day and attempted to use the Vim …" />
+<meta name="keywords" content="computing, vim">
+
+
+  <meta property="og:site_name" content="Ben Quigley"/>
+  <meta property="og:title" content="How Vimmy is Your Vim Mode?"/>
+  <meta property="og:description" content="It’s common for online code editors (LeetCode, CoderPad, CodeSignal, etc.) to offer “Vim and Emacs modes,” and since I’m most comfortable working with the Vim keybinds, I usually turn them on. When I sat down for a technical interview the other day and attempted to use the Vim …"/>
+  <meta property="og:locale" content="en_US"/>
+  <meta property="og:url" content="/how-vimmy-is-your-vim-mode.html"/>
+  <meta property="og:type" content="article"/>
+  <meta property="article:published_time" content="2024-11-15 00:00:00-05:00"/>
+  <meta property="article:modified_time" content=""/>
+  <meta property="article:author" content="/author/ben-quigley.html">
+  <meta property="article:section" content="blog"/>
+  <meta property="article:tag" content="computing"/>
+  <meta property="article:tag" content="vim"/>
+  <meta property="og:image" content="/images/quigley-2022-selfie-square-web.jpg">
+
+  <title>Ben Quigley &ndash; How Vimmy is Your Vim Mode?</title>
+
+
+</head>
+<body class="light-theme">
+
+<aside>
+  <div>
+    <a href="/">
+      <img src="/images/quigley-2022-selfie-square-web.jpg" alt="" title="">
+    </a>
+
+    <h1>
+      <a href="/"></a>
+    </h1>
+
+    <p>Ben Quigley | Software Developer</p>
+
+
+    <nav>
+      <ul class="list">
+
+
+            <li>
+              <a target="_self"
+                 href="/index.html#about">
+                About
+              </a>
+            </li>
+            <li>
+              <a target="_self"
+                 href="/pages/contact.html#contact">
+                Contact
+              </a>
+            </li>
+
+          <li>
+            <a target="_self" href="blog" >blog</a>
+          </li>
+          <li>
+            <a target="_self" href="https://github.com/BenQuigley" >Github</a>
+          </li>
+          <li>
+            <a target="_self" href="https://www.linkedin.com/in/BenjaminQuigley/" >LinkedIn</a>
+          </li>
+      </ul>
+    </nav>
+
+    <ul class="social">
+      <li>
+        <a class="sc-github"
+           href="https://github.com/BenQuigley"
+           target="_blank">
+          <i class="fa-brands fa-github"></i>
+        </a>
+      </li>
+      <li>
+        <a class="sc-linkedin"
+           href="https://LinkedIn.com/in/BenjaminQuigley"
+           target="_blank">
+          <i class="fa-brands fa-linkedin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="sc-rss"
+           href="/blog/feeds/all.atom.xml"
+           target="_blank">
+          <i class="fa-solid fa-rss"></i>
+        </a>
+      </li>
+    </ul>
+  </div>
+
+</aside>
+  <main>
+
+<nav>
+  <a href="/">Home</a>
+
+
+
+</nav>
+
+<article class="single">
+  <header>
+      
+    <h1 id="how-vimmy-is-your-vim-mode">How Vimmy is Your Vim&nbsp;Mode?</h1>
+    <p>
+      Posted on Fri 15 November 2024 in <a href="/category/blog.html">blog</a>
+
+    </p>
+  </header>
+
+
+  <div>
+    <p>It&#8217;s common for online code editors (LeetCode, CoderPad, CodeSignal, etc.) to offer &#8220;Vim and Emacs
+modes,&#8221; and since I&#8217;m most comfortable working with the Vim keybinds, I usually turn them on. When I
+sat down for a technical interview the other day and attempted to use the Vim features that my hands
+take for granted, however, I ran into some behaviors I didn&#8217;t expect - features misbehaving such as
+visual-mode find and replace, interactive find and replace, and even jumping from one parenthesis to
+its partner with <code>%</code>.</p>
+<p>I wondered how complete these online &#8220;Vim modes&#8221; really are, and I took it upon myself to create a
+rubric and begin to assign&nbsp;scores.</p>
+<h2>Caveats:</h2>
+<ul>
+<li>
+<p>I access the web via up-to-date Firefox with <a href="https://ublockorigin.com/">uBlock Origin</a> and
+  <a href="https://privacybadger.org/">PrivacyBadger</a>. From time to time a web site does not work as
+  expected by its designers with this setup. When a Vim feature appeared to &#8220;try to work&#8221; but was
+  broken in my testing, I noted it as &#8220;broken&#8221; rather than &#8220;missing&#8221;, but I didn&#8217;t investigate the
+  cause of the failure&nbsp;further.</p>
+</li>
+<li>
+<p>I fully concede that just because a web site advertises a &#8220;Vim mode&#8221; doesn&#8217;t mean it has promised
+  to ship a fully functional Vim! I&#8217;m not trying to roast these sites for not having these features.
+  I&#8217;m only exploring what Vim features are and are not present in these editors&#8217; Vim modes, just
+  because I am&nbsp;curious.</p>
+</li>
+<li>
+<p>My assignment of &#8220;importance points&#8221; to the various Vim features that I discussed are obviously
+  arbitrary, as are the categories themselves, and no doubt there are important Vim features that I
+  failed to test. (No doubt there are important Vim features that I don&#8217;t even know&nbsp;about!)</p>
+</li>
+<li>
+<p>I didn&#8217;t test Vim features that don&#8217;t make sense in the context of a non-Vim <span class="caps">IDE</span>, such as netrw (its directory
+  explorer, <code>:Explore</code>), splitting panes, and opening&nbsp;tabs.</p>
+</li>
+<li>
+<p>There are inevitably some idiosyncrasies and inconsistencies. I had to make judgment calls about
+  how forgiving to be. For example, I gave no points to HackerRank when finding that jumping from a
+  parenthesis to its partner only works forwards in its editor; when finding, however, that
+  Neetcode.io editor&#8217;s visual block mode works to some extent, but doesn&#8217;t allow replacing in the
+  visual block with <code>r</code> as Vim does, I awarded points for that feature anyway since (to me) 95% of
+  the feature&#8217;s utility was&nbsp;there.</p>
+</li>
+<li>
+<p>I don&#8217;t know the Emacs keybinds well enough to grade them, sorry! If you want to hit me with a
+  rubric of desired features and instructions for testing, I&#8217;d be happy to collaborate on a
+  follow-up blog&nbsp;post.</p>
+</li>
+</ul>
+<h2>Methodology:</h2>
+<p>I decided on thirteen semi-important (at least, I use them all regularly) but non-trivial Vim
+features to test. I assigned them &#8220;importance points&#8221; based on my subjective judgment of how often I
+guessed I used&nbsp;them.</p>
+<table>
+<thead>
+<tr>
+<th>Feature</th>
+<th>Importance points</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Deleting something pops it into your &#8220;paste&#8221; buffer</td>
+<td>2</td>
+</tr>
+<tr>
+<td>Selecting (visual mode) inside parentheses with <code>v i (</code></td>
+<td>2</td>
+</tr>
+<tr>
+<td>Repeating a recent action with <code>.</code></td>
+<td>3</td>
+</tr>
+<tr>
+<td>Doing <code>{number} {action}</code> does <code>{action}</code> that many times</td>
+<td>2</td>
+</tr>
+<tr>
+<td>Visual block mode</td>
+<td>1</td>
+</tr>
+<tr>
+<td><code>/</code> searches</td>
+<td>4</td>
+</tr>
+<tr>
+<td>Jumping from a parenthesis to its partner with %</td>
+<td>1</td>
+</tr>
+<tr>
+<td><code>:%s</code> and <code>:s</code> find and replace</td>
+<td>2</td>
+</tr>
+<tr>
+<td>Interactive find and replace (e.g. <code>s/foo/bar/gc</code>)</td>
+<td>2</td>
+</tr>
+<tr>
+<td>Find and replace with regex (<code>s/^/-</code>)</td>
+<td>1</td>
+</tr>
+<tr>
+<td>Find and replace with capture groups (e.g. <code>s/”\(.*\)”/\1/</code>)</td>
+<td>1</td>
+</tr>
+<tr>
+<td>Command history (e.g. find and replace, search)</td>
+<td>2</td>
+</tr>
+<tr>
+<td>Misc special actions, e.g. <code>g g</code>, <code>c f :</code>, <code>z z</code></td>
+<td>3</td>
+</tr>
+<tr>
+<td>Macros (with e.g. <code>q q</code>)</td>
+<td>2</td>
+</tr>
+<tr>
+<td>Total score possible</td>
+<td>30</td>
+</tr>
+</tbody>
+</table>
+<p>It turned out, though, that three of these items - the first three on my list - were perfectly
+implemented across my sample - every site that I tested was able to deliver these features. So, I
+won&#8217;t discuss those points anymore. For every item from &#8220;visual block mode&#8221; on down, at least one
+site or <span class="caps">IDE</span> that I tested, failed to deliver&nbsp;it.</p>
+<p>I tested the Vim modes of the following sites and&nbsp;IDEs:</p>
+<ul>
+<li>Leetcode</li>
+<li>Neetcode</li>
+<li>Codesignal</li>
+<li>Repl.it</li>
+<li>Coderpad.io</li>
+<li>HackerRank</li>
+<li>Codewars.com</li>
+<li>PyCharm with&nbsp;IdeaVim</li>
+<li><span class="caps">VS</span> Code with&nbsp;vscodevim</li>
+</ul>
+<h2>Results</h2>
+<p>There was, satisfyingly, exactly one perfect score: Pycharm. Second place was a three-way tie
+between applications that delivered every feature I tested, except for find and replace with capture
+groups: repl.it, Codewars.com, and <span class="caps">VS</span> Code + vscodevim. The site that delivered the fewest Vim
+features was&nbsp;HackerRank.</p>
+<p>In a surprising number of cases, features were apparently present, but broken! For instance,
+Leetcode appears to try to support macro recording and replaying - attempting to record a macro to
+the &#8220;r&#8221; key with <code>q r</code> in Leetcode updates the mode line to read <code>--NORMAL--(recording)[r]</code>, and
+closing the recording and, in some cases, executing it, all works as expected. But my default macro
+test was to record a macro of myself typing &#8220;foo bar baz&#8221;, and Leetcode fails to record this as a
+macro; instead it inserts only the last letter of the inserted&nbsp;string.</p>
+<p>Here are the detailed results. (My tabular notes are
+<a href="https://gist.github.com/BenQuigley/bde5e34798d8683eb0b3e24565656705">here</a> if you have a question
+that&#8217;s not answered by the discussion&nbsp;below).</p>
+<h3>Leetcode (22&nbsp;points)</h3>
+<p>Delivered everything&nbsp;except:</p>
+<ul>
+<li>Interactive find and replace (e.g. <code>s/foo/bar/gc</code>) (which is supposed to open an interactive
+  dialog where you answer <code>y / n / {other options}</code> for each replacement&nbsp;candidate).</li>
+<li>Find and replace with capture groups (e.g. <code>s/"\(.*\)"/\1/</code> - this is supposed to store the
+  replaced items for output, for example that expression would replace any string stored in quotes,
+  with the string by&nbsp;itself).</li>
+<li>Command history (e.g. find and replace, search, and other commands in Vim each store a history, so
+  its same location in the text, but now in the middle of the window&nbsp;pane)</li>
+<li>The special action <code>z z</code> (which is supposed to update the buffer location so that the cursor is at
+  its same location in the text, but now in the middle of the window&nbsp;pane)</li>
+<li>Macros (with e.g. <code>q q</code>). As I mentioned above, this is present but in a broken state on
+  Leetcode.com as of right&nbsp;now.</li>
+</ul>
+<h3>Neetcode (23.5&nbsp;points)</h3>
+<p>Delivered everything&nbsp;except:</p>
+<ul>
+<li>Find and replace with capture&nbsp;groups</li>
+<li>Command&nbsp;history</li>
+<li>The special action <code>z z</code></li>
+</ul>
+<h3>Codesignal (23&nbsp;points)</h3>
+<p>Delivered everything&nbsp;except:</p>
+<ul>
+<li>Interactive find and replace - the <code>s/foo/bar/gc</code> command did open a dialog, but it didn&#8217;t accept
+  input on my machine, and the editor entered a broken&nbsp;state.</li>
+<li>Find and replace with capture&nbsp;groups</li>
+<li>Command&nbsp;history</li>
+<li>The special action <code>z z</code></li>
+<li>Macros</li>
+</ul>
+<h3>Repl.it (27&nbsp;points)</h3>
+<p>Great result - delivered everything except find and replace with capture&nbsp;groups.</p>
+<h3>Coderpad.io (21&nbsp;points)</h3>
+<p>Delivered everything&nbsp;except:</p>
+<ul>
+<li>Jumping from a parenthesis to its partner with <code>%</code> - this worked in one direction, forwards, but
+  not the other way&nbsp;around!</li>
+<li>Interactive find and replace - like with Codesignal, the <code>s/foo/bar/gc</code> command did open a dialog
+  but not a working one; unlike with Codesignal the dialog was at least exitable without reloading
+  the entire&nbsp;page.</li>
+<li>Find and replace with capture&nbsp;groups</li>
+<li>Command&nbsp;history</li>
+<li>The special action <code>z z</code></li>
+<li>Macros</li>
+</ul>
+<h3>HackerRank (18&nbsp;points)</h3>
+<p>Delivered everything&nbsp;except:</p>
+<ul>
+<li>Visual block mode (interestingly, the only <span class="caps">IDE</span> I tested that did not deliver this - for reference,
+  Ctrl + V enters a visual mode that&#8217;s distinct from both regular visual mode and linewise visual
+  mode; where arbitrary rectangles of text can be selected and operated&nbsp;on).</li>
+<li>Find and replace with <code>s/foo/bar</code> in Visual mode (<code>%s/foo/bar</code> replacements worked fine, so
+  partial&nbsp;credit).</li>
+<li>Interactive find and replace (instead launches a search; does not break page at&nbsp;all)</li>
+<li>Find and replace with capture&nbsp;groups</li>
+<li>Command&nbsp;history</li>
+<li>The special action <code>z z</code></li>
+<li>Macros</li>
+</ul>
+<h3>Codewars.com (27&nbsp;points)</h3>
+<p>Same as repl.it, great result - delivered everything except find and replace with capture&nbsp;groups.</p>
+<h3>PyCharm + IdeaVim (28&nbsp;points)</h3>
+<p>The only perfect score! Everything I tested&nbsp;worked.</p>
+<h3><span class="caps">VS</span> Code + vscodevim (27&nbsp;points)</h3>
+<p>Same as repl.it and Codewars, great result - delivered everything except find and replace with capture&nbsp;groups.</p>
+  </div>
+  <div class="tag-cloud">
+    <p>
+      <a href="/tag/computing.html">computing</a>
+      <a href="/tag/vim.html">vim</a>
+    </p>
+  </div>
+
+
+
+
+
+
+</article>
+
+<footer>
+<p>&copy;  </p>
+<p>
+Built with <a href="http://getpelican.com" target="_blank">Pelican</a> using <a href="http://bit.ly/flex-pelican" target="_blank">Flex</a> theme
+  <span class="footer-separator">|</span>
+  Switch to the <a href="javascript:void(0)" onclick="theme.switch(`dark`)">dark</a> | <a href="javascript:void(0)" onclick="theme.switch(`light`)">light</a> | <a href="javascript:void(0)" onclick="theme.switch(`browser`)">browser</a> theme
+  <script id="dark-theme-script"
+          src="/theme/dark-theme/dark-theme.min.js"
+          data-enable-auto-detect-theme="False"
+          data-default-theme="light"
+          type="text/javascript">
+  </script>
+</p></footer>  </main>
+
+<script type="application/ld+json">
+{
+  "@context" : "http://schema.org",
+  "@type" : "Blog",
+  "name": " Ben Quigley ",
+  "url" : "",
+  "image": "/images/quigley-2022-selfie-square-web.jpg",
+  "description": "Ben Quigley homepage"
+}
+</script>
+</body>
+</html>
