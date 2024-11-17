@@ -73,7 +73,7 @@ guessed I used them.
 | Macros (with e.g. `q q`)                                     | 2                 |
 | Total score possible                                         | 28                |
 
-It turned out, though, that three of these items - the first three on my list - were perfectly
+It turned out, though, that four of these items - the first four on my list - were perfectly
 implemented across my sample - every site that I tested was able to deliver these features. So, I
 won't discuss those points anymore. For every item from "Visual Block mode" on down, at least one
 site or IDE that I tested, failed to deliver it.
