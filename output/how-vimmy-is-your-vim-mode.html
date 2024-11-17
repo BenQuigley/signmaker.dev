@@ -44,13 +44,13 @@
  
 
 <meta name="author" content="Ben Quigley" />
-<meta name="description" content="It’s common for online code editors (LeetCode, CoderPad, CodeSignal, etc.) to offer “Vim and Emacs modes,” and since I’m most comfortable working with the Vim keybinds, I usually turn them on. When I sat down for a technical interview the other day and attempted to use the Vim …" />
+<meta name="description" content="It’s common for online code editors (LeetCode, CoderPad, CodeSignal, etc.) and IDEs to offer “Vim and Emacs modes”, and since I’m most comfortable working with the Vim keybinds, I usually turn them on. When I sat down for a technical interview the other day and attempted to use …" />
 <meta name="keywords" content="computing, vim">
 
 
   <meta property="og:site_name" content="Ben Quigley"/>
   <meta property="og:title" content="How Vimmy is Your Vim Mode?"/>
-  <meta property="og:description" content="It’s common for online code editors (LeetCode, CoderPad, CodeSignal, etc.) to offer “Vim and Emacs modes,” and since I’m most comfortable working with the Vim keybinds, I usually turn them on. When I sat down for a technical interview the other day and attempted to use the Vim …"/>
+  <meta property="og:description" content="It’s common for online code editors (LeetCode, CoderPad, CodeSignal, etc.) and IDEs to offer “Vim and Emacs modes”, and since I’m most comfortable working with the Vim keybinds, I usually turn them on. When I sat down for a technical interview the other day and attempted to use …"/>
   <meta property="og:locale" content="en_US"/>
   <meta property="og:url" content="/how-vimmy-is-your-vim-mode.html"/>
   <meta property="og:type" content="article"/>
@@ -157,12 +157,13 @@
 
 
   <div>
-    <p>It&#8217;s common for online code editors (LeetCode, CoderPad, CodeSignal, etc.) to offer &#8220;Vim and Emacs
-modes,&#8221; and since I&#8217;m most comfortable working with the Vim keybinds, I usually turn them on. When I
-sat down for a technical interview the other day and attempted to use the Vim features that my hands
-take for granted, however, I ran into some behaviors I didn&#8217;t expect - features misbehaving such as
-visual-mode find and replace, interactive find and replace, and even jumping from one parenthesis to
-its partner with <code>%</code>.</p>
+    <p>It&#8217;s common for online code editors (LeetCode, CoderPad, CodeSignal, etc.) and IDEs to offer &#8220;Vim
+and Emacs modes&#8221;, and since I&#8217;m most comfortable working with the Vim keybinds, I usually turn them
+on. When I sat down for a technical interview the other day and attempted to use the Vim features
+that my hands take for granted, however, I ran into some behaviors I didn&#8217;t expect - features
+misbehaving such as visual-mode find and replace, interactive find and replace, and even jumping
+from one parenthesis to its partner with <code>%</code>.</p>
+<p><img alt="A meme of the &quot;surprised butterfly guy&quot; asking &quot;Is this VIM mode?&quot; regarding a minimal implementation." src="images/missing-vi-keybind-features.jpg"></p>
 <p>I wondered how complete these online &#8220;Vim modes&#8221; really are, and I took it upon myself to create a
 rubric and begin to assign&nbsp;scores.</p>
 <h2>Caveats:</h2>
@@ -183,19 +184,21 @@ rubric and begin to assign&nbsp;scores.</p>
 <li>
 <p>My assignment of &#8220;importance points&#8221; to the various Vim features that I discussed are obviously
   arbitrary, as are the categories themselves, and no doubt there are important Vim features that I
-  failed to test. (No doubt there are important Vim features that I don&#8217;t even know&nbsp;about!)</p>
+  failed to test. (No doubt there are important Vim features that I don&#8217;t even know about!) If I
+  didn&#8217;t score your favorite feature or web <span class="caps">IDE</span>, please feel free to <a href="/pages/contact.html">reach
+  out</a> and I can update this&nbsp;post.</p>
 </li>
 <li>
 <p>I didn&#8217;t test Vim features that don&#8217;t make sense in the context of a non-Vim <span class="caps">IDE</span>, such as netrw (its directory
   explorer, <code>:Explore</code>), splitting panes, and opening&nbsp;tabs.</p>
 </li>
 <li>
-<p>There are inevitably some idiosyncrasies and inconsistencies. I had to make judgment calls about
-  how forgiving to be. For example, I gave no points to HackerRank when finding that jumping from a
-  parenthesis to its partner only works forwards in its editor; when finding, however, that
-  Neetcode.io editor&#8217;s visual block mode works to some extent, but doesn&#8217;t allow replacing in the
-  visual block with <code>r</code> as Vim does, I awarded points for that feature anyway since (to me) 95% of
-  the feature&#8217;s utility was&nbsp;there.</p>
+<p>I&#8217;m human and can be inconsistent. I had to make judgment calls about how to handle scoring
+  certain idiosyncrasies. For example, I gave no points to HackerRank when finding that jumping from
+  a parenthesis to its partner doesn&#8217;t work when jumping backwards in its editor. When finding,
+  however, that Neetcode.io editor&#8217;s Visual Block mode works to some extent, but doesn&#8217;t allow
+  replacing in the visual block with <code>r</code> as Vim does, I awarded points for that feature anyway since
+  (to me) 95% of the feature&#8217;s utility was&nbsp;there.</p>
 </li>
 <li>
 <p>I don&#8217;t know the Emacs keybinds well enough to grade them, sorry! If you want to hit me with a
@@ -232,7 +235,7 @@ guessed I used&nbsp;them.</p>
 <td>2</td>
 </tr>
 <tr>
-<td>Visual block mode</td>
+<td>Visual Block mode</td>
 <td>1</td>
 </tr>
 <tr>
@@ -240,7 +243,7 @@ guessed I used&nbsp;them.</p>
 <td>4</td>
 </tr>
 <tr>
-<td>Jumping from a parenthesis to its partner with %</td>
+<td>Jumping from a parenthesis to its partner with <code>%</code></td>
 <td>1</td>
 </tr>
 <tr>
@@ -273,13 +276,13 @@ guessed I used&nbsp;them.</p>
 </tr>
 <tr>
 <td>Total score possible</td>
-<td>30</td>
+<td>28</td>
 </tr>
 </tbody>
 </table>
 <p>It turned out, though, that three of these items - the first three on my list - were perfectly
 implemented across my sample - every site that I tested was able to deliver these features. So, I
-won&#8217;t discuss those points anymore. For every item from &#8220;visual block mode&#8221; on down, at least one
+won&#8217;t discuss those points anymore. For every item from &#8220;Visual Block mode&#8221; on down, at least one
 site or <span class="caps">IDE</span> that I tested, failed to deliver&nbsp;it.</p>
 <p>I tested the Vim modes of the following sites and&nbsp;IDEs:</p>
 <ul>
@@ -293,6 +296,8 @@ site or <span class="caps">IDE</span> that I tested, failed to deliver&nbsp;it.<
 <li>PyCharm with&nbsp;IdeaVim</li>
 <li><span class="caps">VS</span> Code with&nbsp;vscodevim</li>
 </ul>
+<p>(The two IDEs were a bit of an afterthought, since I realized they have &#8220;Vim modes&#8221; too and I was
+curious how they held&nbsp;up).</p>
 <h2>Results</h2>
 <p>There was, satisfyingly, exactly one perfect score: Pycharm. Second place was a three-way tie
 between applications that delivered every feature I tested, except for find and replace with capture
@@ -320,7 +325,7 @@ that&#8217;s not answered by the discussion&nbsp;below).</p>
 <li>The special action <code>z z</code> (which is supposed to update the buffer location so that the cursor is at
   its same location in the text, but now in the middle of the window&nbsp;pane)</li>
 <li>Macros (with e.g. <code>q q</code>). As I mentioned above, this is present but in a broken state on
-  Leetcode.com as of right&nbsp;now.</li>
+  Leetcode.com as of right now, on my machine at&nbsp;least.</li>
 </ul>
 <h3>Neetcode (23.5&nbsp;points)</h3>
 <p>Delivered everything&nbsp;except:</p>
@@ -357,7 +362,7 @@ that&#8217;s not answered by the discussion&nbsp;below).</p>
 <h3>HackerRank (18&nbsp;points)</h3>
 <p>Delivered everything&nbsp;except:</p>
 <ul>
-<li>Visual block mode (interestingly, the only <span class="caps">IDE</span> I tested that did not deliver this - for reference,
+<li>Visual Block mode (interestingly, the only <span class="caps">IDE</span> I tested that did not deliver this - for reference,
   Ctrl + V enters a visual mode that&#8217;s distinct from both regular visual mode and linewise visual
   mode; where arbitrary rectangles of text can be selected and operated&nbsp;on).</li>
 <li>Find and replace with <code>s/foo/bar</code> in Visual mode (<code>%s/foo/bar</code> replacements worked fine, so

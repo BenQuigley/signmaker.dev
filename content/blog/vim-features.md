@@ -4,12 +4,14 @@ date: 2024-11-15
 tags: computing, vim
 ---
 
-It's common for online code editors (LeetCode, CoderPad, CodeSignal, etc.) to offer "Vim and Emacs
-modes," and since I'm most comfortable working with the Vim keybinds, I usually turn them on. When I
-sat down for a technical interview the other day and attempted to use the Vim features that my hands
-take for granted, however, I ran into some behaviors I didn't expect - features misbehaving such as
-visual-mode find and replace, interactive find and replace, and even jumping from one parenthesis to
-its partner with `%`.
+It's common for online code editors (LeetCode, CoderPad, CodeSignal, etc.) and IDEs to offer "Vim
+and Emacs modes", and since I'm most comfortable working with the Vim keybinds, I usually turn them
+on. When I sat down for a technical interview the other day and attempted to use the Vim features
+that my hands take for granted, however, I ran into some behaviors I didn't expect - features
+misbehaving such as visual-mode find and replace, interactive find and replace, and even jumping
+from one parenthesis to its partner with `%`.
+
+![A meme of the "surprised butterfly guy" asking "Is this VIM mode?" regarding a minimal implementation.](images/missing-vi-keybind-features.jpg)
 
 I wondered how complete these online "Vim modes" really are, and I took it upon myself to create a
 rubric and begin to assign scores.
@@ -29,17 +31,19 @@ rubric and begin to assign scores.
   
 - My assignment of "importance points" to the various Vim features that I discussed are obviously
   arbitrary, as are the categories themselves, and no doubt there are important Vim features that I
-  failed to test. (No doubt there are important Vim features that I don't even know about!)
+  failed to test. (No doubt there are important Vim features that I don't even know about!) If I
+  didn't score your favorite feature or web IDE, please feel free to [reach
+  out](/pages/contact.html) and I can update this post.
   
 - I didn't test Vim features that don't make sense in the context of a non-Vim IDE, such as netrw (its directory
   explorer, `:Explore`), splitting panes, and opening tabs.
   
-- There are inevitably some idiosyncrasies and inconsistencies. I had to make judgment calls about
-  how forgiving to be. For example, I gave no points to HackerRank when finding that jumping from a
-  parenthesis to its partner only works forwards in its editor; when finding, however, that
-  Neetcode.io editor's visual block mode works to some extent, but doesn't allow replacing in the
-  visual block with `r` as Vim does, I awarded points for that feature anyway since (to me) 95% of
-  the feature's utility was there.
+- I'm human and can be inconsistent. I had to make judgment calls about how to handle scoring
+  certain idiosyncrasies. For example, I gave no points to HackerRank when finding that jumping from
+  a parenthesis to its partner doesn't work when jumping backwards in its editor. When finding,
+  however, that Neetcode.io editor's Visual Block mode works to some extent, but doesn't allow
+  replacing in the visual block with `r` as Vim does, I awarded points for that feature anyway since
+  (to me) 95% of the feature's utility was there.
   
 - I don't know the Emacs keybinds well enough to grade them, sorry! If you want to hit me with a
   rubric of desired features and instructions for testing, I'd be happy to collaborate on a
@@ -57,9 +61,9 @@ guessed I used them.
 | Selecting (visual mode) inside parentheses with `v i (`      | 2                 |
 | Repeating a recent action with `.`                           | 3                 |
 | Doing `{number} {action}` does `{action}` that many times    | 2                 |
-| Visual block mode                                            | 1                 |
+| Visual Block mode                                            | 1                 |
 | `/` searches                                                 | 4                 |
-| Jumping from a parenthesis to its partner with %             | 1                 |
+| Jumping from a parenthesis to its partner with `%`           | 1                 |
 | `:%s` and `:s` find and replace                              | 2                 |
 | Interactive find and replace (e.g. `s/foo/bar/gc`)           | 2                 |
 | Find and replace with regex (`s/^/- `)                       | 1                 |
@@ -67,11 +71,11 @@ guessed I used them.
 | Command history (e.g. find and replace, search)              | 2                 |
 | Misc special actions, e.g. `g g`, `c f :`, `z z`             | 3                 |
 | Macros (with e.g. `q q`)                                     | 2                 |
-| Total score possible                                         | 30                |
+| Total score possible                                         | 28                |
 
 It turned out, though, that three of these items - the first three on my list - were perfectly
 implemented across my sample - every site that I tested was able to deliver these features. So, I
-won't discuss those points anymore. For every item from "visual block mode" on down, at least one
+won't discuss those points anymore. For every item from "Visual Block mode" on down, at least one
 site or IDE that I tested, failed to deliver it.
 
 I tested the Vim modes of the following sites and IDEs:
@@ -85,6 +89,9 @@ I tested the Vim modes of the following sites and IDEs:
 - Codewars.com
 - PyCharm with IdeaVim
 - VS Code with vscodevim
+
+(The two IDEs were a bit of an afterthought, since I realized they have "Vim modes" too and I was
+curious how they held up).
 
 ## Results
 
@@ -118,7 +125,7 @@ Delivered everything except:
 - The special action `z z` (which is supposed to update the buffer location so that the cursor is at
   its same location in the text, but now in the middle of the window pane)
 - Macros (with e.g. `q q`). As I mentioned above, this is present but in a broken state on
-  Leetcode.com as of right now.
+  Leetcode.com as of right now, on my machine at least.
 
 ### Neetcode (23.5 points)
 
@@ -161,7 +168,7 @@ Delivered everything except:
 
 Delivered everything except:
 
-- Visual block mode (interestingly, the only IDE I tested that did not deliver this - for reference,
+- Visual Block mode (interestingly, the only IDE I tested that did not deliver this - for reference,
   Ctrl + V enters a visual mode that's distinct from both regular visual mode and linewise visual
   mode; where arbitrary rectangles of text can be selected and operated on).
 - Find and replace with `s/foo/bar` in Visual mode (`%s/foo/bar` replacements worked fine, so
