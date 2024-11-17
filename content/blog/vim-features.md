@@ -26,8 +26,8 @@ rubric and begin to assign scores.
   
 - I fully concede that just because a web site advertises a "Vim mode" doesn't mean it has promised
   to ship a fully functional Vim! I'm not trying to roast these sites for not having these features.
-  I'm only exploring what Vim features are and are not present in these editors' Vim modes, just
-  because I am curious.
+  I'm only exploring what Vim features are and are not present in these editors' Vim modes, because
+  I am curious.
   
 - My assignment of "importance points" to the various Vim features that I discussed are obviously
   arbitrary, as are the categories themselves, and no doubt there are important Vim features that I
@@ -40,10 +40,10 @@ rubric and begin to assign scores.
   
 - I'm human and can be inconsistent. I had to make judgment calls about how to handle scoring
   certain idiosyncrasies. For example, I gave no points to HackerRank when finding that jumping from
-  a parenthesis to its partner doesn't work when jumping backwards in its editor. When finding,
-  however, that Neetcode.io editor's Visual Block mode works to some extent, but doesn't allow
-  replacing in the visual block with `r` as Vim does, I awarded points for that feature anyway since
-  (to me) 95% of the feature's utility was there.
+  a parenthesis to its partner doesn't work when jumping backwards in its editor, even though it
+  does work in the forward direction. When finding, however, that Neetcode.io editor's Visual Block
+  mode works to some extent, but doesn't allow replacing in the visual block with `r` as Vim does, I
+  awarded points for that feature anyway since (to me) 95% of the feature's utility was there.
   
 - I don't know the Emacs keybinds well enough to grade them, sorry! If you want to hit me with a
   rubric of desired features and instructions for testing, I'd be happy to collaborate on a
