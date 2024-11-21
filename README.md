@@ -1,6 +1,6 @@
 # signmaker.dev
 
-Ben Quigley's homepage.
+Source code for Ben Quigley's homepage, online at [signmaker.dev](https://signmaker.dev).
 
 ## Setup
 
