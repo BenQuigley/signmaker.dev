@@ -24,7 +24,7 @@ TRANSLATION_FEED_ATOM = None
 AUTHOR_FEED_ATOM = None
 AUTHOR_FEED_RSS = None
 
-SITELOGO = "/images/quigley-2022-selfie-square-web.jpg"
+SITELOGO = "/images/quigley-2024-selfie-square.jpg"
 FAVICON = "/static/favicon.ico"
 
 # Blogroll
