@@ -1,5 +1,228 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Ben Quigley</title><link href="https://signmaker.dev/" rel="alternate"></link><link href="https://signmaker.dev/feeds/all.atom.xml" rel="self"></link><id>https://signmaker.dev/</id><updated>2024-09-16T00:00:00-05:00</updated><subtitle>Ben Quigley | Software Developer</subtitle><entry><title>Aliases and Scripts</title><link href="https://signmaker.dev/aliases-and-scripts.html" rel="alternate"></link><published>2024-09-16T00:00:00-05:00</published><updated>2024-09-16T00:00:00-05:00</updated><author><name>Ben Quigley</name></author><id>tag:signmaker.dev,2024-09-16:/aliases-and-scripts.html</id><summary type="html">&lt;p&gt;Over the years I&amp;#8217;ve developed (and stolen) a lot of shortcuts and scripts for
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Ben Quigley</title><link href="https://signmaker.dev/" rel="alternate"></link><link href="https://signmaker.dev/feeds/all.atom.xml" rel="self"></link><id>https://signmaker.dev/</id><updated>2024-11-15T00:00:00-05:00</updated><subtitle>Ben Quigley | Software Developer</subtitle><entry><title>How Vimmy is Your Vim Mode?</title><link href="https://signmaker.dev/how-vimmy-is-your-vim-mode.html" rel="alternate"></link><published>2024-11-15T00:00:00-05:00</published><updated>2024-11-15T00:00:00-05:00</updated><author><name>Ben Quigley</name></author><id>tag:signmaker.dev,2024-11-15:/how-vimmy-is-your-vim-mode.html</id><summary type="html">&lt;p&gt;It&amp;#8217;s common for online code editors (LeetCode, CoderPad, CodeSignal, etc.) and IDEs to offer &amp;#8220;Vim
+and Emacs modes&amp;#8221;, and since I&amp;#8217;m most comfortable working with the Vim keybinds, I usually turn them
+on. When I sat down for a technical interview the other day and attempted to use …&lt;/p&gt;</summary><content type="html">&lt;p&gt;It&amp;#8217;s common for online code editors (LeetCode, CoderPad, CodeSignal, etc.) and IDEs to offer &amp;#8220;Vim
+and Emacs modes&amp;#8221;, and since I&amp;#8217;m most comfortable working with the Vim keybinds, I usually turn them
+on. When I sat down for a technical interview the other day and attempted to use the Vim features
+that my hands take for granted, however, I ran into some behaviors I didn&amp;#8217;t expect - features
+misbehaving such as visual-mode find and replace, interactive find and replace, and even jumping
+from one parenthesis to its partner with &lt;code&gt;%&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;img alt="A meme of the &amp;quot;surprised butterfly guy&amp;quot; asking &amp;quot;Is this VIM mode?&amp;quot; regarding a minimal implementation." src="images/missing-vi-keybind-features.jpg"&gt;&lt;/p&gt;
+&lt;p&gt;I wondered how complete these online &amp;#8220;Vim modes&amp;#8221; really are, and I took it upon myself to create a
+rubric and begin to assign&amp;nbsp;scores.&lt;/p&gt;
+&lt;h2&gt;Caveats:&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;I access the web via up-to-date Firefox with &lt;a href="https://ublockorigin.com/"&gt;uBlock Origin&lt;/a&gt; and
+  &lt;a href="https://privacybadger.org/"&gt;PrivacyBadger&lt;/a&gt;. From time to time a web site does not work as
+  expected by its designers with this setup. When a Vim feature appeared to &amp;#8220;try to work&amp;#8221; but was
+  broken in my testing, I noted it as &amp;#8220;broken&amp;#8221; rather than &amp;#8220;missing&amp;#8221;, but I didn&amp;#8217;t investigate the
+  cause of the failure&amp;nbsp;further.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;I fully concede that just because a web site advertises a &amp;#8220;Vim mode&amp;#8221; doesn&amp;#8217;t mean it has promised
+  to ship a fully functional Vim! I&amp;#8217;m not trying to roast these sites for not having these features.
+  I&amp;#8217;m only exploring what Vim features are and are not present in these editors&amp;#8217; Vim modes, because
+  I am&amp;nbsp;curious.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;My assignment of &amp;#8220;importance points&amp;#8221; to the various Vim features that I discussed are obviously
+  arbitrary, as are the categories themselves, and no doubt there are important Vim features that I
+  failed to test. (No doubt there are important Vim features that I don&amp;#8217;t even know about!) If I
+  didn&amp;#8217;t score your favorite feature or web &lt;span class="caps"&gt;IDE&lt;/span&gt;, please feel free to &lt;a href="/pages/contact.html"&gt;reach
+  out&lt;/a&gt; and I can update this&amp;nbsp;post.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;I didn&amp;#8217;t test Vim features that don&amp;#8217;t make sense in the context of a non-Vim &lt;span class="caps"&gt;IDE&lt;/span&gt;, such as netrw (its directory
+  explorer, &lt;code&gt;:Explore&lt;/code&gt;), splitting panes, and opening&amp;nbsp;tabs.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;I&amp;#8217;m human and can be inconsistent. I had to make judgment calls about how to handle scoring
+  certain idiosyncrasies. For example, I gave no points to HackerRank when finding that jumping from
+  a parenthesis to its partner doesn&amp;#8217;t work when jumping backwards in its editor, even though it
+  does work in the forward direction. When finding, however, that Neetcode.io editor&amp;#8217;s Visual Block
+  mode works to some extent, but doesn&amp;#8217;t allow replacing in the visual block with &lt;code&gt;r&lt;/code&gt; as Vim does, I
+  awarded points for that feature anyway since (to me) 95% of the feature&amp;#8217;s utility was&amp;nbsp;there.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;I don&amp;#8217;t know the Emacs keybinds well enough to grade them, sorry! If you want to hit me with a
+  rubric of desired features and instructions for testing, I&amp;#8217;d be happy to collaborate on a
+  follow-up blog&amp;nbsp;post.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;Methodology:&lt;/h2&gt;
+&lt;p&gt;I decided on thirteen semi-important (at least, I use them all regularly) but non-trivial Vim
+features to test. I assigned them &amp;#8220;importance points&amp;#8221; based on my subjective judgment of how often I
+guessed I used&amp;nbsp;them.&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Feature&lt;/th&gt;
+&lt;th&gt;Importance points&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;Deleting something pops it into your &amp;#8220;paste&amp;#8221; buffer&lt;/td&gt;
+&lt;td&gt;2&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Selecting (visual mode) inside parentheses with &lt;code&gt;v i (&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;2&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Repeating a recent action with &lt;code&gt;.&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;3&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Doing &lt;code&gt;{number} {action}&lt;/code&gt; does &lt;code&gt;{action}&lt;/code&gt; that many times&lt;/td&gt;
+&lt;td&gt;2&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Visual Block mode&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;/&lt;/code&gt; searches&lt;/td&gt;
+&lt;td&gt;4&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Jumping from a parenthesis to its partner with &lt;code&gt;%&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;:%s&lt;/code&gt; and &lt;code&gt;:s&lt;/code&gt; find and replace&lt;/td&gt;
+&lt;td&gt;2&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Interactive find and replace (e.g. &lt;code&gt;s/foo/bar/gc&lt;/code&gt;)&lt;/td&gt;
+&lt;td&gt;2&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Find and replace with regex (&lt;code&gt;s/^/-&lt;/code&gt;)&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Find and replace with capture groups (e.g. &lt;code&gt;s/”\(.*\)”/\1/&lt;/code&gt;)&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Command history (e.g. find and replace, search)&lt;/td&gt;
+&lt;td&gt;2&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Misc special actions, e.g. &lt;code&gt;g g&lt;/code&gt;, &lt;code&gt;c f :&lt;/code&gt;, &lt;code&gt;z z&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;3&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Macros (with e.g. &lt;code&gt;q q&lt;/code&gt;)&lt;/td&gt;
+&lt;td&gt;2&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Total score possible&lt;/td&gt;
+&lt;td&gt;28&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;It turned out, though, that four of these items - the first four on my list - were perfectly
+implemented across my sample - every site that I tested was able to deliver these features. So, I
+won&amp;#8217;t discuss those points anymore. For every item from &amp;#8220;Visual Block mode&amp;#8221; on down, at least one
+site or &lt;span class="caps"&gt;IDE&lt;/span&gt; that I tested, failed to deliver&amp;nbsp;it.&lt;/p&gt;
+&lt;p&gt;I tested the Vim modes of the following sites and&amp;nbsp;IDEs:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Leetcode&lt;/li&gt;
+&lt;li&gt;Neetcode&lt;/li&gt;
+&lt;li&gt;Codesignal&lt;/li&gt;
+&lt;li&gt;Repl.it&lt;/li&gt;
+&lt;li&gt;Coderpad.io&lt;/li&gt;
+&lt;li&gt;HackerRank&lt;/li&gt;
+&lt;li&gt;Codewars.com&lt;/li&gt;
+&lt;li&gt;PyCharm with&amp;nbsp;IdeaVim&lt;/li&gt;
+&lt;li&gt;&lt;span class="caps"&gt;VS&lt;/span&gt; Code with&amp;nbsp;vscodevim&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;(The two IDEs were a bit of an afterthought, since I realized they have &amp;#8220;Vim modes&amp;#8221; too and I was
+curious how they held&amp;nbsp;up).&lt;/p&gt;
+&lt;h2&gt;Results&lt;/h2&gt;
+&lt;p&gt;There was, satisfyingly, exactly one perfect score: Pycharm. Second place was a three-way tie
+between applications that delivered every feature I tested, except for find and replace with capture
+groups: repl.it, Codewars.com, and &lt;span class="caps"&gt;VS&lt;/span&gt; Code + vscodevim. The site that delivered the fewest Vim
+features was&amp;nbsp;HackerRank.&lt;/p&gt;
+&lt;p&gt;In a surprising number of cases, features were apparently present, but broken! For instance,
+Leetcode appears to try to support macro recording and replaying - attempting to record a macro to
+the &amp;#8220;r&amp;#8221; key with &lt;code&gt;q r&lt;/code&gt; in Leetcode updates the mode line to read &lt;code&gt;--NORMAL--(recording)[r]&lt;/code&gt;, and
+closing the recording and, in some cases, executing it, all works as expected. But my default macro
+test was to record a macro of myself typing &amp;#8220;foo bar baz&amp;#8221;, and Leetcode fails to record this as a
+macro; instead it inserts only the last letter of the inserted&amp;nbsp;string.&lt;/p&gt;
+&lt;p&gt;Here are the detailed results. (My tabular notes are
+&lt;a href="https://gist.github.com/BenQuigley/bde5e34798d8683eb0b3e24565656705"&gt;here&lt;/a&gt; if you have a question
+that&amp;#8217;s not answered by the discussion&amp;nbsp;below).&lt;/p&gt;
+&lt;h3&gt;Leetcode (22&amp;nbsp;points)&lt;/h3&gt;
+&lt;p&gt;Delivered everything&amp;nbsp;except:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Interactive find and replace (e.g. &lt;code&gt;s/foo/bar/gc&lt;/code&gt;) (which is supposed to open an interactive
+  dialog where you answer &lt;code&gt;y / n / {other options}&lt;/code&gt; for each replacement&amp;nbsp;candidate).&lt;/li&gt;
+&lt;li&gt;Find and replace with capture groups (e.g. &lt;code&gt;s/"\(.*\)"/\1/&lt;/code&gt; - this is supposed to store the
+  replaced items for output, for example that expression would replace any string stored in quotes,
+  with the string by&amp;nbsp;itself).&lt;/li&gt;
+&lt;li&gt;Command history (e.g. find and replace, search, and other commands in Vim each store a history, so
+  its same location in the text, but now in the middle of the window&amp;nbsp;pane)&lt;/li&gt;
+&lt;li&gt;The special action &lt;code&gt;z z&lt;/code&gt; (which is supposed to update the buffer location so that the cursor is at
+  its same location in the text, but now in the middle of the window&amp;nbsp;pane)&lt;/li&gt;
+&lt;li&gt;Macros (with e.g. &lt;code&gt;q q&lt;/code&gt;). As I mentioned above, this is present but in a broken state on
+  Leetcode.com as of right now, on my machine at&amp;nbsp;least.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Neetcode (23.5&amp;nbsp;points)&lt;/h3&gt;
+&lt;p&gt;Delivered everything&amp;nbsp;except:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Find and replace with capture&amp;nbsp;groups&lt;/li&gt;
+&lt;li&gt;Command&amp;nbsp;history&lt;/li&gt;
+&lt;li&gt;The special action &lt;code&gt;z z&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Codesignal (23&amp;nbsp;points)&lt;/h3&gt;
+&lt;p&gt;Delivered everything&amp;nbsp;except:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Interactive find and replace - the &lt;code&gt;s/foo/bar/gc&lt;/code&gt; command did open a dialog, but it didn&amp;#8217;t accept
+  input on my machine, and the editor entered a broken&amp;nbsp;state.&lt;/li&gt;
+&lt;li&gt;Find and replace with capture&amp;nbsp;groups&lt;/li&gt;
+&lt;li&gt;Command&amp;nbsp;history&lt;/li&gt;
+&lt;li&gt;The special action &lt;code&gt;z z&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Macros&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Repl.it (27&amp;nbsp;points)&lt;/h3&gt;
+&lt;p&gt;Great result - delivered everything except find and replace with capture&amp;nbsp;groups.&lt;/p&gt;
+&lt;h3&gt;Coderpad.io (21&amp;nbsp;points)&lt;/h3&gt;
+&lt;p&gt;Delivered everything&amp;nbsp;except:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Jumping from a parenthesis to its partner with &lt;code&gt;%&lt;/code&gt; - this worked in one direction, forwards, but
+  not the other way&amp;nbsp;around!&lt;/li&gt;
+&lt;li&gt;Interactive find and replace - like with Codesignal, the &lt;code&gt;s/foo/bar/gc&lt;/code&gt; command did open a dialog
+  but not a working one; unlike with Codesignal the dialog was at least exitable without reloading
+  the entire&amp;nbsp;page.&lt;/li&gt;
+&lt;li&gt;Find and replace with capture&amp;nbsp;groups&lt;/li&gt;
+&lt;li&gt;Command&amp;nbsp;history&lt;/li&gt;
+&lt;li&gt;The special action &lt;code&gt;z z&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Macros&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;HackerRank (18&amp;nbsp;points)&lt;/h3&gt;
+&lt;p&gt;Delivered everything&amp;nbsp;except:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Visual Block mode (interestingly, the only &lt;span class="caps"&gt;IDE&lt;/span&gt; I tested that did not deliver this - for reference,
+  Ctrl + V enters a visual mode that&amp;#8217;s distinct from both regular visual mode and linewise visual
+  mode; where arbitrary rectangles of text can be selected and operated&amp;nbsp;on).&lt;/li&gt;
+&lt;li&gt;Find and replace with &lt;code&gt;s/foo/bar&lt;/code&gt; in Visual mode (&lt;code&gt;%s/foo/bar&lt;/code&gt; replacements worked fine, so
+  partial&amp;nbsp;credit).&lt;/li&gt;
+&lt;li&gt;Interactive find and replace (instead launches a search; does not break page at&amp;nbsp;all)&lt;/li&gt;
+&lt;li&gt;Find and replace with capture&amp;nbsp;groups&lt;/li&gt;
+&lt;li&gt;Command&amp;nbsp;history&lt;/li&gt;
+&lt;li&gt;The special action &lt;code&gt;z z&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Macros&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Codewars.com (27&amp;nbsp;points)&lt;/h3&gt;
+&lt;p&gt;Same as repl.it, great result - delivered everything except find and replace with capture&amp;nbsp;groups.&lt;/p&gt;
+&lt;h3&gt;PyCharm + IdeaVim (28&amp;nbsp;points)&lt;/h3&gt;
+&lt;p&gt;The only perfect score! Everything I tested&amp;nbsp;worked.&lt;/p&gt;
+&lt;h3&gt;&lt;span class="caps"&gt;VS&lt;/span&gt; Code + vscodevim (27&amp;nbsp;points)&lt;/h3&gt;
+&lt;p&gt;Same as repl.it and Codewars, great result - delivered everything except find and replace with capture&amp;nbsp;groups.&lt;/p&gt;</content><category term="blog"></category><category term="computing"></category><category term="vim"></category></entry><entry><title>Aliases and Scripts</title><link href="https://signmaker.dev/aliases-and-scripts.html" rel="alternate"></link><published>2024-09-16T00:00:00-05:00</published><updated>2024-09-16T00:00:00-05:00</updated><author><name>Ben Quigley</name></author><id>tag:signmaker.dev,2024-09-16:/aliases-and-scripts.html</id><summary type="html">&lt;p&gt;Over the years I&amp;#8217;ve developed (and stolen) a lot of shortcuts and scripts for
 accomplishing tasks quickly from the command line. I&amp;#8217;ve written about them
 &lt;a href="https://signmaker.dev/personal-scripts"&gt;before&lt;/a&gt;; it is time now to go further
 and document all of the absolute best scripts in my&amp;nbsp;possession.&lt;/p&gt;

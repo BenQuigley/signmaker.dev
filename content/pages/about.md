@@ -7,14 +7,11 @@ url: index.html
 
 Welcome! I'm Ben, and this is my home on the internet.
 
-I'm a software developer coming to you from [Warner Bros. Digital
-Labs](https://www.warnerbros.com/) working on
-[DCUniverse.com](https://dcuniverse.com) and other high-traffic and -visibility
-webapps, and from [EditShare](https://editshare.com/) writing high-performance
-Python code for video servers, and currently from
-[EquityZen.com](https://equityzen.com/), where I develop performant GraphQL
-APIs, microservices, and data pipelines supporting a top-tier investment
-application.
+I'm a software developer coming to you from [Warner Bros. Digital Labs](https://www.warnerbros.com/)
+working on [DCUniverse.com](https://dcuniverse.com) and other high-traffic and -visibility webapps,
+and from [EditShare](https://editshare.com/) writing high-performance Python code for video servers,
+and most recently from [EquityZen.com](https://equityzen.com/), where I developed performant GraphQL
+APIs, microservices, and data pipelines supporting a top-tier investment application.
 
 More data about me:
 
