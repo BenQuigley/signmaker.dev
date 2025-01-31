@@ -13,14 +13,14 @@ ever since the ZVEX Instant Lofi Junky became only the third guitar pedal I ever
 counting effects like the Strymon Deco which are "vintage" or maybe nostalgic but not exactly in the
 "warbly lo-fi" genre that I'm most fond of, I've still owned quite a few:
 
-- ZVEX Instant Lofi Junky
-- Fairfield Shallow Water
-- Walrus Mako M1
-- Chase Bliss Generation Loss mk2
-- Kinotone Ribbons
-- Chase Bliss Lossy
-- Hologram Chroma Console
-- and now the TEFI Vintage Lab Malinconia
+- [ZVEX Instant Lofi Junky](https://www.zvex.com/guitar-pedals/instant-lo-fi-junky-guitar-effects-pedal)
+- [Fairfield Shallow Water](https://fairfieldcircuitry.com/products/shallow-water)
+- [Walrus Mako M1](https://www.walrusaudio.com/products/mako-series-m1-high-fidelity-modulation-machine?variant=42069616918763)
+- [Chase Bliss Generation Loss mk2](https://www.chasebliss.com/generation-loss-mkii)
+- [Kinotone Ribbons](https://kinotoneaudio.com/products/ribbons/)
+- [Chase Bliss Lossy](https://www.chasebliss.com/lossy)
+- [Hologram Chroma Console](https://www.hologramelectronics.com/chroma-console)
+- and now the [TEFI Vintage Lab Malinconia](https://tefivintagelab.it/)
 
 Let's give each of these some brief discussion and a rating. The ratings will go on a scale from 1
 to 4 in honor of Roger Ebert. I already gave the market prices, so I'm not going to think too much
