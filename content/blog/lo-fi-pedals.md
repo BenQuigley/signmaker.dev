@@ -11,7 +11,7 @@ that it cost around $400, I thought I'd better tell you what it's like.
 
 I love lo-fi music in general, and lo-fi guitar pedals have always had a special place in my heart,
 ever since the ZVEX Instant Lofi Junky became only the third guitar pedal I ever owned. Excluding
-"lo-fi delay" and "reverb" effects like the Digitech Obscura or Caroline Météore, and also not
+"lo-fi" delay and reverb effects like the Digitech Obscura or Caroline Météore, and also not
 counting effects like the Strymon Deco which are "vintage" or maybe nostalgic but not exactly in the
 "warbly lo-fi" genre that I'm most fond of, I've still owned quite a few:
 
@@ -241,12 +241,12 @@ All ratings out of 4.
 |---------------------|---------|-----------------------|--------|----------|--------|
 | Instant Lofi Junky  | $200ish | 20                    | 3      | 1        | 2      |
 | Shallow Water       | $220ish | 40                    | 2      | 1        | 2      |
-| Mako M1             | $200ish | 300                   | 3      | 2        | 4      |
-| Generation Loss mk2 | $350ish | 250                   | 4      | 3        | 3      |
-| Ribbons             | $400ish | 160-180               | 4      | 3        | 4      |
 | Lossy               | $350ish | 400                   | 1      | 1        | 2      |
 | Chroma Console      | $400ish | 500                   | 4      | 3        | 3      |
+| Generation Loss mk2 | $350ish | 250                   | 4      | 3        | 3      |
+| Mako M1             | $200ish | 300                   | 3      | 2        | 4      |
 | Malinconia          | $400ish | 100                   | 4      | 4        | 4      |
+| Ribbons             | $400ish | 160-180               | 4      | 3        | 4      |
 
 Thanks for reading my thoughts on lo-fi modulation guitar effects. Feel free to get in touch if you
 want to talk about them, other guitar effects, or job opportunities working with Rust (hey, can't
