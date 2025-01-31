@@ -7,6 +7,8 @@ tags: guitar-pedals, guitar, music
 I'm now the owner of Malinconia #103, so since there are so few of them out in the wild, and being
 that it cost around $400, I thought I'd better tell you what it's like.
 
+![My pedalboard showing the TEFI Malinconia](images/malinconia-pedalboard.jpg)
+
 I love lo-fi music in general, and lo-fi guitar pedals have always had a special place in my heart,
 ever since the ZVEX Instant Lofi Junky became only the third guitar pedal I ever owned. Excluding
 "lo-fi delay" and "reverb" effects like the Digitech Obscura or Caroline Météore, and also not
@@ -23,9 +25,9 @@ counting effects like the Strymon Deco which are "vintage" or maybe nostalgic bu
 - and now the [TEFI Vintage Lab Malinconia](https://tefivintagelab.it/)
 
 Let's give each of these some brief discussion and a rating. The ratings will go on a scale from 1
-to 4 in honor of Roger Ebert. I already gave the market prices, so I'm not going to think too much
-about price when reviewing these. (Although it's definitely a factor that I care and think a lot
-about!)
+to 4 in honor of Roger Ebert. Factors that I care about include beautifulness, composability with
+other effects / subtlety, return-on-investment with regard to price, and ROI with regard to amperage
+from my pedalboard. Let's go in the order in which I tried them.
 
 ## ZVEX Instant Lofi Junky
 
