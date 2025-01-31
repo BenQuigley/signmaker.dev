@@ -16,6 +16,7 @@ APIs, microservices, and data pipelines supporting a top-tier investment applica
 More data about me:
 
 * 🕷️ Software developer and data engineer (Python, GraphQL, REST, Airflow, Athena)
+* 🦀 Strong professional interest in Rust
 * 🌲 Climate activist
 * 🚸 Twin parent
 * 🥧 Baking & cooking enthusiast
