@@ -13,14 +13,14 @@ ever since the ZVEX Instant Lofi Junky became only the third guitar pedal I ever
 counting effects like the Strymon Deco which are "vintage" or maybe nostalgic but not exactly in the
 "warbly lo-fi" genre that I'm most fond of, I've still owned quite a few:
 
-- ZVEX Instant Lofi Junky ($200ish)
-- Fairfield Shallow Water ($220ish)
-- Walrus Mako M1 ($200ish)
-- Chase Bliss Generation Loss mk2 ($350ish)
-- Kinotone Ribbons ($400ish)
-- Chase Bliss Lossy ($350ish)
-- Hologram Chroma Console ($400ish)
-- and now the TEFI Vintage Lab Malinconia ($400ish).
+- ZVEX Instant Lofi Junky
+- Fairfield Shallow Water
+- Walrus Mako M1
+- Chase Bliss Generation Loss mk2
+- Kinotone Ribbons
+- Chase Bliss Lossy
+- Hologram Chroma Console
+- and now the TEFI Vintage Lab Malinconia
 
 Let's give each of these some brief discussion and a rating. The ratings will go on a scale from 1
 to 4 in honor of Roger Ebert. I already gave the market prices, so I'm not going to think too much
