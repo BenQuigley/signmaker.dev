@@ -79,11 +79,17 @@ distinct and interesting:
 
 Plus it has a "lo-fi" knob that controls six additional effects: "env" (tone jumps responding to how
 hard you play), "drive", "space" (reverb), "age" (a tape age effect), "noise", and "warble". Plus
-there are six modulation parameters, plus the pedal supports presets... The pedal is a case study in
-how hard it is to design an effect pedal's physical interface.
+there are six modulation parameters, plus the pedal supports presets...
 
-It's a bit bananas and, like the other two I've discussed so far, a huge tone suck (in most
-configurations). Also, it requires a lot of power (300 mA minimum). But:
+The pedal is a case study in how hard it is to design an effect pedal's physical interface, because
+the pedal has so many features and only 11 controls total. For example, the "Tweak" knob is in
+charge of six settings total - "shape", "dive", "type" (referring to the subvarieties that I
+mentioned above), "env", "drive", and "space" - which of the six settings the knob controls is
+determined by a three-position switch below the knob, combined with whether or not the "Bypass /
+Lo-fi" footswitch is being held.
+
+So the interface is a bit bananas, and, like the other two I've discussed so far, the pedal is a
+tone suck (in most configurations). Also, it requires a lot of power (300 mA minimum). But:
 
 - The "univibe-tuned phaser" setting rocks; it's no worse than the Strymon Ultraviolet which costs
   basically as much as this pedal does
@@ -124,6 +130,9 @@ if you're never even going to be totally sure what you're getting? Why not just 
 range with tick marks, like on the Chase Bliss Thermae?
 
 3/4.
+
+
+![A screenshot of the Generation Loss manual showing its Model selection.](images/gen-loss-models.jpg)
 
 ## Kinotone Ribbons
 
