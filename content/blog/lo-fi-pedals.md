@@ -135,9 +135,9 @@ range with tick marks, like on the Chase Bliss Thermae?
 
 ## Kinotone Ribbons
 
-The Ribbons is a particularly boutique pedal from an up-and-coming studio Kinotone, but it's
-absolutely packed with features. It's not "just" a lo-fi pedal, although most of its features
-pertain at least loosely to the theme of "lo-fi and tape emulation".
+Ribbons is a particularly boutique pedal from an up-and-coming studio Kinotone, but it's absolutely
+packed with features. It's not "just" a lo-fi pedal, although most of its features pertain at least
+loosely to the theme of "lo-fi and tape emulation".
 
 - Extremely clever UI design: You know how some pedals, like Red Panda, have a
   "Shift" button that adds alternative functions to the knobs? The benefit is
