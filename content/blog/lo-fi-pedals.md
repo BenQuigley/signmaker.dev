@@ -24,7 +24,7 @@ counting effects like the Strymon Deco which are "vintage" or maybe nostalgic bu
 - [Hologram Chroma Console](https://www.hologramelectronics.com/chroma-console)
 - and now the [TEFI Vintage Lab Malinconia](https://tefivintagelab.it/)
 
-Let's give each of these some brief discussion and a rating. The ratings will go on a scale from 1
+Let's give each of these some brief discussion and a rating. The ratings will go on a scale from 0
 to 4 in honor of Roger Ebert. Factors that I care about include beautifulness, composability with
 other effects / subtlety, return-on-investment with regard to price, and ROI with regard to amperage
 from my pedalboard. Let's go in the order in which I tried them.
