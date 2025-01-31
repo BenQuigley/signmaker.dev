@@ -131,7 +131,6 @@ range with tick marks, like on the Chase Bliss Thermae?
 
 3/4.
 
-
 ![A screenshot of the Generation Loss manual showing its Model selection.](images/gen-loss-models.jpg)
 
 ## Kinotone Ribbons
