@@ -29,7 +29,7 @@ FAVICON = "/static/favicon.ico"
 
 # Blogroll
 LINKS = (
-    ("blog", "blog"),
+    ("blog", "/blog"),
     ("Github", "https://github.com/BenQuigley"),
     ("LinkedIn", "https://www.linkedin.com/in/BenjaminQuigley/"),
 )
@@ -38,7 +38,7 @@ LINKS = (
 SOCIAL = (
     ("github", "https://github.com/BenQuigley"),
     ("linkedin", "https://LinkedIn.com/in/BenjaminQuigley"),
-    ("rss", "/blog/feeds/all.atom.xml"),
+    ("rss", "/feeds/all.atom.xml"),
 )
 
 DEFAULT_PAGINATION = 15
