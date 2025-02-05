@@ -1,7 +1,7 @@
 ---
 title: TEFI Vintage Lab Malinconia Review and Lo-Fi Pedal Rundown
 date: 2025-01-30
-tags: guitar-pedals, guitar, music
+tags: guitar-pedals, guitar, music, blog
 ---
 
 I'm now the owner of Malinconia #103, so since there are so few of them out in the wild, and being
