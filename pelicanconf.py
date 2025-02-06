@@ -2,7 +2,8 @@
 # Flex example: https://github.com/alexandrevicenzi/Flex/wiki/Configuration-example
 AUTHOR = "Ben Quigley"
 SITENAME = "Ben Quigley"
-SITESUBTITLE = "Ben Quigley | Software Developer"
+SITETITLE = "Ben Quigley"
+SITESUBTITLE = "Software Developer"
 SITEDESCRIPTION = "Ben Quigley homepage"
 SITEURL = ""  # Careful, even on local this will ask for CSS etc from this URL
 ROBOTS = "index, follow"
